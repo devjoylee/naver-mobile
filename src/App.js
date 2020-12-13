@@ -1,9 +1,29 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import styled from 'styled-components';
+
+import LoginPage from './pages/login';
+import MainPage from './pages/main';
+import MyPage from './pages/mypage';
+import SearchPage from './pages/search';
+
+const Container = styled.div`
+  max-width: 720px;
+  margin: 0 auto;
+`;
 
 function App() {
   return (
-    <div></div>
-    //
+    <Container>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={MainPage} />
+          <Route path="/login" component={LoginPage} />
+          <Route path="/mypage" component={MyPage} />
+          <Route path="/search" component={SearchPage} />
+        </Switch>
+      </Router>
+    </Container>
   );
 }
 
