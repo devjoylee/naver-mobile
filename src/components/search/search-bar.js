@@ -46,11 +46,18 @@ const Input = styled.input`
   box-sizing: border-box;
 `;
 
-function SearchBar() {
+function SearchBar({ onAddKeyword }) {
   const [keyword, setKeyword] = useState('');
 
   const handleKeyword = (e) => {
     setKeyword(e.target.value);
+  };
+
+  const handleEnter = (e) => {
+    if (keyword && e.keyCode === 13) {
+      onAddKeyword(keyword);
+      setKeyword('');
+    }
   };
 
   const handleReset = () => {
@@ -70,6 +77,7 @@ function SearchBar() {
           value={keyword}
           active={hasKeyword}
           onChange={handleKeyword}
+          onKeyDown={handleEnter}
         />
         <ResetIconStyle onClick={handleReset} />
       </InputContainer>
