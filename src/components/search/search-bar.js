@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { ArrowLeftIcon, SearchIcon, ResetIcon } from '../icons';
@@ -8,8 +8,8 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid #1fcf89;
-  padding: 15px;
-  margin: 0 10px;
+  padding: 15px 20px;
+  background: #fff;
 `;
 
 const ArrowLeftIconStyle = styled(ArrowLeftIcon)`
@@ -27,6 +27,7 @@ const ResetIconStyle = styled(ResetIcon)`
   color: #ccc;
   position: absolute;
   right: 0;
+  opacity: ${({ active }) => (active ? 1 : 0)};
 `;
 
 const InputContainer = styled.div`
@@ -46,14 +47,31 @@ const Input = styled.input`
 `;
 
 function SearchBar() {
+  const [keyword, setKeyword] = useState('');
+
+  const handleKeyword = (e) => {
+    setKeyword(e.target.value);
+  };
+
+  const handleReset = () => {
+    setKeyword('');
+  };
+
+  const hasKeyword = !!keyword;
+
   return (
     <Container>
       <Link to="/">
         <ArrowLeftIconStyle />
       </Link>
       <InputContainer>
-        <Input placeholder="검색어를 입력해주세요." />
-        <ResetIconStyle />
+        <Input
+          placeholder="검색어를 입력해주세요."
+          value={keyword}
+          active={hasKeyword}
+          onChange={handleKeyword}
+        />
+        <ResetIconStyle onClick={handleReset} />
       </InputContainer>
       <SearchIconStyle />
     </Container>
