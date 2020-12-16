@@ -1,7 +1,5 @@
 import React from 'react';
-import NavBtn from '../components/main/nav-btn';
-import Logo from '../components/main/logo';
-import SearchBox from '../components/main/search-box';
+import { Logo, NavBtn, SearchBox } from '../components';
 
 function MainPage() {
   return (

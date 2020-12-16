@@ -1,8 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import styled from 'styled-components';
-
-import GlobalStyles from './components/global-styles';
+import GlobalStyles from './globalStyles';
 import LoginPage from './pages/login';
 import MainPage from './pages/main';
 import MyPage from './pages/mypage';

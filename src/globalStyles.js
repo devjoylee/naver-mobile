@@ -1,4 +1,4 @@
-import { css, createGlobalStyle } from 'styled-components';
+import styled, { css, createGlobalStyle } from 'styled-components';
 
 // prettier-ignore
 export const reset = css`
@@ -82,3 +82,23 @@ input:focus
 `
 
 export default createGlobalStyle`${reset}`;
+
+export const Container = styled.div`
+  ${({ margin }) =>
+    margin &&
+    `
+  margin-top: ${margin.top || 0}px;
+  margin-right: ${margin.right || 0}px;
+  margin-bottom: ${margin.bottom || 0}px;
+  margin-left: ${margin.left || 0}px;
+  `}
+
+  ${({ padding }) =>
+    padding &&
+    `
+  padding-top: ${padding.top || 0}px;
+  padding-right: ${padding.right || 0}px;
+  padding-bottom: ${padding.bottom || 0}px;
+  padding-left: ${padding.left || 0}px;
+  `}
+`;
