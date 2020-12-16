@@ -68,13 +68,39 @@ export const DeleteAll = styled.span`
   color: #a7a7a7;
 `;
 
-export const RecentList = styled.ul``;
-
 export const EmptyList = styled.div`
   width: 100%;
   height: 200px;
   line-height: 200px;
   text-align: center;
+`;
+
+export const RecentList = styled.ul`
+  padding: 0 20px 15px;
+`;
+
+export const TextWrapper = styled.li`
+  display: flex;
+  align-items: center;
+  padding-bottom: 5px;
+`;
+
+export const Icon = styled(SearchIcon)`
+  width: 15px;
+  padding: 5px;
+  margin-right: 7px;
+  border-radius: 50%;
+  background: #ccc;
+  color: #fff;
+`;
+
+export const Keyword = styled.span``;
+
+export const RemoveBtn = styled.span`
+  font-size: 14px;
+  color: #666;
+  margin-left: auto;
+  cursor: pointer;
 `;
 
 // setting
