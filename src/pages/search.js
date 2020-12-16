@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import SearchBar from '../components/search/search-bar';
-import History from '../components/search/history';
-import Help from '../components/search/help';
+import { SearchBar, History, Setting } from '../components/';
 
 function SearchPage() {
   const [keywords, setKeywords] = useState(
@@ -42,7 +40,7 @@ function SearchPage() {
       <Container>
         <SearchBar onAddKeyword={handleAddKeyword} />
         <History keywords={keywords} />
-        <Help />
+        <Setting />
       </Container>
     </GrayBackground>
   );
