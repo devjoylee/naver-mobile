@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import SearchBar from '../components/search/search-bar';
 import History from '../components/search/history';
+import Help from '../components/search/help';
 
 function SearchPage() {
   const [keywords, setKeywords] = useState(
@@ -23,16 +24,27 @@ function SearchPage() {
 
   console.log(keywords);
 
-  const Container = styled.div`
+  const GrayBackground = styled.div`
     height: 100%;
     background: #e1e1e1;
   `;
 
+  const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #fff;
+    min-height: 200px;
+  `;
+
   return (
-    <Container>
-      <SearchBar onAddKeyword={handleAddKeyword} />
-      <History keywords={keywords} />
-    </Container>
+    <GrayBackground>
+      <Container>
+        <SearchBar onAddKeyword={handleAddKeyword} />
+        <History keywords={keywords} />
+        <Help />
+      </Container>
+    </GrayBackground>
   );
 }
 
