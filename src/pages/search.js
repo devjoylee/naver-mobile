@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
 import SearchBar from '../components/search/search-bar';
+import History from '../components/search/history';
 
 function SearchPage() {
   const [keywords, setKeywords] = useState(
@@ -21,7 +23,17 @@ function SearchPage() {
 
   console.log(keywords);
 
-  return <SearchBar onAddKeyword={handleAddKeyword} />;
+  const Container = styled.div`
+    height: 100%;
+    background: #e1e1e1;
+  `;
+
+  return (
+    <Container>
+      <SearchBar onAddKeyword={handleAddKeyword} />
+      <History keywords={keywords} />
+    </Container>
+  );
 }
 
 export default SearchPage;
