@@ -16,8 +16,8 @@ function SearchBar({ onAddKeyword }) {
     setKeyword(e.target.value);
   };
 
-  const handleEnter = (e) => {
-    if (keyword && e.keyCode === 13) {
+  const handleSearch = () => {
+    if (keyword) {
       onAddKeyword(keyword);
       setKeyword('');
     }
@@ -39,11 +39,13 @@ function SearchBar({ onAddKeyword }) {
           placeholder="검색어를 입력해주세요."
           value={keyword}
           onChange={handleKeyword}
-          onKeyDown={handleEnter}
+          onKeyDown={(e) => {
+            if (e.keyCode === 13) handleSearch();
+          }}
         />
         <ResetBtn onClick={handleReset} active={hasKeyword ? 1 : 0} />
       </InputContainer>
-      <SearchBtn />
+      <SearchBtn onClick={() => handleSearch()} />
     </PageWrapper>
   );
 }
