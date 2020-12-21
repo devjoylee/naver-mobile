@@ -12,7 +12,7 @@ import {
   RemoveBtn,
 } from './Search.elements';
 
-function History({ keywords }) {
+function History({ keywords, onRemoveKeyword, onClearList }) {
   if (keywords.length === 0) {
     return (
       <ListContainer>
@@ -25,7 +25,7 @@ function History({ keywords }) {
     <ListContainer>
       <Header>
         <Title>최근 검색어</Title>
-        <DeleteAll>Clear</DeleteAll>
+        <DeleteAll onClick={onClearList}>Clear</DeleteAll>
       </Header>
       <RecentList>
         {keywords.map(({ id, text }) => {
@@ -33,7 +33,7 @@ function History({ keywords }) {
             <TextWrapper key={id}>
               <Icon />
               <Keyword>{text}</Keyword>
-              <RemoveBtn>삭제</RemoveBtn>
+              <RemoveBtn onClick={() => onRemoveKeyword(id)}>삭제</RemoveBtn>
             </TextWrapper>
           );
         })}

@@ -66,6 +66,7 @@ export const Title = styled.span`
 
 export const DeleteAll = styled.span`
   color: #a7a7a7;
+  cursor: pointer;
 `;
 
 export const EmptyList = styled.div`
@@ -82,11 +83,11 @@ export const RecentList = styled.ul`
 export const TextWrapper = styled.li`
   display: flex;
   align-items: center;
-  padding-bottom: 5px;
+  padding-bottom: 7px;
 `;
 
 export const Icon = styled(SearchIcon)`
-  width: 15px;
+  width: 14px;
   padding: 5px;
   margin-right: 7px;
   border-radius: 50%;
@@ -97,7 +98,7 @@ export const Icon = styled(SearchIcon)`
 export const Keyword = styled.span``;
 
 export const RemoveBtn = styled.span`
-  font-size: 14px;
+  font-size: 13px;
   color: #666;
   margin-left: auto;
   cursor: pointer;

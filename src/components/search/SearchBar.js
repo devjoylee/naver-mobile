@@ -41,7 +41,7 @@ function SearchBar({ onAddKeyword }) {
           onChange={handleKeyword}
           onKeyDown={handleEnter}
         />
-        <ResetBtn onClick={handleReset} active={hasKeyword} />
+        <ResetBtn onClick={handleReset} active={hasKeyword ? 1 : 0} />
       </InputContainer>
       <SearchBtn />
     </PageWrapper>
