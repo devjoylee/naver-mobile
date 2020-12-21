@@ -17,16 +17,12 @@ export const LogoImage = styled(Link)`
 `;
 
 // hamburger
-export const NavContainer = styled(Container)``;
-
 export const Hamburger = styled(MenuIcon)`
   width: 25px;
   color: #333;
 `;
 
 // search box
-export const BoxContainer = styled(Container)``;
-
 export const InputBox = styled.div`
   width: 100%;
   height: 50px;
