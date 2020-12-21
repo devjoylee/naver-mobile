@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { SearchBar, History, Setting } from '../components/';
+import { PageWrapper } from '../globalStyles';
 
-const GrayBackground = styled.div`
-  height: 100%;
-  background: #e1e1e1;
-`;
-
-const Container = styled.div`
+const SearchContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -46,8 +42,8 @@ function SearchPage() {
   };
 
   return (
-    <GrayBackground>
-      <Container>
+    <PageWrapper graybg>
+      <SearchContainer>
         <SearchBar onAddKeyword={handleAddKeyword} />
         <History
           keywords={keywords}
@@ -55,8 +51,8 @@ function SearchPage() {
           onClearList={handleClearList}
         />
         <Setting />
-      </Container>
-    </GrayBackground>
+      </SearchContainer>
+    </PageWrapper>
   );
 }
 

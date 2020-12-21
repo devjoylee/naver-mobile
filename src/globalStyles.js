@@ -102,3 +102,9 @@ export const Container = styled.div`
   padding-left: ${padding.left || 0}px;
   `}
 `;
+
+export const PageWrapper = styled.div`
+  height: 100%;
+  background-color: ${({ graybg }) => (graybg ? '#eee' : '#fff')};
+  padding: ${({ padding }) => (padding ? '20px' : 0)};
+`;
