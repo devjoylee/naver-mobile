@@ -19,7 +19,7 @@ export const LogoImage = styled(Link)`
 // hamburger
 export const Hamburger = styled(MenuIcon)`
   width: 25px;
-  color: #333;
+  color: #555;
 `;
 
 // search box

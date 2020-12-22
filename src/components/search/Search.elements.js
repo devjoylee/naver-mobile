@@ -29,7 +29,7 @@ export const Input = styled.input`
 
 export const BackBtn = styled(ArrowLeftIcon)`
   width: 25px;
-  color: #333;
+  color: #919191;
 `;
 
 export const SearchBtn = styled(SearchIcon)`

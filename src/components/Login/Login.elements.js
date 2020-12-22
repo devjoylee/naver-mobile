@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+// login form
 export const Input = styled.input`
   width: 100%;
   height: 40px;
