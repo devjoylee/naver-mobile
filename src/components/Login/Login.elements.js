@@ -18,6 +18,6 @@ export const LoginButton = styled(Link)`
   height: 40px;
   line-height: 40px;
   text-align: center;
-  background: #1fcf89;
+  background-color: ${({ disabled }) => (disabled ? '#bcbcbc' : '#1fcf89')};
   color: #fff;
 `;
