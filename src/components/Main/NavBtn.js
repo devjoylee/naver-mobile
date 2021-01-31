@@ -4,7 +4,7 @@ import { Hamburger } from './Main.elements';
 
 function NavBtn() {
   return (
-    <Link to="/login">
+    <Link to="/mypage">
       <Hamburger />
     </Link>
   );
