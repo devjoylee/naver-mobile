@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 // login form
 export const Input = styled.input`
@@ -12,7 +11,7 @@ export const Input = styled.input`
   box-sizing: border-box;
 `;
 
-export const LoginButton = styled(Link)`
+export const LoginButton = styled.button`
   display: block;
   width: 100%;
   height: 40px;

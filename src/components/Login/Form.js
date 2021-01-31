@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import { Input, LoginButton } from './Login.elements';
+import { useHistory } from 'react-router-dom';
+import { useUserContext } from '../../contexts/UserContext';
+import { fetchLogin } from './service';
 
 function Form() {
+  const { setUser } = useUserContext();
+  const history = useHistory();
   const [formValues, setFormValues] = useState({
     id: '',
     password: '',
   });
-
   const { id, password } = formValues;
 
   const handleFormValues = (e) => {
@@ -17,12 +21,24 @@ function Form() {
     });
   };
 
+  const handleSubmit = async () => {
+    try {
+      const user = await fetchLogin({ id, password }); // 로그인 요청
+      setUser(user);
+      history.replace('/'); // 홈으로
+    } catch (error) {
+      console.log('error', error);
+      window.alert(error);
+    }
+  };
+
   const isSubmittable = id && password;
 
   return (
     <>
       <Input
         id="id"
+        type="text"
         value={id}
         placeholder="아이디"
         onChange={handleFormValues}
@@ -34,7 +50,7 @@ function Form() {
         placeholder="비밀번호"
         onChange={handleFormValues}
       />
-      <LoginButton to="/" disabled={!isSubmittable}>
+      <LoginButton disabled={!isSubmittable} onClick={handleSubmit}>
         로그인
       </LoginButton>
     </>

@@ -9,4 +9,3 @@ ReactDOM.render(
   </UserContextProvider>,
   document.getElementById('root')
 );
-git / apps / naver - mobile - app / src / components;
