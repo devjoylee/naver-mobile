@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useUserContext } from '../../contexts/UserContext';
+import { InfoContainer, ProfileImage, ProfileDetail } from './Mypage.elements';
 
 function UserInfo() {
   const { user } = useUserContext();
@@ -9,14 +9,17 @@ function UserInfo() {
   const { id, name, image } = user;
 
   return (
-    <ul>
-      <li>
-        <img src={image} />
-      </li>
-      <li>아이디 : {id}@naver.com</li>
-      <li>이름 : {name}</li>
-      <Link to="/">HOME</Link>
-    </ul>
+    <InfoContainer>
+      <ProfileImage src={image} />
+      <ProfileDetail>
+        <h3>{name}</h3>
+        <p>{id}@naver.com</p>
+        <ul>
+          <li>내 인증서</li>
+          <li>QR체크인</li>
+        </ul>
+      </ProfileDetail>
+    </InfoContainer>
   );
 }
 
