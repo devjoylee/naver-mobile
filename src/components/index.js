@@ -14,3 +14,6 @@ export { default as Form } from './Login/Form';
 
 // my page
 export { default as UserInfo } from './Mypage/UserInfo';
+export { default as Navbar } from './Mypage/Navbar';
+export { default as Logout } from './Mypage/Logout';
+export { default as InfoLinks } from './Mypage/InfoLinks';

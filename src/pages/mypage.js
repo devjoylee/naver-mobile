@@ -1,7 +1,5 @@
 import React from 'react';
-import { UserInfo } from '../components';
-import Navbar from '../components/Mypage/Navbar';
-import Logout from '../components/Mypage/Logout';
+import { UserInfo, Navbar, Logout, InfoLinks } from '../components';
 import { PageWrapper } from '../globalStyles';
 
 function MyPage() {
@@ -9,6 +7,7 @@ function MyPage() {
     <PageWrapper graybg>
       <Navbar />
       <UserInfo />
+      <InfoLinks />
       <Logout />
     </PageWrapper>
   );

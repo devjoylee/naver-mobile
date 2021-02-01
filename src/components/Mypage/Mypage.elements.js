@@ -27,7 +27,7 @@ export const NavTitle = styled.div`
 
 // UserInfo
 export const InfoContainer = styled.div`
-  padding: 30px 20px;
+  padding: 24px 20px;
   background-color: #00bb38;
   width: 100%;
   box-sizing: border-box;
@@ -72,11 +72,28 @@ export const ProfileDetail = styled.div`
   }
 `;
 
+// InfoLink
+export const LinkContainer = styled(Link)`
+  display: block;
+  padding: 20px 15px;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+`;
+
+export const LinkTitle = styled.h3`
+  margin-bottom: 10px;
+`;
+
+export const LinkText = styled.p`
+  color: #999;
+  font-size: 15px;
+`;
+
 // Logout Button
 export const LogoutButton = styled.button`
   display: block;
   width: 80px;
-  margin: 30px auto 0;
+  margin: 20px auto 0;
   border: 1px solid #ccc;
   background: #eaeaea;
   padding: 7px 12px;
