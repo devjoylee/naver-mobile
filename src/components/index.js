@@ -11,3 +11,6 @@ export { BackBtn } from './Search/Search.elements';
 
 // login page
 export { default as Form } from './Login/Form';
+
+// my page
+export { default as UserInfo } from './Mypage/UserInfo';
