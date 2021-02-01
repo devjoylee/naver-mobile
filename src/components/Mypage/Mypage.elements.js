@@ -15,7 +15,7 @@ export const HomeLogo = styled(Link)`
 `;
 
 export const NavTitle = styled.div`
-  background-color: #26d45a;
+  background-color: #08c741;
   width: 100%;
   height: 45px;
   padding: 10px;
@@ -32,6 +32,7 @@ export const InfoContainer = styled.div`
   width: 100%;
   box-sizing: border-box;
   display: flex;
+  border-top: 1px solid #00ac34;
 `;
 
 export const ProfileImage = styled.img`
@@ -61,12 +62,24 @@ export const ProfileDetail = styled.div`
   }
 
   ul li {
-    width: 100px;
-    padding: 10px;
-    margin-right: 10px;
+    width: 90px;
+    padding: 12px 8px;
+    margin-right: 8px;
     font-size: 15px;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
+    border-radius: 25px;
   }
+`;
+
+// Logout Button
+export const LogoutButton = styled.button`
+  display: block;
+  width: 80px;
+  margin: 30px auto 0;
+  border: 1px solid #ccc;
+  background: #eaeaea;
+  padding: 7px 12px;
+  color: #666;
+  cursor: pointer;
 `;
