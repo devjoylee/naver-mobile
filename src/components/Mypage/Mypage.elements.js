@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { ChevRightIcon, PencilIcon } from '../icons';
 
 // Navbar
 export const NavContainer = styled.div`
@@ -62,22 +63,29 @@ export const ProfileDetail = styled.div`
   }
 
   ul li {
-    width: 90px;
-    padding: 12px 8px;
+    width: 92px;
+    padding: 10px 0;
     margin-right: 8px;
-    font-size: 15px;
+    font-size: 14px;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 25px;
+    cursor: pointer;
   }
 `;
 
+export const EditButton = styled(PencilIcon)`
+  width: 15px;
+`;
+
 // InfoLink
-export const LinkContainer = styled(Link)`
+export const LinkContainer = styled.div`
   display: block;
+  position: relative;
   padding: 20px 15px;
   border-bottom: 1px solid #ddd;
   background: #fff;
+  cursor: pointer;
 `;
 
 export const LinkTitle = styled.h3`
@@ -87,6 +95,15 @@ export const LinkTitle = styled.h3`
 export const LinkText = styled.p`
   color: #999;
   font-size: 15px;
+`;
+
+export const LinkBtn = styled(ChevRightIcon)`
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #bbb;
 `;
 
 // Logout Button

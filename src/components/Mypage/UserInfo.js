@@ -1,6 +1,11 @@
 import React from 'react';
 import { useUserContext } from '../../contexts/UserContext';
-import { InfoContainer, ProfileImage, ProfileDetail } from './Mypage.elements';
+import {
+  InfoContainer,
+  ProfileImage,
+  ProfileDetail,
+  EditButton,
+} from './Mypage.elements';
 
 function UserInfo() {
   const { user } = useUserContext();
@@ -12,7 +17,12 @@ function UserInfo() {
     <InfoContainer>
       <ProfileImage src={image} />
       <ProfileDetail>
-        <h3>{name}</h3>
+        <h3>
+          {name}
+          <span>
+            <EditButton />
+          </span>
+        </h3>
         <p>{id}@naver.com</p>
         <ul>
           <li>내 인증서</li>
