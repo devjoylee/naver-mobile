@@ -6,6 +6,7 @@ import LoginPage from './pages/login';
 import MainPage from './pages/main';
 import MyPage from './pages/mypage';
 import SearchPage from './pages/search';
+import JoinPage from './pages/join';
 import Route from './components/Route';
 
 const Container = styled.div`
@@ -24,6 +25,7 @@ function App() {
           <Route path="/login" component={LoginPage} />
           <Route auth path="/mypage" component={MyPage} />
           <Route path="/search" component={SearchPage} />
+          <Route path="/join" component={JoinPage} />
         </Switch>
       </Router>
     </Container>

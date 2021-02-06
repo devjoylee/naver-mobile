@@ -6,7 +6,7 @@ function HelpLogin() {
     <HelpBar center padding={{ top: 15 }}>
       <HelpBarItem to="/" text="아이디 찾기" />
       <HelpBarItem to="/" text="비밀번호 찾기" />
-      <HelpBarItem to="/" text="회원가입" $bold />
+      <HelpBarItem to="/join" text="회원가입" $bold />
     </HelpBar>
   );
 }

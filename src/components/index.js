@@ -18,3 +18,6 @@ export { default as UserInfo } from './Mypage/UserInfo';
 export { default as Navbar } from './Mypage/Navbar';
 export { default as Logout } from './Mypage/Logout';
 export { default as InfoLinks } from './Mypage/InfoLinks';
+
+// join page
+export { default as JoinForm } from './Join/JoinForm';
