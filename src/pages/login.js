@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Form, Logo, BackBtn } from '../components';
+import { Form, Logo, BackBtn, HelpLogin } from '../components';
 import { PageWrapper } from '../globalStyles';
 
 function LoginPage() {
@@ -11,6 +11,7 @@ function LoginPage() {
       </Link>
       <Logo />
       <Form />
+      <HelpLogin />
     </PageWrapper>
   );
 }

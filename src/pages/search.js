@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { SearchBar, History, Setting } from '../components/';
+import { SearchBar, History, HelpSearch } from '../components/';
 import { PageWrapper } from '../globalStyles';
 
 const SearchContainer = styled.div`
@@ -50,7 +50,7 @@ function SearchPage() {
           onRemoveKeyword={handleRemoveKeyword}
           onClearList={handleClearList}
         />
-        <Setting />
+        <HelpSearch />
       </SearchContainer>
     </PageWrapper>
   );

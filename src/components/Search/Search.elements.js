@@ -104,30 +104,8 @@ export const RemoveBtn = styled.span`
   cursor: pointer;
 `;
 
-// setting
-export const Footer = styled.ul`
-  display: flex;
-  align-items: center;
-  padding: 15px 20px;
-  border-top: 1px solid #ddd;
-`;
-
-export const FooterBtn = styled.li`
-  font-size: 14px;
-  color: #888;
-
-  &:first-child {
-    padding-right: 10px;
-    margin-right: 10px;
-    position: relative;
-  }
-
-  &:first-child::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    width: 1px;
-    height: 17px;
-    background-color: #bbb;
-  }
+// HelpBar
+export const HelpContainer = styled.div`
+  padding: 15px;
+  border-top: 1px solid #eaeaea;
 `;

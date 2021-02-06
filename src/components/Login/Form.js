@@ -35,7 +35,7 @@ function Form() {
   const isSubmittable = id && password;
 
   return (
-    <>
+    <form>
       <Input
         id="id"
         type="text"
@@ -53,7 +53,7 @@ function Form() {
       <LoginButton disabled={!isSubmittable} onClick={handleSubmit}>
         로그인
       </LoginButton>
-    </>
+    </form>
   );
 }
 
