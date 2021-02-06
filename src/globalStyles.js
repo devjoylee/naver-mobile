@@ -91,19 +91,32 @@ export const Container = styled.div`
   ${({ margin }) =>
     margin &&
     `
-  margin-top: ${margin.top || 0}px;
-  margin-right: ${margin.right || 0}px;
-  margin-bottom: ${margin.bottom || 0}px;
-  margin-left: ${margin.left || 0}px;
+    margin-top: ${margin.top ? margin.top + 'px' : ''};
+    margin-right: ${margin.right ? margin.right + 'px' : ''};
+    margin-bottom: ${margin.bottom ? margin.bottom + 'px' : ''};
+    margin-left: ${margin.left ? margin.left + 'px' : ''};
+    margin: ${margin.all ? margin.all + 'px' : ''};
+    margin: ${
+      margin.tb || margin.lr
+        ? `${margin.tb || 0}px ${margin.lr || 0}px`
+        : '    '
+    }; 
+
   `}
 
   ${({ padding }) =>
     padding &&
     `
-  padding-top: ${padding.top || 0}px;
-  padding-right: ${padding.right || 0}px;
-  padding-bottom: ${padding.bottom || 0}px;
-  padding-left: ${padding.left || 0}px;
+    padding-top: ${padding.top ? padding.top + 'px' : ''};
+    padding-right: ${padding.right ? padding.right + 'px' : ''};
+    padding-bottom: ${padding.bottom ? padding.bottom + 'px' : ''};
+    padding-left: ${padding.left ? padding.left + 'px' : ''};
+    padding: ${padding.all ? padding.all + 'px' : ''};
+    padding: ${
+      padding.tb || padding.lr
+        ? `${padding.tb || 0}px ${padding.lr || 0}px`
+        : ''
+    }; 
   `}
 `;
 

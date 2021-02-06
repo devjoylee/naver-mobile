@@ -7,6 +7,7 @@ const StyleHelpBar = styled(Container)`
   display: flex;
   align-items: center;
   justify-content: ${({ center }) => (center ? 'center' : 'flex-start')};
+  border-top: 1px solid #e1e1e1;
 `;
 
 const StyleHelpBarItem = styled(Link)`

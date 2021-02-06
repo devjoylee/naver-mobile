@@ -48,7 +48,7 @@ export const ResetBtn = styled(ResetIcon)`
 `;
 
 // history
-export const ListContainer = styled.div`
+export const ListContainer = styled(Container)`
   background: #fff;
   min-height: 200px;
 `;
@@ -57,7 +57,7 @@ export const Header = styled.div`
   display: flex;
   justify-content: space-between;
   font-size: 14px;
-  padding: 15px 20px;
+  padding-bottom: 15px;
 `;
 
 export const Title = styled.span`
@@ -76,9 +76,7 @@ export const EmptyList = styled.div`
   text-align: center;
 `;
 
-export const RecentList = styled.ul`
-  padding: 0 20px 15px;
-`;
+export const RecentList = styled.ul``;
 
 export const TextWrapper = styled.li`
   display: flex;
@@ -102,10 +100,4 @@ export const RemoveBtn = styled.span`
   color: #666;
   margin-left: auto;
   cursor: pointer;
-`;
-
-// HelpBar
-export const HelpContainer = styled.div`
-  padding: 15px;
-  border-top: 1px solid #eaeaea;
 `;

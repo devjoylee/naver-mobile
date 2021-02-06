@@ -1,13 +1,13 @@
 import React from 'react';
-import { LinkContainer, LinkTitle, LinkText, LinkBtn } from './Mypage.elements';
+import { LinkWrapper, LinkTitle, LinkText, LinkBtn } from './Mypage.elements';
 
-function InfoLink({ title, text, to }) {
+function InfoLink({ title, text }) {
   return (
-    <LinkContainer to={to}>
+    <LinkWrapper>
       <LinkTitle>{title}</LinkTitle>
       <LinkText>{text}</LinkText>
       <LinkBtn style={{ position: 'absolute' }} />
-    </LinkContainer>
+    </LinkWrapper>
   );
 }
 

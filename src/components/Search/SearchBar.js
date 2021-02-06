@@ -34,7 +34,7 @@ function SearchBar({ onAddKeyword }) {
       <Link to="/">
         <BackBtn />
       </Link>
-      <InputContainer margin={{ left: 10, right: 10 }}>
+      <InputContainer margin={{ lr: 10 }}>
         <Input
           placeholder="검색어를 입력해주세요."
           value={keyword}

@@ -14,7 +14,7 @@ function UserInfo() {
   const { id, name, image } = user;
 
   return (
-    <InfoContainer>
+    <InfoContainer padding={{ tb: 24, lr: 20 }}>
       <ProfileImage src={image} />
       <ProfileDetail>
         <h3>

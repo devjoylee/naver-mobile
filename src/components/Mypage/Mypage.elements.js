@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { ChevRightIcon, PencilIcon } from '../icons';
+import { Container } from '../../globalStyles';
 
 // Navbar
-export const NavContainer = styled.div`
+export const Nav = styled.div`
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -27,8 +28,7 @@ export const NavTitle = styled.div`
 `;
 
 // UserInfo
-export const InfoContainer = styled.div`
-  padding: 24px 20px;
+export const InfoContainer = styled(Container)`
   background-color: #00bb38;
   width: 100%;
   box-sizing: border-box;
@@ -79,7 +79,7 @@ export const EditButton = styled(PencilIcon)`
 `;
 
 // InfoLink
-export const LinkContainer = styled.div`
+export const LinkWrapper = styled.div`
   display: block;
   position: relative;
   padding: 20px 15px;
@@ -89,6 +89,7 @@ export const LinkContainer = styled.div`
 `;
 
 export const LinkTitle = styled.h3`
+  color: #333;
   margin-bottom: 10px;
 `;
 
