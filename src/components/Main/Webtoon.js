@@ -24,18 +24,15 @@ function Webtoon() {
   }
 
   return (
-    <>
-      <h3>오늘의 추천 웹툰</h3>
-      <ScrollContainer>
-        {webtoons.map(({ id, title, image, author }) => (
-          <WebtoonContainer key={id}>
-            <Image src={image} alt="webtoon" />
-            <Title>{title}</Title>
-            <Author>{author}</Author>
-          </WebtoonContainer>
-        ))}
-      </ScrollContainer>
-    </>
+    <ScrollContainer>
+      {webtoons.map(({ id, title, image, author }) => (
+        <WebtoonContainer key={id}>
+          <Image src={image} alt="webtoon" />
+          <Title>{title}</Title>
+          <Author>{author}</Author>
+        </WebtoonContainer>
+      ))}
+    </ScrollContainer>
   );
 }
 

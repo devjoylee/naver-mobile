@@ -24,3 +24,4 @@ export { default as JoinForm } from './Join/JoinForm';
 
 // common
 export { default as Logo } from './common/Logo';
+export { default as Section } from './common/Section';
