@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Input, LoginButton } from './Login.elements';
+import { LoginInput, LoginButton } from './Login.elements';
 import { useHistory } from 'react-router-dom';
 import { useUserContext } from '../../contexts/UserContext';
 import { fetchLogin } from './service';
@@ -36,14 +36,14 @@ function Form() {
 
   return (
     <form>
-      <Input
+      <LoginInput
         id="id"
         type="text"
         value={id}
         placeholder="아이디"
         onChange={handleFormValues}
       />
-      <Input
+      <LoginInput
         id="password"
         type="password"
         value={password}

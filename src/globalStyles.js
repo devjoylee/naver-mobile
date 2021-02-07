@@ -125,3 +125,24 @@ export const PageWrapper = styled.div`
   background-color: ${({ graybg }) => (graybg ? '#eee' : '#fff')};
   padding: ${({ padding }) => (padding ? '20px' : 0)};
 `;
+
+export const Input = styled.input`
+  width: 100%;
+  height: 50px;
+  border: 1px solid #dadada;
+  padding: 5px;
+  background: #fff;
+  box-sizing: border-box;
+`;
+
+export const Button = styled.button`
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 50px;
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  display: block;
+  color: #fff;
+  cursor: pointer;
+`;

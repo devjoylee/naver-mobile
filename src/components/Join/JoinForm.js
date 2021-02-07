@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Input } from '../Login/Login.elements';
-import { LabelWrapper, JoinLabel, JoinButton } from './Join.elements';
+import {
+  LabelWrapper,
+  JoinLabel,
+  JoinInput,
+  JoinButton,
+} from './Join.elements';
 import { requestSignup } from './service';
 
 function JoinForm() {
@@ -13,7 +17,7 @@ function JoinForm() {
   });
 
   const history = useHistory();
-  const { id, password, rePassword, name } = formValues;
+  const { id, password, rePassword, name, email } = formValues;
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -24,7 +28,7 @@ function JoinForm() {
   };
 
   const handleSubmit = async () => {
-    if (await requestSignup({ id, password, name })) {
+    if (await requestSignup({ id, password, name, email })) {
       history.push('/login');
       window.alert('회원가입 성공. 가입한 아이디로 로그인해주세요');
     } else {
@@ -39,44 +43,50 @@ function JoinForm() {
     <>
       <LabelWrapper>
         <JoinLabel htmlFor="id">아이디</JoinLabel>
-        <Input
+        <JoinInput
           type="text"
           id="id"
           name="id"
           value={id}
           onChange={handleChange}
-          required
         />
 
         <JoinLabel htmlFor="password">비밀번호</JoinLabel>
-        <Input
+        <JoinInput
           type="password"
           id="password"
           name="password"
           value={password}
           onChange={handleChange}
-          required
         />
 
         <JoinLabel htmlFor="rePassword">비밀번호 재확인</JoinLabel>
-        <Input
+        <JoinInput
           type="password"
           id="rePassword"
           name="rePassword"
           value={rePassword}
           onChange={handleChange}
-          required
         />
       </LabelWrapper>
       <LabelWrapper>
         <JoinLabel htmlFor="name">이름</JoinLabel>
-        <Input
+        <JoinInput
           type="text"
           id="name"
           name="name"
           value={name}
           onChange={handleChange}
-          required
+        />
+        <JoinLabel htmlFor="name">
+          이메일 <span>(선택)</span>
+        </JoinLabel>
+        <JoinInput
+          type="text"
+          id="email"
+          name="email"
+          value={email}
+          onChange={handleChange}
         />
       </LabelWrapper>
       <JoinButton disabled={!isSubmittable} onClick={handleSubmit}>

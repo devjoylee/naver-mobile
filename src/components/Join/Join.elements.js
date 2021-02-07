@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import { Input, Button } from '../../globalStyles';
 
 export const LabelWrapper = styled.div`
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 `;
 
 export const JoinLabel = styled.label`
@@ -9,15 +10,17 @@ export const JoinLabel = styled.label`
   margin-bottom: 10px;
   font-size: 15px;
   font-weight: bold;
+
+  span {
+    font-weight: 400;
+    color: #777;
+  }
 `;
 
-export const JoinButton = styled.button`
-  display: block;
-  width: 100%;
-  height: 50px;
-  font-size: 16px;
-  line-height: 40px;
-  text-align: center;
+export const JoinInput = styled(Input)`
+  margin-bottom: 12px;
+`;
+
+export const JoinButton = styled(Button)`
   background-color: ${({ disabled }) => (disabled ? '#bcbcbc' : '#1fcf89')};
-  color: #fff;
 `;
