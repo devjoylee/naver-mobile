@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Input } from '../Login/Login.elements';
 import { LabelWrapper, JoinLabel, JoinButton } from './Join.elements';
+import { requestSignup } from './service';
 
 function JoinForm() {
   const [formValues, setFormValues] = useState({
@@ -10,6 +12,7 @@ function JoinForm() {
     name: '',
   });
 
+  const history = useHistory();
   const { id, password, rePassword, name } = formValues;
 
   const handleChange = (e) => {
@@ -20,8 +23,13 @@ function JoinForm() {
     });
   };
 
-  const handleSubmit = () => {
-    console.log(formValues);
+  const handleSubmit = async () => {
+    if (await requestSignup({ id, password, name })) {
+      history.push('/login');
+      window.alert('회원가입 성공. 가입한 아이디로 로그인해주세요');
+    } else {
+      window.alert('회원가입에 실패하였습니다. 다시 시도해주세요.');
+    }
   };
 
   const isMatchedPassword = password === rePassword;
