@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Input } from '../Login/Login.elements';
 import { LabelWrapper, JoinLabel, JoinButton } from './Join.elements';
-import { requestSignup } from './service';
 
 function JoinForm() {
   const [formValues, setFormValues] = useState({
