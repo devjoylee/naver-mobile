@@ -4,6 +4,7 @@ import {
   InfoContainer,
   ProfileImage,
   ProfileDetail,
+  Edit,
   EditButton,
 } from './Mypage.elements';
 
@@ -19,9 +20,9 @@ function UserInfo() {
       <ProfileDetail>
         <h3>
           {name}
-          <span>
+          <Edit>
             <EditButton />
-          </span>
+          </Edit>
         </h3>
         <p>{id}@naver.com</p>
         <ul>

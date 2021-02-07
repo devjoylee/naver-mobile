@@ -6,7 +6,7 @@ function InfoLink({ title, text }) {
     <LinkWrapper>
       <LinkTitle>{title}</LinkTitle>
       <LinkText>{text}</LinkText>
-      <LinkBtn style={{ position: 'absolute' }} />
+      <LinkBtn />
     </LinkWrapper>
   );
 }

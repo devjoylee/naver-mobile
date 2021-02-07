@@ -74,8 +74,14 @@ export const ProfileDetail = styled.div`
   }
 `;
 
+export const Edit = styled.span`
+  position: relative;
+`;
+
 export const EditButton = styled(PencilIcon)`
-  width: 15px;
+  position: absolute;
+  bottom: 0;
+  margin-left: 2px;
 `;
 
 // InfoLink
