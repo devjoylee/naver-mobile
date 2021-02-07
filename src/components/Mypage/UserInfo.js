@@ -1,7 +1,7 @@
 import React from 'react';
 import { useUserContext } from '../../contexts/UserContext';
 import {
-  InfoContainer,
+  InfoWrapper,
   ProfileImage,
   ProfileDetail,
   Edit,
@@ -15,7 +15,7 @@ function UserInfo() {
   const { id, name, image } = user;
 
   return (
-    <InfoContainer padding={{ tb: 24, lr: 20 }}>
+    <InfoWrapper>
       <ProfileImage src={image} />
       <ProfileDetail>
         <h3>
@@ -30,7 +30,7 @@ function UserInfo() {
           <li>QR체크인</li>
         </ul>
       </ProfileDetail>
-    </InfoContainer>
+    </InfoWrapper>
   );
 }
 

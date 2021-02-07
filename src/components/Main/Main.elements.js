@@ -1,20 +1,5 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import { Container } from '../../globalStyles';
-import logo from '../../images/logo.png';
 import { MenuIcon } from '../icons';
-
-// logo
-export const LogoContainer = styled(Container)`
-  text-align: center;
-`;
-
-export const LogoImage = styled(Link)`
-  display: inline-block;
-  width: 180px;
-  height: 35px;
-  background: url(${logo}) no-repeat;
-`;
 
 // hamburger
 export const Hamburger = styled(MenuIcon)`

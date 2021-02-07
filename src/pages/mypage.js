@@ -1,6 +1,6 @@
 import React from 'react';
 import { UserInfo, Navbar, Logout, InfoLinks } from '../components';
-import { PageWrapper } from '../globalStyles';
+import { Container, PageWrapper } from '../globalStyles';
 
 function MyPage() {
   return (
@@ -8,7 +8,9 @@ function MyPage() {
       <Navbar />
       <UserInfo />
       <InfoLinks />
-      <Logout />
+      <Container margin={{ top: 20 }}>
+        <Logout />
+      </Container>
     </PageWrapper>
   );
 }

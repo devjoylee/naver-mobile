@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { Container } from '../../globalStyles';
 
-const StyleHelpBar = styled(Container)`
+const StyleHelpBar = styled.div`
   display: flex;
   align-items: center;
   justify-content: ${({ center }) => (center ? 'center' : 'flex-start')};
   border-top: 1px solid #e1e1e1;
+  padding: 15px;
 `;
 
 const StyleHelpBarItem = styled(Link)`

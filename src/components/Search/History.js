@@ -22,7 +22,7 @@ function History({ keywords, onRemoveKeyword, onClearList }) {
   }
 
   return (
-    <ListContainer padding={{ tb: 15, lr: 20 }}>
+    <ListContainer>
       <Header>
         <Title>최근 검색어</Title>
         <DeleteAll onClick={onClearList}>Clear</DeleteAll>

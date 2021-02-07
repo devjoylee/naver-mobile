@@ -1,5 +1,4 @@
 // main page
-export { default as Logo } from './Main/Logo';
 export { default as NavBtn } from './Main/NavBtn';
 export { default as SearchBox } from './Main/SearchBox';
 
@@ -21,3 +20,6 @@ export { default as InfoLinks } from './Mypage/InfoLinks';
 
 // join page
 export { default as JoinForm } from './Join/JoinForm';
+
+// common
+export { default as Logo } from './common/Logo';

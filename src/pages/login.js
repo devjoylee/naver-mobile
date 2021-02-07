@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Form, Logo, BackBtn, HelpLogin } from '../components';
-import { PageWrapper } from '../globalStyles';
+import { Container, PageWrapper } from '../globalStyles';
 
 function LoginPage() {
   return (
@@ -9,8 +9,12 @@ function LoginPage() {
       <Link to="/">
         <BackBtn />
       </Link>
-      <Logo />
-      <Form />
+      <Container margin={{ top: 35, bottom: 40 }}>
+        <Logo />
+      </Container>
+      <Container margin={{ bottom: 40 }}>
+        <Form />
+      </Container>
       <HelpLogin />
     </PageWrapper>
   );

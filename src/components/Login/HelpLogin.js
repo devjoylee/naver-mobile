@@ -3,7 +3,7 @@ import { HelpBar, HelpBarItem } from '../common/HelpBar';
 
 function HelpLogin() {
   return (
-    <HelpBar center margin={{ top: 40 }} padding={{ top: 15 }}>
+    <HelpBar center>
       <HelpBarItem to="/" text="아이디 찾기" />
       <HelpBarItem to="/" text="비밀번호 찾기" />
       <HelpBarItem to="/join" text="회원가입" $bold />

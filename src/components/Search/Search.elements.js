@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-import { Container } from '../../globalStyles';
 import { ArrowLeftIcon, SearchIcon, ResetIcon } from '../icons';
 
 // search bar
-export const PageWrapper = styled(Container)`
+export const BarWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,9 +11,10 @@ export const PageWrapper = styled(Container)`
   background: #fff;
 `;
 
-export const InputContainer = styled(Container)`
+export const InputWrapper = styled.div`
   flex: 1;
   position: relative;
+  margin: 0 10px;
 `;
 
 export const Input = styled.input`
@@ -48,9 +48,10 @@ export const ResetBtn = styled(ResetIcon)`
 `;
 
 // history
-export const ListContainer = styled(Container)`
+export const ListContainer = styled.div`
   background: #fff;
   min-height: 200px;
+  padding: 15px 20px;
 `;
 
 export const Header = styled.div`

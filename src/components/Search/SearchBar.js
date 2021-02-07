@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  PageWrapper,
+  BarWrapper,
   BackBtn,
   SearchBtn,
   ResetBtn,
-  InputContainer,
+  InputWrapper,
   Input,
 } from './Search.elements';
 
@@ -30,11 +30,11 @@ function SearchBar({ onAddKeyword }) {
   const hasKeyword = !!keyword;
 
   return (
-    <PageWrapper>
+    <BarWrapper>
       <Link to="/">
         <BackBtn />
       </Link>
-      <InputContainer margin={{ lr: 10 }}>
+      <InputWrapper>
         <Input
           placeholder="검색어를 입력해주세요."
           value={keyword}
@@ -44,9 +44,9 @@ function SearchBar({ onAddKeyword }) {
           }}
         />
         <ResetBtn onClick={handleReset} active={hasKeyword ? 1 : 0} />
-      </InputContainer>
+      </InputWrapper>
       <SearchBtn onClick={() => handleSearch()} />
-    </PageWrapper>
+    </BarWrapper>
   );
 }
 

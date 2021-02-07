@@ -1,12 +1,14 @@
 import React from 'react';
 import { Logo, NavBtn, SearchBox } from '../components';
-import { PageWrapper } from '../globalStyles';
+import { Container, PageWrapper } from '../globalStyles';
 
 function MainPage() {
   return (
     <PageWrapper padding>
       <NavBtn />
-      <Logo />
+      <Container padding={{ top: 20, bottom: 30 }}>
+        <Logo />
+      </Container>
       <SearchBox />
     </PageWrapper>
   );

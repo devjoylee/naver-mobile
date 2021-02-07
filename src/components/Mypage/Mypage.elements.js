@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { ChevRightIcon, PencilIcon } from '../icons';
-import { Container } from '../../globalStyles';
 
 // Navbar
 export const Nav = styled.div`
@@ -28,12 +27,13 @@ export const NavTitle = styled.div`
 `;
 
 // UserInfo
-export const InfoContainer = styled(Container)`
+export const InfoWrapper = styled.div`
   background-color: #00bb38;
   width: 100%;
   box-sizing: border-box;
   display: flex;
   border-top: 1px solid #00ac34;
+  padding: 24px 20px;
 `;
 
 export const ProfileImage = styled.img`
@@ -43,7 +43,6 @@ export const ProfileImage = styled.img`
 
 export const ProfileDetail = styled.div`
   padding-left: 10px;
-  padding-top: 10px;
   color: #fff;
 
   h3 {
@@ -117,7 +116,7 @@ export const LinkBtn = styled(ChevRightIcon)`
 export const LogoutButton = styled.button`
   display: block;
   width: 80px;
-  margin: 20px auto 0;
+  margin: 0 auto;
   border: 1px solid #ccc;
   background: #eaeaea;
   padding: 7px 12px;
