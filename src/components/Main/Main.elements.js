@@ -16,11 +16,30 @@ export const InputBox = styled.div`
 `;
 
 // webtoon list
-export const ScrollContainer = styled.div``;
+export const ScrollContainer = styled.div`
+  overflow-x: scroll;
+  white-space: nowrap;
 
-export const WebtoonContainer = styled.div``;
+  -webkit-overflow-scrolling: touch; // only IOS
 
-export const Image = styled.img``;
+  &::-webkit-scrollbar {
+    /* display: none; */
+  }
+`;
+
+export const WebtoonContainer = styled.div`
+  display: inline-block;
+  width: 45%;
+  border-radius: 5px;
+  &:not(:last-child) {
+    margin-right: 15px;
+  }
+`;
+
+export const Image = styled.img`
+  width: 100%;
+  vertical-align: top;
+`;
 
 export const Title = styled.div`
   margin-top: 9px;

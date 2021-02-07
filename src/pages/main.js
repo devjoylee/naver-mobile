@@ -6,10 +6,12 @@ function MainPage() {
   return (
     <PageWrapper padding>
       <NavBtn />
-      <Container padding={{ top: 20, bottom: 30 }}>
+      <Container margin={{ top: 20, bottom: 30 }}>
         <Logo />
       </Container>
-      <SearchBox />
+      <Container margin={{ bottom: 30 }}>
+        <SearchBox />
+      </Container>
       <Webtoon />
     </PageWrapper>
   );
