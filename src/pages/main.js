@@ -1,5 +1,5 @@
 import React from 'react';
-import { Logo, NavBtn, SearchBox } from '../components';
+import { Logo, NavBtn, SearchBox, Webtoon } from '../components';
 import { Container, PageWrapper } from '../globalStyles';
 
 function MainPage() {
@@ -10,6 +10,7 @@ function MainPage() {
         <Logo />
       </Container>
       <SearchBox />
+      <Webtoon />
     </PageWrapper>
   );
 }

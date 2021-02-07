@@ -14,3 +14,21 @@ export const InputBox = styled.div`
   border: 1px solid #1fcf89;
   border-radius: 3px;
 `;
+
+// webtoon list
+export const ScrollContainer = styled.div``;
+
+export const WebtoonContainer = styled.div``;
+
+export const Image = styled.img``;
+
+export const Title = styled.div`
+  margin-top: 9px;
+  font-weight: bold;
+`;
+
+export const Author = styled.div`
+  margin-top: 4px;
+  font-size: 14px;
+  color: #797b84;
+`;
