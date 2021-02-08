@@ -2,23 +2,22 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const IconWrapper = styled.span`
+const IconWrapper = styled.div`
   font-size: ${({ size }) => (size ? size + 'px' : '')};
-  color: ${({ color }) => (color ? color : '')};
+  a {
+    color: ${({ color }) => (color ? color : '')};
+  }
+  cursor: ${({ cursor }) => (cursor ? 'pointer' : 'auto')};
 `;
 
-function Icon({ children, size, color, linkTo }) {
-  if (!linkTo) {
-    return (
-      <IconWrapper size={size} color={color}>
-        {children}
-      </IconWrapper>
-    );
+function Icon({ children, ...props }) {
+  if (!props.linkTo) {
+    return <IconWrapper {...props}>{children}</IconWrapper>;
   }
 
   return (
-    <IconWrapper size={size} color={color}>
-      <Link to={linkTo}>{children}</Link>
+    <IconWrapper {...props}>
+      <Link to={props.linkTo}>{children}</Link>
     </IconWrapper>
   );
 }

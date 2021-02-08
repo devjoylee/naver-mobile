@@ -1,19 +1,23 @@
 import styled from 'styled-components';
-import { ArrowLeftIcon, SearchIcon, ResetIcon } from '../icons';
+import { GoSearch } from 'react-icons/go';
+import { RiCloseCircleFill } from 'react-icons/ri';
+import { VscClose } from 'react-icons/vsc';
 
 // search bar
 export const BarWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #1fcf89;
+  border-bottom: 1px solid #1fcf89;
   padding: 15px 20px;
   background: #fff;
 `;
 
 export const InputWrapper = styled.div`
   flex: 1;
-  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: 0 10px;
 `;
 
@@ -32,22 +36,15 @@ export const Input = styled.input`
   }
 `;
 
-export const BackBtn = styled(ArrowLeftIcon)`
-  width: 25px;
-  color: #919191;
-`;
-
-export const SearchBtn = styled(SearchIcon)`
-  width: 25px;
+export const SearchButton = styled(GoSearch)`
+  font-size: 26px;
   color: #1fcf89;
   cursor: pointer;
 `;
 
-export const ResetBtn = styled(ResetIcon)`
-  width: 20px;
-  color: #ccc;
-  position: absolute;
-  right: 0;
+export const ResetButton = styled(RiCloseCircleFill)`
+  font-size: 24px;
+  color: #ddd;
   opacity: ${({ active }) => (active ? 1 : 0)};
   cursor: pointer;
 `;
@@ -62,7 +59,7 @@ export const ListContainer = styled.div`
 export const Header = styled.div`
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
+  font-size: 15px;
   padding-bottom: 15px;
 `;
 
@@ -87,23 +84,23 @@ export const RecentList = styled.ul``;
 export const TextWrapper = styled.li`
   display: flex;
   align-items: center;
-  padding-bottom: 7px;
+  margin-bottom: 10px;
 `;
 
-export const Icon = styled(SearchIcon)`
-  width: 14px;
-  padding: 5px;
+export const Icon = styled(GoSearch)`
+  font-size: 16px;
+  padding: 6px;
   margin-right: 7px;
   border-radius: 50%;
-  background: #ccc;
+  background: #ddd;
   color: #fff;
 `;
 
 export const Keyword = styled.span``;
 
-export const RemoveBtn = styled.span`
-  font-size: 13px;
-  color: #666;
+export const RemoveButton = styled(VscClose)`
+  font-size: 23px;
+  color: #ccc;
   margin-left: auto;
   cursor: pointer;
 `;

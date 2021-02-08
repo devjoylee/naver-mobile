@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { BackButton } from '..';
 import {
   BarWrapper,
-  BackBtn,
-  SearchBtn,
-  ResetBtn,
+  ResetButton,
   InputWrapper,
   Input,
+  SearchButton,
 } from './Search.elements';
 
 function SearchBar({ onAddKeyword }) {
@@ -31,9 +30,7 @@ function SearchBar({ onAddKeyword }) {
 
   return (
     <BarWrapper>
-      <Link to="/">
-        <BackBtn />
-      </Link>
+      <BackButton />
       <InputWrapper>
         <Input
           autoFocus
@@ -44,9 +41,9 @@ function SearchBar({ onAddKeyword }) {
             if (e.keyCode === 13) handleSearch();
           }}
         />
-        <ResetBtn onClick={handleReset} active={hasKeyword ? 1 : 0} />
+        <ResetButton onClick={handleReset} active={hasKeyword ? 1 : 0} />
       </InputWrapper>
-      <SearchBtn onClick={() => handleSearch()} />
+      <SearchButton onClick={() => handleSearch()} />
     </BarWrapper>
   );
 }

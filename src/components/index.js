@@ -8,7 +8,6 @@ export { default as WebtoonLinks } from './Main/section/WebtoonLinks';
 export { default as SearchBar } from './Search/SearchBar';
 export { default as History } from './Search/History';
 export { default as HelpSearch } from './Search/HelpSearch';
-export { BackBtn } from './Search/Search.elements';
 
 // login page
 export { default as Form } from './Login/Form';
@@ -27,3 +26,4 @@ export { default as JoinForm } from './Join/JoinForm';
 export { default as Logo } from './common/Logo';
 export { default as Section } from './common/Section';
 export { default as Icon } from './common/Icon';
+export { default as BackButton } from './common/BackButton';

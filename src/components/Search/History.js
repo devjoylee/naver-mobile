@@ -9,7 +9,7 @@ import {
   TextWrapper,
   Icon,
   Keyword,
-  RemoveBtn,
+  RemoveButton,
 } from './Search.elements';
 
 function History({ keywords, onRemoveKeyword, onClearList }) {
@@ -33,7 +33,7 @@ function History({ keywords, onRemoveKeyword, onClearList }) {
             <TextWrapper key={id}>
               <Icon />
               <Keyword>{text}</Keyword>
-              <RemoveBtn onClick={() => onRemoveKeyword(id)}>삭제</RemoveBtn>
+              <RemoveButton onClick={() => onRemoveKeyword(id)} />
             </TextWrapper>
           );
         })}
