@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Hamburger } from './Main.elements';
+import { VscMenu } from 'react-icons/vsc';
+import Icon from '../common/Icon';
 
 function NavBtn() {
   return (
-    <Link to="/mypage">
-      <Hamburger />
-    </Link>
+    <Icon size="22" linkTo="/mypage">
+      <VscMenu />
+    </Icon>
   );
 }
 

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { ChevRightIcon, PencilIcon } from '../icons';
+import { VscChevronRight } from 'react-icons/vsc';
+import { FiEdit3 } from 'react-icons/fi';
 
 // Navbar
 export const Nav = styled.div`
@@ -44,24 +45,35 @@ export const ProfileImage = styled.img`
 export const ProfileDetail = styled.div`
   padding-left: 10px;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
 
-  h3 {
-    font-weight: bold;
-    font-size: 18px;
-    margin-bottom: 5px;
-  }
+export const Name = styled.div`
+  position: relative;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 5px;
+`;
 
-  p {
-    font-size: 15px;
-    margin-left: 3px;
-  }
+export const EditButton = styled(FiEdit3)`
+  position: absolute;
+  bottom: -2px;
+  margin-left: 2px;
+  font-size: 20px;
+`;
 
-  ul {
-    display: flex;
-    margin-top: 15px;
-  }
+export const Email = styled.p`
+  font-size: 15px;
+  margin-left: 3px;
+`;
 
-  ul li {
+export const Buttons = styled.div`
+  display: flex;
+  margin-top: 15px;
+
+  span {
     width: 92px;
     padding: 10px 0;
     margin-right: 8px;
@@ -71,16 +83,6 @@ export const ProfileDetail = styled.div`
     border-radius: 25px;
     cursor: pointer;
   }
-`;
-
-export const Edit = styled.span`
-  position: relative;
-`;
-
-export const EditButton = styled(PencilIcon)`
-  position: absolute;
-  bottom: 0;
-  margin-left: 2px;
 `;
 
 // InfoLink
@@ -103,13 +105,13 @@ export const LinkText = styled.p`
   font-size: 15px;
 `;
 
-export const LinkBtn = styled(ChevRightIcon)`
-  display: block;
+export const LinkBtn = styled(VscChevronRight)`
   position: absolute;
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
-  color: #bbb;
+  color: #999;
+  font-size: 25px;
 `;
 
 // Logout Button

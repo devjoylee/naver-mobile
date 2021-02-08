@@ -4,8 +4,10 @@ import {
   InfoWrapper,
   ProfileImage,
   ProfileDetail,
-  Edit,
+  Name,
   EditButton,
+  Email,
+  Buttons,
 } from './Mypage.elements';
 
 function UserInfo() {
@@ -18,17 +20,15 @@ function UserInfo() {
     <InfoWrapper>
       <ProfileImage src={image} />
       <ProfileDetail>
-        <h3>
+        <Name>
           {name}
-          <Edit>
-            <EditButton />
-          </Edit>
-        </h3>
-        <p>{id}@naver.com</p>
-        <ul>
-          <li>내 인증서</li>
-          <li>QR체크인</li>
-        </ul>
+          <EditButton />
+        </Name>
+        <Email>{id}@naver.com</Email>
+        <Buttons>
+          <span>내 인증서</span>
+          <span>QR체크인</span>
+        </Buttons>
       </ProfileDetail>
     </InfoWrapper>
   );
