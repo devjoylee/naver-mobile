@@ -79,10 +79,6 @@ input:focus
 {
 	outline:0;
 }
-
-svg{
-  width: 25px;
-}
 `
 
 export default createGlobalStyle`${reset}`;

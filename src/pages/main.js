@@ -20,10 +20,12 @@ function MainPage() {
         <Container margin={{ bottom: 30 }}>
           <SearchBox />
         </Container>
-        <Section title="오늘의 추천 웹툰">
+        <Section title="오늘의 추천 웹툰" isOpened={true}>
           <Webtoon />
           <WebtoonLinks />
         </Section>
+        <Section title="네이버페이" isOpened={true}></Section>
+        <Section title="날씨" isOpened={false}></Section>
       </Container>
     </PageWrapper>
   );
