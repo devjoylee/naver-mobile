@@ -20,10 +20,19 @@ function SearchPage() {
     localStorage.setItem('keywords', JSON.stringify(keywords));
   }, [keywords]);
 
+  const getDate = () => {
+    const today = new Date();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+
+    return `${month}.${day}`;
+  };
+
   const handleAddKeyword = (text) => {
     const newKeyword = {
       id: Date.now(),
       text,
+      date: getDate(),
     };
 
     setKeywords([newKeyword, ...keywords]);

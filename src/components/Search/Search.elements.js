@@ -85,22 +85,31 @@ export const TextWrapper = styled.li`
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  height: 30px;
+  line-height: 30px;
 `;
 
 export const Icon = styled(GoSearch)`
   font-size: 16px;
   padding: 6px;
-  margin-right: 7px;
   border-radius: 50%;
   background: #ddd;
   color: #fff;
 `;
 
-export const Keyword = styled.span``;
+export const Keyword = styled.p`
+  flex: 1;
+  padding-left: 10px;
+`;
+
+export const Date = styled.span`
+  color: #aaa;
+  font-size: 15px;
+  padding-right: 5px;
+`;
 
 export const RemoveButton = styled(VscClose)`
   font-size: 23px;
   color: #ccc;
-  margin-left: auto;
   cursor: pointer;
 `;

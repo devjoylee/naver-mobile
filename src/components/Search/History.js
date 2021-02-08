@@ -9,6 +9,7 @@ import {
   TextWrapper,
   Icon,
   Keyword,
+  Date,
   RemoveButton,
 } from './Search.elements';
 
@@ -28,11 +29,12 @@ function History({ keywords, onRemoveKeyword, onClearList }) {
         <DeleteAll onClick={onClearList}>Clear</DeleteAll>
       </Header>
       <RecentList>
-        {keywords.map(({ id, text }) => {
+        {keywords.map(({ id, text, date }) => {
           return (
             <TextWrapper key={id}>
               <Icon />
               <Keyword>{text}</Keyword>
+              <Date>{date}</Date>
               <RemoveButton onClick={() => onRemoveKeyword(id)} />
             </TextWrapper>
           );
