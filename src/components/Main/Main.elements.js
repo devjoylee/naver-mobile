@@ -8,11 +8,17 @@ export const Hamburger = styled(MenuIcon)`
 `;
 
 // search box
-export const InputBox = styled.div`
+export const InputBox = styled.input`
   width: 100%;
   height: 50px;
   border: 1px solid #1fcf89;
   border-radius: 3px;
+  padding-left: 12px;
+
+  &::placeholder {
+    color: #dadada;
+    font-size: 16px;
+  }
 `;
 
 // webtoon list
@@ -20,6 +26,7 @@ export const ScrollContainer = styled.div`
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
+  padding-left: 10px;
   cursor: pointer;
 
   -webkit-overflow-scrolling: touch; // only IOS
@@ -62,6 +69,8 @@ export const LinkWrapper = styled.ul`
   background-color: #f9fafc;
   border-top: 1px solid #eee;
   margin-top: 15px;
+
+  cursor: pointer;
 `;
 
 export const WebtoonLink = styled.li`

@@ -1,18 +1,28 @@
 import React from 'react';
-import { Logo, NavBtn, SearchBox, Section, Webtoon } from '../components';
+import {
+  Logo,
+  NavBtn,
+  SearchBox,
+  Section,
+  Webtoon,
+  WebtoonLinks,
+} from '../components';
 import { Container, PageWrapper } from '../globalStyles';
 
 function MainPage() {
   return (
     <PageWrapper padding>
       <NavBtn />
-      <Container padding={{ all: 20 }}>
-        <Container margin={{ bottom: 30 }}>
+      <Container padding={{ lr: 15 }}>
+        <Container margin={{ top: 20, bottom: 25 }}>
           <Logo />
         </Container>
-        <SearchBox />
+        <Container margin={{ bottom: 30 }}>
+          <SearchBox />
+        </Container>
         <Section title="오늘의 추천 웹툰">
           <Webtoon />
+          <WebtoonLinks />
         </Section>
       </Container>
     </PageWrapper>

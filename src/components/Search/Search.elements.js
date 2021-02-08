@@ -19,12 +19,17 @@ export const InputWrapper = styled.div`
 
 export const Input = styled.input`
   width: 100%;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
-  color: #333;
+  line-height: 1.4;
   background-color: #fff;
   padding-right: 20px;
   box-sizing: border-box;
+
+  &::placeholder {
+    color: #dadada;
+    font-size: 16px;
+  }
 `;
 
 export const BackBtn = styled(ArrowLeftIcon)`

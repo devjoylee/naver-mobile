@@ -1,21 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Container } from '../../globalStyles';
 
 const SectionContainer = styled.div`
   margin-top: 30px;
+  background: #eee;
 `;
 
-const SectionTitle = styled.h3`
+const Title = styled.h3`
   font-weight: bold;
-  margin-bottom: 7px;
   color: #333;
 `;
 
 function Section({ children, title }) {
   return (
     <SectionContainer>
-      <SectionTitle>{title}</SectionTitle>
-      {children}
+      <Container padding={{ all: 15 }}>
+        <Title>{title}</Title>
+      </Container>
+      <Container padding={{ bottom: 15 }}>{children}</Container>
     </SectionContainer>
   );
 }

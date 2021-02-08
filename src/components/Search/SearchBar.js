@@ -36,6 +36,7 @@ function SearchBar({ onAddKeyword }) {
       </Link>
       <InputWrapper>
         <Input
+          autoFocus
           placeholder="검색어를 입력해주세요."
           value={keyword}
           onChange={handleKeyword}
