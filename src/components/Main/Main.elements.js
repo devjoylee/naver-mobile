@@ -18,6 +18,7 @@ export const InputBox = styled.div`
 // webtoon list
 export const ScrollContainer = styled.div`
   overflow-x: scroll;
+  overflow-y: hidden;
   white-space: nowrap;
 
   -webkit-overflow-scrolling: touch; // only IOS

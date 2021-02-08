@@ -8,7 +8,7 @@ function MyPage() {
       <Navbar />
       <UserInfo />
       <InfoLinks />
-      <Container margin={{ top: 20 }}>
+      <Container padding={{ tb: 20 }}>
         <Logout />
       </Container>
     </PageWrapper>

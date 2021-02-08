@@ -8,6 +8,7 @@ const SectionContainer = styled.div`
 const SectionTitle = styled.h3`
   font-weight: bold;
   margin-bottom: 7px;
+  color: #333;
 `;
 
 function Section({ children, title }) {
