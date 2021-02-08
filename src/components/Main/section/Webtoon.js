@@ -5,8 +5,8 @@ import {
   Image,
   Title,
   Author,
-} from './Main.elements';
-import { fetchWebtoons } from './service';
+} from '../Main.elements';
+import { fetchWebtoons } from '../service';
 
 function Webtoon() {
   const [webtoons, setWebtoons] = useState([]);
