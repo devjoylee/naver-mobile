@@ -7,3 +7,11 @@ export const fetchWebtoons = async () => {
 
   return [];
 };
+
+export const fetchRecommend = async () => {
+  const response = await fetch('http://localhost:8888/recommend');
+
+  if (response.ok) {
+    return response.json();
+  }
+};

@@ -2,6 +2,7 @@
 export { default as NavBtn } from './Main/NavBtn';
 export { default as SearchBox } from './Main/SearchBox';
 export { default as Webtoon } from './Main/WebtoonSection/Webtoon';
+export { default as RecommendWebtoon } from './Main/WebtoonSection/RecommendWebtoon';
 export { default as WebtoonLinks } from './Main/WebtoonSection/WebtoonLinks';
 
 // search page

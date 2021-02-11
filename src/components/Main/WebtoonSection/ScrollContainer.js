@@ -5,7 +5,7 @@ const Container = styled.div`
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
-  padding-left: 10px;
+  margin: 0 0 20px 15px;
   cursor: pointer;
 
   -webkit-overflow-scrolling: touch; // only IOS

@@ -5,11 +5,14 @@ import {
   SearchBox,
   Section,
   Webtoon,
+  RecommendWebtoon,
   WebtoonLinks,
 } from '../components';
+import { useUserContext } from '../contexts/UserContext';
 import { Container, PageWrapper } from '../globalStyles';
 
 function MainPage() {
+  const { user } = useUserContext();
   return (
     <PageWrapper padding>
       <NavBtn />
@@ -22,6 +25,11 @@ function MainPage() {
         </Container>
         <Section title="오늘의 추천 웹툰" isOpened={true}>
           <Webtoon />
+          {user && (
+            <Container padding={{ lr: 15 }}>
+              <RecommendWebtoon />
+            </Container>
+          )}
           <WebtoonLinks />
         </Section>
         <Section title="네이버페이" isOpened={true}></Section>
