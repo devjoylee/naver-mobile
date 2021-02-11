@@ -221,3 +221,27 @@ export const Button = styled.button`
     opacity: 0;
   }
 `;
+
+// footer
+export const FooterContainer = styled.div`
+  padding: 60px 0;
+  background: #eff2f8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & > div {
+    margin-bottom: 13px;
+  }
+
+  @media (max-width: 500px) {
+    margin: 0px -20px;
+  }
+`;
+
+export const FooterLogoImage = styled.img`
+  display: inline-block;
+  margin-top: 15px;
+  width: 80px;
+  height: 15px;
+`;

@@ -6,6 +6,10 @@ import { Container } from '../../globalStyles';
 const SectionContainer = styled.div`
   margin-bottom: 10px;
   background: #fff;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 `;
 
 const TitleWrapper = styled.div`

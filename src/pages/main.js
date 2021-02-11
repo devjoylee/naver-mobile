@@ -9,6 +9,7 @@ import {
   RecommendWebtoon,
   WebtoonLinks,
   NPay,
+  Footer,
 } from '../components';
 import { useUserContext } from '../contexts/UserContext';
 import { Container, PageWrapper } from '../globalStyles';
@@ -16,7 +17,7 @@ import logoNpay from '../images/logo-npay.png';
 
 const SectionWrapper = styled.div`
   padding: 0 15px;
-  background: linear-gradient(to bottom, #fff 5%, #eaeaea 75%);
+  background: linear-gradient(to bottom, #fff 5%, #eff2f8 75%);
   @media (max-width: 500px) {
     margin: 0px -20px;
   }
@@ -52,6 +53,7 @@ function MainPage() {
         </Section>
         <Section title="날씨" isOpened={false}></Section>
       </SectionWrapper>
+      <Footer />
     </PageWrapper>
   );
 }

@@ -121,7 +121,7 @@ export const Container = styled.div`
 
 export const PageWrapper = styled.div`
   height: 100%;
-  background-color: ${({ graybg }) => (graybg ? '#eee' : '#fff')};
+  background-color: ${({ graybg }) => (graybg ? '#eff2f8' : '#fff')};
   padding: ${({ padding }) => (padding ? '20px' : 0)};
 `;
 

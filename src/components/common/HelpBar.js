@@ -6,8 +6,8 @@ const StyleHelpBar = styled.div`
   display: flex;
   align-items: center;
   justify-content: ${({ center }) => (center ? 'center' : 'flex-start')};
-  border-top: 1px solid #e1e1e1;
-  padding: 15px;
+  border-top: ${({ borderNone }) => (borderNone ? '' : '1px solid #e1e1e1')};
+  padding: ${({ paddingNone }) => (paddingNone ? '' : '15px')};
 `;
 
 const StyleHelpBarItem = styled(Link)`
@@ -43,6 +43,14 @@ export function HelpBar({ children, ...rest }) {
   return <StyleHelpBar {...rest}>{children}</StyleHelpBar>;
 }
 
-export function HelpBarItem({ text, ...rest }) {
-  return <StyleHelpBarItem {...rest}>{text}</StyleHelpBarItem>;
+export function HelpBarItem({ text, isLinked, ...rest }) {
+  const preventClick = (e) => {
+    if (!isLinked) e.preventDefault();
+  };
+
+  return (
+    <StyleHelpBarItem {...rest} onClick={preventClick}>
+      {text}
+    </StyleHelpBarItem>
+  );
 }

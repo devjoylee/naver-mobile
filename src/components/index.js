@@ -5,6 +5,7 @@ export { default as Webtoon } from './Main/WebtoonSection/Webtoon';
 export { default as RecommendWebtoon } from './Main/WebtoonSection/RecommendWebtoon';
 export { default as WebtoonLinks } from './Main/WebtoonSection/WebtoonLinks';
 export { default as NPay } from './Main/NPaySection/NPay';
+export { default as Footer } from './Main/Footer';
 
 // search page
 export { default as SearchBar } from './Search/SearchBar';
