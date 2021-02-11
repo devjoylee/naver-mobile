@@ -125,3 +125,39 @@ export const WebtoonLink = styled.li`
   text-align: center;
   font-size: 15px;
 `;
+
+// npay
+export const PayWrapper = styled.div`
+  padding: 18px 20px;
+  margin-bottom: 20px;
+  border: 1px solid #03c75a;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    font-size: 15px;
+    letter-spacing: -1px;
+    color: #333;
+
+    b {
+      font-weight: bold;
+    }
+  }
+`;
+
+export const PayLink = styled.div`
+  width: 20px;
+  height: 20px;
+  font-size: 16px;
+  border-radius: 50%;
+  background-color: #03c75a;
+  color: #fff;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;

@@ -4,6 +4,7 @@ export { default as SearchBox } from './Main/SearchBox';
 export { default as Webtoon } from './Main/WebtoonSection/Webtoon';
 export { default as RecommendWebtoon } from './Main/WebtoonSection/RecommendWebtoon';
 export { default as WebtoonLinks } from './Main/WebtoonSection/WebtoonLinks';
+export { default as NPay } from './Main/NPaySection/NPay';
 
 // search page
 export { default as SearchBar } from './Search/SearchBar';

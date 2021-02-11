@@ -7,12 +7,16 @@ import {
   Webtoon,
   RecommendWebtoon,
   WebtoonLinks,
+  NPay,
 } from '../components';
 import { useUserContext } from '../contexts/UserContext';
 import { Container, PageWrapper } from '../globalStyles';
+import logoNpay from '../images/logo-npay.png';
 
 function MainPage() {
   const { user } = useUserContext();
+  const npay = <img src={logoNpay} alt="네이버페이"></img>;
+
   return (
     <PageWrapper padding>
       <NavBtn />
@@ -32,7 +36,11 @@ function MainPage() {
           )}
           <WebtoonLinks />
         </Section>
-        <Section title="네이버페이" isOpened={true}></Section>
+        <Section title={npay} isOpened={true}>
+          <Container padding={{ lr: 15 }}>
+            <NPay />
+          </Container>
+        </Section>
         <Section title="날씨" isOpened={false}></Section>
       </Container>
     </PageWrapper>
