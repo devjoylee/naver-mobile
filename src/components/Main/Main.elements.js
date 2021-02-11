@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { MenuIcon } from '../icons';
 
@@ -128,7 +129,7 @@ export const WebtoonLink = styled.li`
 
 // npay
 export const PayWrapper = styled.div`
-  padding: 18px 20px;
+  padding: 18px 15px;
   margin-bottom: 20px;
   border: 1px solid #03c75a;
   border-radius: 10px;
@@ -137,18 +138,18 @@ export const PayWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  p {
-    font-size: 15px;
-    letter-spacing: -1px;
-    color: #333;
-
-    b {
-      font-weight: bold;
-    }
+  b {
+    font-weight: bold;
   }
 `;
 
-export const PayLink = styled.div`
+export const StartPayText = styled.p`
+  font-size: 15px;
+  letter-spacing: -1px;
+  color: #333;
+`;
+
+export const StartPayButton = styled.div`
   width: 20px;
   height: 20px;
   font-size: 16px;
@@ -160,4 +161,62 @@ export const PayLink = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+export const UserPayText = styled.div`
+  flex: 1;
+  display: block;
+  font-size: 14px;
+  color: #888;
+  letter-spacing: -1px;
+  p {
+    margin-top: 6px;
+    color: #333;
+
+    b {
+      font-size: 20px;
+    }
+  }
+`;
+
+export const UserPayButtons = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 10px 15px;
+  border-radius: 20px;
+  background-color: #09b65a;
+  cursor: pointer;
+`;
+
+export const Button = styled(Link)`
+  font-size: 14px;
+  font-weight: bold;
+  padding-right: 8px;
+  color: #fff;
+  position: relative;
+
+  display: inline-block;
+  vertical-align: top;
+  letter-spacing: -0.5px;
+
+  &:last-child {
+    padding-right: 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 4px;
+    width: 1px;
+    background-color: #fff;
+    opacity: 0.5;
+  }
+
+  &:last-child::after {
+    opacity: 0;
+  }
 `;
