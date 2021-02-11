@@ -11,15 +11,9 @@ function UserPay() {
         </p>
       </UserPayText>
       <UserPayButtons>
-        <Button to="/" onClick={(e) => e.preventDefault()}>
-          충전
-        </Button>
-        <Button to="/" onClick={(e) => e.preventDefault()}>
-          인출
-        </Button>
-        <Button to="/" onClick={(e) => e.preventDefault()}>
-          포인트선물
-        </Button>
+        <Button>충전</Button>
+        <Button>인출</Button>
+        <Button>포인트선물</Button>
       </UserPayButtons>
     </>
   );

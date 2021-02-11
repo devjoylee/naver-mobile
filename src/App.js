@@ -11,7 +11,7 @@ import Route from './components/Route';
 
 const Container = styled.div`
   max-width: 720px;
-  height: 100vh;
+  height: 100%;
   margin: 0 auto;
 `;
 

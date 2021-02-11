@@ -5,7 +5,7 @@ import { Container } from '../../globalStyles';
 
 const SectionContainer = styled.div`
   margin-bottom: 10px;
-  border: 1px solid rgb(221, 221, 221);
+  background: #fff;
 `;
 
 const TitleWrapper = styled.div`
@@ -31,8 +31,7 @@ const OpenIcon = styled.div`
 function Section({ children, title, isOpened }) {
   const [open, setOpen] = useState(isOpened);
   const handleToggle = () => {
-    setOpen(isOpened === !open);
-    console.log(open);
+    setOpen((isOpened = !open));
   };
 
   return (

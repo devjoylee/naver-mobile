@@ -15,6 +15,7 @@ export const InputBox = styled.input`
   border: 1px solid #1fcf89;
   border-radius: 3px;
   padding-left: 12px;
+  box-sizing: border-box;
 
   &::placeholder {
     color: #dadada;
@@ -130,7 +131,6 @@ export const WebtoonLink = styled.li`
 // npay
 export const PayWrapper = styled.div`
   padding: 18px 15px;
-  margin-bottom: 20px;
   border: 1px solid #03c75a;
   border-radius: 10px;
 
@@ -190,11 +190,12 @@ export const UserPayButtons = styled.div`
   cursor: pointer;
 `;
 
-export const Button = styled(Link)`
+export const Button = styled.button`
   font-size: 14px;
   font-weight: bold;
   padding-right: 8px;
   color: #fff;
+  outline: none;
   position: relative;
 
   display: inline-block;
