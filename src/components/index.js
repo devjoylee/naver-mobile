@@ -1,8 +1,8 @@
 // main page
 export { default as NavBtn } from './Main/NavBtn';
 export { default as SearchBox } from './Main/SearchBox';
-export { default as Webtoon } from './Main/section/Webtoon';
-export { default as WebtoonLinks } from './Main/section/WebtoonLinks';
+export { default as Webtoon } from './Main/WebtoonSection/Webtoon';
+export { default as WebtoonLinks } from './Main/WebtoonSection/WebtoonLinks';
 
 // search page
 export { default as SearchBar } from './Search/SearchBar';

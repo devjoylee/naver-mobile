@@ -1,15 +1,21 @@
-import React, { useEffect, useState, useRef } from 'react';
-import {
-  ScrollContainer,
-  WebtoonContainer,
-  Image,
-  Title,
-  Author,
-} from '../Main.elements';
-import { fetchWebtoons } from '../service';
+import React, { useRef } from 'react';
+import styled from 'styled-components';
 
-function Webtoon() {
-  const [webtoons, setWebtoons] = useState([]);
+const Container = styled.div`
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding-left: 10px;
+  cursor: pointer;
+
+  -webkit-overflow-scrolling: touch; // only IOS
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+function ScrollContainer({ children }) {
   const slider = useRef(null);
 
   let isDown = false;
@@ -41,36 +47,17 @@ function Webtoon() {
     slider.current.scrollLeft = scrollLeft - walk;
   };
 
-  useEffect(() => {
-    async function fetchAndSetWebtoons() {
-      const data = await fetchWebtoons();
-      setWebtoons(data);
-    }
-
-    fetchAndSetWebtoons();
-  }, []);
-
-  if (!webtoons.length) {
-    return null;
-  }
-
   return (
-    <ScrollContainer
+    <Container
       ref={slider}
       onMouseDown={mouseDown}
       onMouseMove={mouseMove}
       onMouseLeave={mouseLeave}
       onMouseUp={mouseUp}
     >
-      {webtoons.map(({ id, title, image, author }) => (
-        <WebtoonContainer key={id}>
-          <Image src={image} alt="webtoon" />
-          <Title>{title}</Title>
-          <Author>{author}</Author>
-        </WebtoonContainer>
-      ))}
-    </ScrollContainer>
+      {children}
+    </Container>
   );
 }
 
-export default Webtoon;
+export default ScrollContainer;

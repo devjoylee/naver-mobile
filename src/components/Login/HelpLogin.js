@@ -4,8 +4,16 @@ import { HelpBar, HelpBarItem } from '../common/HelpBar';
 function HelpLogin() {
   return (
     <HelpBar center>
-      <HelpBarItem to="/" text="아이디 찾기" />
-      <HelpBarItem to="/" text="비밀번호 찾기" />
+      <HelpBarItem
+        to="/"
+        text="아이디 찾기"
+        onClick={(e) => e.preventDefault()}
+      />
+      <HelpBarItem
+        to="/"
+        text="비밀번호 찾기"
+        onClick={(e) => e.preventDefault()}
+      />
       <HelpBarItem to="/join" text="회원가입" $bold />
     </HelpBar>
   );

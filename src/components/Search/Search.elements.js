@@ -54,6 +54,7 @@ export const ListContainer = styled.div`
   background: #fff;
   min-height: 200px;
   padding: 15px 20px;
+  display: table;
 `;
 
 export const Header = styled.div`
@@ -74,8 +75,8 @@ export const DeleteAll = styled.span`
 
 export const EmptyList = styled.div`
   width: 100%;
-  height: 200px;
-  line-height: 200px;
+  display: table-cell;
+  vertical-align: middle;
   text-align: center;
 `;
 

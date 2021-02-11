@@ -22,20 +22,6 @@ export const InputBox = styled.input`
 `;
 
 // webtoon list
-export const ScrollContainer = styled.div`
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  padding-left: 10px;
-  cursor: pointer;
-
-  -webkit-overflow-scrolling: touch; // only IOS
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-`;
-
 export const WebtoonContainer = styled.div`
   display: inline-block;
   width: 38%;
