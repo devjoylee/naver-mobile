@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { VscChevronDown, VscChevronUp } from 'react-icons/vsc';
-import { Container } from '../../globalStyles';
 
 const SectionContainer = styled.div`
   margin-bottom: 10px;
@@ -14,6 +13,7 @@ const SectionContainer = styled.div`
 const TitleWrapper = styled.div`
   position: relative;
   padding: 20px 15px;
+  cursor: pointer;
 `;
 
 const Title = styled.h3`
@@ -43,11 +43,9 @@ function Section({ children, title, isOpened, padding }) {
 
   return (
     <SectionContainer>
-      <TitleWrapper>
+      <TitleWrapper onClick={handleToggle}>
         <Title>{title}</Title>
-        <OpenIcon onClick={handleToggle}>
-          {open ? <VscChevronUp /> : <VscChevronDown />}
-        </OpenIcon>
+        <OpenIcon>{open ? <VscChevronUp /> : <VscChevronDown />}</OpenIcon>
       </TitleWrapper>
       {open && <Content padding={padding}>{children}</Content>}
     </SectionContainer>

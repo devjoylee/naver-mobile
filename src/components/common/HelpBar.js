@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import LinkTo from './LinkTo';
 
 const StyleHelpBar = styled.div`
   display: flex;
@@ -10,20 +11,13 @@ const StyleHelpBar = styled.div`
   padding: ${({ paddingNone }) => (paddingNone ? '' : '15px')};
 `;
 
-const StyleHelpBarItem = styled(Link)`
+const StyleHelpBarItem = styled.span`
   position: relative;
   padding-right: 10px;
   margin-right: 10px;
   font-size: 14px;
   color: #888;
   cursor: pointer;
-
-  ${({ $bold }) =>
-    $bold &&
-    `
-  font-weight: bold;
-  color: #03a742;
-  `}
 
   &::after {
     content: '';
@@ -37,20 +31,20 @@ const StyleHelpBarItem = styled(Link)`
   &:last-child::after {
     width: 0;
   }
+
+  a {
+    color: #888;
+  }
 `;
 
 export function HelpBar({ children, ...rest }) {
   return <StyleHelpBar {...rest}>{children}</StyleHelpBar>;
 }
 
-export function HelpBarItem({ text, isLinked, ...rest }) {
-  const preventClick = (e) => {
-    if (!isLinked) e.preventDefault();
-  };
-
+export function HelpBarItem({ ...rest }) {
   return (
-    <StyleHelpBarItem {...rest} onClick={preventClick}>
-      {text}
+    <StyleHelpBarItem>
+      <LinkTo {...rest} />
     </StyleHelpBarItem>
   );
 }

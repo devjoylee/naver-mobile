@@ -149,13 +149,10 @@ export const FooterContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0px -20px;
 
   & > div {
     margin-bottom: 13px;
-  }
-
-  @media (max-width: 500px) {
-    margin: 0px -20px;
   }
 `;
 
@@ -164,4 +161,5 @@ export const FooterLogoImage = styled.img`
   margin-top: 15px;
   width: 80px;
   height: 15px;
+  cursor: pointer;
 `;
