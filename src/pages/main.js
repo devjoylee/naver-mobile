@@ -46,12 +46,12 @@ function MainPage() {
           )}
           <WebtoonLinks />
         </Section>
-        <Section title={npay} isOpened={true}>
-          <Container padding={{ left: 15, right: 15, bottom: 20 }}>
-            <NPay />
-          </Container>
+        <Section title={npay} isOpened={true} padding>
+          <NPay />
         </Section>
-        <Section title="날씨" isOpened={false}></Section>
+        <Section title="날씨" isOpened={false} padding>
+          <p>현재 위치를 찾을 수 없습니다.</p>
+        </Section>
       </SectionWrapper>
       <Footer />
     </PageWrapper>

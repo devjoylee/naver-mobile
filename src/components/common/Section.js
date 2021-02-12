@@ -6,7 +6,6 @@ import { Container } from '../../globalStyles';
 const SectionContainer = styled.div`
   margin-bottom: 10px;
   background: #fff;
-
   &:last-child {
     margin-bottom: 0;
   }
@@ -32,7 +31,11 @@ const OpenIcon = styled.div`
   cursor: pointer;
 `;
 
-function Section({ children, title, isOpened }) {
+const Content = styled.div`
+  padding: ${({ padding }) => (padding ? '0 15px 20px 15px' : '')};
+`;
+
+function Section({ children, title, isOpened, padding }) {
   const [open, setOpen] = useState(isOpened);
   const handleToggle = () => {
     setOpen((isOpened = !open));
@@ -46,7 +49,7 @@ function Section({ children, title, isOpened }) {
           {open ? <VscChevronUp /> : <VscChevronDown />}
         </OpenIcon>
       </TitleWrapper>
-      {open && <Container>{children}</Container>}
+      {open && <Content padding={padding}>{children}</Content>}
     </SectionContainer>
   );
 }
