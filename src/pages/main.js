@@ -9,6 +9,7 @@ import {
   RecommendWebtoon,
   WebtoonLinks,
   NPay,
+  Weather,
   Footer,
 } from '../components';
 import { useUserContext } from '../contexts/UserContext';
@@ -48,7 +49,7 @@ function MainPage() {
           <NPay />
         </Section>
         <Section title="날씨" isOpened={false} padding>
-          <p>현재 위치를 찾을 수 없습니다.</p>
+          <Weather />
         </Section>
       </SectionWrapper>
       <Footer />

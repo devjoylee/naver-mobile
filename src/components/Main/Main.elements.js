@@ -163,3 +163,11 @@ export const FooterLogoImage = styled.img`
   height: 15px;
   cursor: pointer;
 `;
+
+export const Empty = styled.p`
+  font-size: 14px;
+  padding-bottom: 10px;
+  color: #888;
+  letter-spacing: -1px;
+  text-align: center;
+`;

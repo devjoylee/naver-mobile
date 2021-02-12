@@ -2,11 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const StylePayText = styled.div`
+const StylePayText = styled.div`
   font-size: 14px;
   color: #666;
   letter-spacing: -1px;
   word-break: keep-all;
+  line-height: 1.3;
 
   p {
     margin-top: 6px;
@@ -19,7 +20,7 @@ export const StylePayText = styled.div`
   }
 `;
 
-export const StylePayButtonWrapper = styled.div`
+const StylePayButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,7 +31,7 @@ export const StylePayButtonWrapper = styled.div`
   cursor: pointer;
 `;
 
-export const StylePayButton = styled(Link)`
+const StylePayButton = styled(Link)`
   font-size: 14px;
   font-weight: bold;
   padding-right: 8px;
