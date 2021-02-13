@@ -25,6 +25,12 @@ export const JoinInput = styled(Input)`
   margin-bottom: 12px;
 `;
 
+export const Validation = styled.p`
+  color: #da2727;
+  font-size: 15px;
+  margin: -5px 0 20px 3px;
+`;
+
 export const JoinButton = styled(Button)`
   margin-top: 40px;
   background-color: ${({ disabled }) => (disabled ? '#bcbcbc' : '#1fcf89')};

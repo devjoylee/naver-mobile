@@ -4,16 +4,15 @@ import {
   FormRow,
   JoinLabel,
   JoinInput,
+  Validation,
   JoinButton,
 } from './Join.elements';
 import useForm from './useForm';
+import validateInfo from './validation';
 
 function JoinForm() {
-  const { values, handleChange, handleSubmit } = useForm();
+  const { values, errors, handleChange, handleSubmit } = useForm(validateInfo);
   const { id, password, password2, name, email } = values;
-
-  const isMatchedPassword = password === password2;
-  const isSubmittable = isMatchedPassword && id && password && name;
 
   return (
     <Form onSubmit={handleSubmit}>
@@ -25,7 +24,9 @@ function JoinForm() {
           name="id"
           value={id}
           onChange={handleChange}
+          placeholder="id"
         />
+        {errors.id && <Validation>{errors.id}</Validation>}
       </FormRow>
       <FormRow>
         <JoinLabel htmlFor="password">비밀번호</JoinLabel>
@@ -35,7 +36,9 @@ function JoinForm() {
           name="password"
           value={password}
           onChange={handleChange}
+          placeholder="password"
         />
+        {errors.password && <Validation>{errors.password}</Validation>}
       </FormRow>
       <FormRow>
         <JoinLabel htmlFor="password2">비밀번호 재확인</JoinLabel>
@@ -45,7 +48,9 @@ function JoinForm() {
           name="password2"
           value={password2}
           onChange={handleChange}
+          placeholder="Confirm password"
         />
+        {errors.password2 && <Validation>{errors.password2}</Validation>}
       </FormRow>
       <FormRow>
         <JoinLabel htmlFor="name">이름</JoinLabel>
@@ -55,21 +60,23 @@ function JoinForm() {
           name="name"
           value={name}
           onChange={handleChange}
+          placeholder="name"
         />
+        {errors.name && <Validation>{errors.name}</Validation>}
       </FormRow>
       <FormRow>
         <JoinLabel htmlFor="email">이메일</JoinLabel>
         <JoinInput
-          type="email"
+          type="text"
           id="email"
           name="email"
           value={email}
           onChange={handleChange}
+          placeholder="email"
         />
+        {errors.email && <Validation>{errors.email}</Validation>}
       </FormRow>
-      <JoinButton type="submit" disabled={!isSubmittable}>
-        가입하기
-      </JoinButton>
+      <JoinButton type="submit">가입하기</JoinButton>
     </Form>
   );
 }

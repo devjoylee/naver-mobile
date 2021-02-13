@@ -11,6 +11,20 @@
       "password": "1234",
       "name": "이주영",
       "image": "http://sbvillaba.com/themes/isabel/assets/images/placeholder.png"
+    },
+    {
+      "id": "joy",
+      "password": "joy",
+      "password2": "joy",
+      "name": "joy",
+      "email": "joy"
+    },
+    {
+      "id": "sdf",
+      "password": "sdf",
+      "password2": "sdsd",
+      "name": "sgd",
+      "email": "sgd"
     }
   ],
   "webtoons": [

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { requestSignup } from './service';
 
-function useForm() {
+function useForm(validate) {
   const [values, setValues] = useState({
     id: '',
     password: '',
@@ -11,7 +11,6 @@ function useForm() {
     email: '',
   });
   const [errors, setErrors] = useState({});
-
   const history = useHistory();
 
   const handleChange = (e) => {
@@ -22,9 +21,17 @@ function useForm() {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
+    setErrors(validate(values));
 
+    if (Object.keys(errors).length === 0) {
+      // submitForm();
+      window.alert('Welcome!');
+    }
+  };
+
+  const submitForm = async () => {
     if (await requestSignup(values)) {
       history.push('/login');
       window.alert('회원가입 성공. 가입한 아이디로 로그인해주세요');
@@ -33,7 +40,7 @@ function useForm() {
     }
   };
 
-  return { values, errors, setValues, handleChange, handleSubmit };
+  return { values, errors, handleChange, handleSubmit };
 }
 
 export default useForm;
