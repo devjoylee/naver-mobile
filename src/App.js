@@ -8,6 +8,7 @@ import MyPage from './pages/mypage';
 import SearchPage from './pages/search';
 import JoinPage from './pages/join';
 import Route from './components/Route';
+import ScrollToTop from './hooks/ScrollToTop';
 
 const Container = styled.div`
   max-width: 720px;
@@ -20,6 +21,7 @@ function App() {
     <Container>
       <GlobalStyles />
       <Router>
+        <ScrollToTop />
         <Switch>
           <Route exact path="/" component={MainPage} />
           <Route path="/login" component={LoginPage} />
