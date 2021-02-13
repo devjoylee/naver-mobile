@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function LinkTo({ text, to, bold }) {
+function LinkTo({ text, to, bold, onClick }) {
   if (to) {
     return (
       <Link
@@ -12,7 +12,7 @@ function LinkTo({ text, to, bold }) {
       </Link>
     );
   } else {
-    return <span>{text}</span>;
+    return <span onClick={onClick}>{text}</span>;
   }
 }
 

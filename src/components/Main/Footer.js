@@ -11,10 +11,6 @@ function Footer() {
   const history = useHistory();
 
   const handleLogOut = () => {
-    // 1. context user 를 null 로 변경
-    // 2. localStorage user 지우기
-    // 3. history replace
-
     setUser(null);
     localStorage.removeItem('user');
     history.replace('./');

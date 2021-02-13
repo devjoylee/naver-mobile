@@ -9,6 +9,7 @@ import {
   Email,
   Buttons,
 } from './Mypage.elements';
+import defaultImage from '../../images/default-profile.png';
 
 function UserInfo() {
   const { user } = useUserContext();
@@ -18,7 +19,7 @@ function UserInfo() {
 
   return (
     <InfoWrapper>
-      <ProfileImage src={image} />
+      <ProfileImage src={image ? image : defaultImage} />
       <ProfileDetail>
         <Name>
           {name}
