@@ -1,8 +1,12 @@
 import styled from 'styled-components';
 import { Input, Button } from '../../globalStyles';
 
-export const LabelWrapper = styled.div`
-  margin-bottom: 30px;
+export const Form = styled.form``;
+
+export const FormRow = styled.div`
+  &:nth-child(3) {
+    margin-bottom: 30px;
+  }
 `;
 
 export const JoinLabel = styled.label`
@@ -22,5 +26,6 @@ export const JoinInput = styled(Input)`
 `;
 
 export const JoinButton = styled(Button)`
+  margin-top: 40px;
   background-color: ${({ disabled }) => (disabled ? '#bcbcbc' : '#1fcf89')};
 `;

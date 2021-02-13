@@ -1,47 +1,23 @@
-import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import React from 'react';
 import {
-  LabelWrapper,
+  Form,
+  FormRow,
   JoinLabel,
   JoinInput,
   JoinButton,
 } from './Join.elements';
-import { requestSignup } from './service';
+import useForm from './useForm';
 
 function JoinForm() {
-  const [formValues, setFormValues] = useState({
-    id: '',
-    password: '',
-    rePassword: '',
-    name: '',
-  });
+  const { values, handleChange, handleSubmit } = useForm();
+  const { id, password, password2, name, email } = values;
 
-  const history = useHistory();
-  const { id, password, rePassword, name, email } = formValues;
-
-  const handleChange = (e) => {
-    const { id, value } = e.target;
-    setFormValues({
-      ...formValues,
-      [id]: value,
-    });
-  };
-
-  const handleSubmit = async () => {
-    if (await requestSignup({ id, password, name, email })) {
-      history.push('/login');
-      window.alert('회원가입 성공. 가입한 아이디로 로그인해주세요');
-    } else {
-      window.alert('회원가입에 실패하였습니다. 다시 시도해주세요.');
-    }
-  };
-
-  const isMatchedPassword = password === rePassword;
+  const isMatchedPassword = password === password2;
   const isSubmittable = isMatchedPassword && id && password && name;
 
   return (
-    <>
-      <LabelWrapper>
+    <Form onSubmit={handleSubmit}>
+      <FormRow>
         <JoinLabel htmlFor="id">아이디</JoinLabel>
         <JoinInput
           type="text"
@@ -50,7 +26,8 @@ function JoinForm() {
           value={id}
           onChange={handleChange}
         />
-
+      </FormRow>
+      <FormRow>
         <JoinLabel htmlFor="password">비밀번호</JoinLabel>
         <JoinInput
           type="password"
@@ -59,17 +36,18 @@ function JoinForm() {
           value={password}
           onChange={handleChange}
         />
-
-        <JoinLabel htmlFor="rePassword">비밀번호 재확인</JoinLabel>
+      </FormRow>
+      <FormRow>
+        <JoinLabel htmlFor="password2">비밀번호 재확인</JoinLabel>
         <JoinInput
           type="password"
-          id="rePassword"
-          name="rePassword"
-          value={rePassword}
+          id="password2"
+          name="password2"
+          value={password2}
           onChange={handleChange}
         />
-      </LabelWrapper>
-      <LabelWrapper>
+      </FormRow>
+      <FormRow>
         <JoinLabel htmlFor="name">이름</JoinLabel>
         <JoinInput
           type="text"
@@ -78,21 +56,21 @@ function JoinForm() {
           value={name}
           onChange={handleChange}
         />
-        <JoinLabel htmlFor="name">
-          이메일 <span>(선택)</span>
-        </JoinLabel>
+      </FormRow>
+      <FormRow>
+        <JoinLabel htmlFor="email">이메일</JoinLabel>
         <JoinInput
-          type="text"
+          type="email"
           id="email"
           name="email"
           value={email}
           onChange={handleChange}
         />
-      </LabelWrapper>
-      <JoinButton disabled={!isSubmittable} onClick={handleSubmit}>
+      </FormRow>
+      <JoinButton type="submit" disabled={!isSubmittable}>
         가입하기
       </JoinButton>
-    </>
+    </Form>
   );
 }
 
