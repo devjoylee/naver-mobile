@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { VscChevronRight } from 'react-icons/vsc';
-import { FiEdit3 } from 'react-icons/fi';
+import { RiEdit2Fill } from 'react-icons/ri';
 
 // Navbar
 export const Nav = styled.div`
@@ -51,17 +50,16 @@ export const ProfileDetail = styled.div`
 `;
 
 export const Name = styled.div`
-  position: relative;
   font-weight: bold;
   font-size: 18px;
   margin-bottom: 5px;
 `;
 
-export const EditButton = styled(FiEdit3)`
-  position: absolute;
-  bottom: -2px;
-  margin-left: 2px;
-  font-size: 20px;
+export const EditButton = styled(RiEdit2Fill)`
+  margin-bottom: -2px;
+  margin-left: 4px;
+  font-size: 22px;
+  cursor: pointer;
 `;
 
 export const Email = styled.p`
@@ -88,30 +86,38 @@ export const Buttons = styled.div`
 // InfoLink
 export const LinkWrapper = styled.div`
   display: block;
-  position: relative;
   padding: 20px 15px;
   border-bottom: 1px solid #ddd;
   background: #fff;
   cursor: pointer;
+
+  display: flex;
+  align-items: center;
+
+  & > svg:first-child {
+    color: #ccc;
+    font-size: 22px;
+  }
+
+  & > svg:last-child {
+    color: #999;
+    font-size: 25px;
+  }
 `;
 
-export const LinkTitle = styled.h3`
+export const LinkMenu = styled.div`
+  flex: 1;
+  margin-left: 12px;
+`;
+
+export const Title = styled.h3`
   color: #333;
   margin-bottom: 10px;
 `;
 
-export const LinkText = styled.p`
+export const Text = styled.p`
   color: #999;
   font-size: 15px;
-`;
-
-export const LinkBtn = styled(VscChevronRight)`
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #999;
-  font-size: 25px;
 `;
 
 // Logout Button

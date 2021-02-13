@@ -18,7 +18,7 @@ import logoNpay from '../images/logo-npay.png';
 
 const SectionWrapper = styled.div`
   padding: 0 15px;
-  background: linear-gradient(to bottom, #fff 5%, #eff2f8 75%);
+  background: linear-gradient(to bottom, #fff 5%, #eff2f8 40%);
   margin: 0px -20px;
 `;
 

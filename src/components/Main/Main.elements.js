@@ -1,11 +1,4 @@
 import styled from 'styled-components';
-import { MenuIcon } from '../icons';
-
-// hamburger
-export const Hamburger = styled(MenuIcon)`
-  width: 25px;
-  color: #555;
-`;
 
 // search box
 export const InputBox = styled.input`
@@ -123,8 +116,16 @@ export const WebtoonLink = styled.li`
   height: 45px;
   line-height: 45px;
   color: #777;
-  text-align: center;
   font-size: 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & > svg {
+    font-size: 17px;
+    padding-right: 5px;
+  }
 `;
 
 // npay
