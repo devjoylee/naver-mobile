@@ -1,5 +1,5 @@
 export const fetchLogin = async ({ id, password }) => {
-  const response = await fetch('http://localhost:8888/users'); // http 요청
+  const response = await fetch('/users'); // http 요청
 
   if (response.ok) {
     const users = await response.json();

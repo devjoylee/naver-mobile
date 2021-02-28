@@ -1,5 +1,5 @@
 export const fetchWebtoons = async () => {
-  const response = await fetch('http://localhost:8888/webtoons');
+  const response = await fetch('/webtoons');
 
   if (response.ok) {
     return response.json();
@@ -9,7 +9,7 @@ export const fetchWebtoons = async () => {
 };
 
 export const fetchRecommend = async () => {
-  const response = await fetch('http://localhost:8888/recommend');
+  const response = await fetch('/recommend');
 
   if (response.ok) {
     return response.json();

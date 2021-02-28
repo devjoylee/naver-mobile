@@ -1,5 +1,5 @@
 export const requestSignup = async (user) => {
-  const response = await fetch('http://localhost:8888/users', {
+  const response = await fetch('/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
