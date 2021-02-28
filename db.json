@@ -11,20 +11,6 @@
       "password": "1234",
       "name": "이주영",
       "image": "http://sbvillaba.com/themes/isabel/assets/images/placeholder.png"
-    },
-    {
-      "id": "joy",
-      "password": "joy",
-      "password2": "joy",
-      "name": "joy",
-      "email": "joy"
-    },
-    {
-      "id": "sdf",
-      "password": "sdf",
-      "password2": "sdsd",
-      "name": "sgd",
-      "email": "sgd"
     }
   ],
   "webtoons": [
@@ -36,7 +22,7 @@
     },
     {
       "id": 1,
-      "title": "관계의종말",
+      "title": "관계의 종말",
       "image": "https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fshared-comic.pstatic.net%2Fthumb%2Fwebtoon%2F752803%2Fthumbnail%2Fthumbnail_IMAG19_b796561c-fe2d-4594-a4df-e7b22dd1a8b3.jpg%22&type=f220_138&service=navermain",
       "author": "김용키"
     },
@@ -54,12 +40,10 @@
     },
     {
       "id": 4,
-      "title": "선의의경쟁",
+      "title": "선의의 경쟁",
       "image": "https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fshared-comic.pstatic.net%2Fthumb%2Fwebtoon%2F748069%2Fthumbnail%2Fthumbnail_IMAG19_9854a59c-e436-4677-99f7-b92b0f135f6e.jpg%22&type=f220_138&service=navermain",
       "author": "송채윤/심재영"
-    }
-  ],
-  "recommend": [
+    },
     {
       "id": 5,
       "title": "데드퀸",
@@ -74,6 +58,26 @@
     },
     {
       "id": 7,
+      "title": "1 초",
+      "image": "https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fshared-comic.pstatic.net%2Fthumb%2Fwebtoon%2F725586%2Fthumbnail%2Fthumbnail_IMAG19_7d4c905d-0988-4016-bb4b-b9c0e2f93c60.jpg%22&type=f220_138&service=navermain",
+      "author": "시나"
+    }
+  ],
+  "recommend": [
+    {
+      "id": 8,
+      "title": "데드퀸",
+      "image": "https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fshared-comic.pstatic.net%2Fthumb%2Fwebtoon%2F753478%2Fthumbnail%2Fthumbnail_IMAG19_6bd89b70-deff-4849-aeef-41eb5af000a1.jpg%22&type=f220_138&service=navermain",
+      "author": "김규삼"
+    },
+    {
+      "id": 9,
+      "title": "갓 오브 하이스쿨",
+      "image": "https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fshared-comic.pstatic.net%2Fthumb%2Fwebtoon%2F318995%2Fthumbnail%2Ftitle_thumbnail_20150323150655_t220x202.jpg%22&type=f220_138&service=navermain",
+      "author": "박용제"
+    },
+    {
+      "id": 10,
       "title": "1 초",
       "image": "https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fshared-comic.pstatic.net%2Fthumb%2Fwebtoon%2F725586%2Fthumbnail%2Fthumbnail_IMAG19_7d4c905d-0988-4016-bb4b-b9c0e2f93c60.jpg%22&type=f220_138&service=navermain",
       "author": "시나"

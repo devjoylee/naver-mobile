@@ -23,6 +23,10 @@ export const WebtoonContainer = styled.div`
   &:not(:last-child) {
     margin-right: 15px;
   }
+
+  @media (min-width: 600px) {
+    width: 28%;
+  }
 `;
 
 export const Image = styled.img`
