@@ -1,5 +1,5 @@
 import React from 'react';
-import { HelpBar, HelpBarItem } from '../common/HelpBar';
+import { HelpBar, HelpBarItem } from '../shared/HelpBar';
 
 function HelpSearch() {
   return (

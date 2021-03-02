@@ -12,19 +12,22 @@ import {
 function InfoLink({ icon, title, text }) {
   return (
     <LinkWrapper>
-      {icon === 'icon1' ? (
-        <Icon1 />
-      ) : icon === 'icon2' ? (
-        <Icon2 />
-      ) : icon === 'icon3' ? (
-        <Icon3 />
-      ) : icon === 'icon4' ? (
-        <Icon4 />
-      ) : icon === 'icon5' ? (
-        <Icon5 />
-      ) : (
-        ''
-      )}
+      {() => {
+        switch (icon) {
+          case 'icon1':
+            return <Icon1 />;
+          case 'icon2':
+            return <Icon2 />;
+          case 'icon3':
+            return <Icon3 />;
+          case 'icon4':
+            return <Icon4 />;
+          case 'icon5':
+            return <Icon5 />;
+          default:
+            return;
+        }
+      }}
       <LinkMenu>
         <Title>{title}</Title>
         <Text>{text}</Text>

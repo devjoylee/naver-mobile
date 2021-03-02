@@ -1,5 +1,5 @@
 import React from 'react';
-import { HelpBar, HelpBarItem } from '../common/HelpBar';
+import { HelpBar, HelpBarItem } from '../shared/HelpBar';
 import { FooterContainer, FooterLogoImage } from './Main.elements';
 import { useHistory } from 'react-router-dom';
 import { useUserContext } from '../../contexts/UserContext';

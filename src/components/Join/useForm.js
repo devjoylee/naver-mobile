@@ -21,7 +21,7 @@ function useForm(validate) {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors(validate(values));
 

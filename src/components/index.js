@@ -26,8 +26,8 @@ export { default as InfoLinks } from './Mypage/InfoLinks';
 // join page
 export { default as JoinForm } from './Join/JoinForm';
 
-// common
-export { default as Logo } from './common/Logo';
-export { default as Section } from './common/Section';
-export { default as Icon } from './common/Icon';
-export { default as BackButton } from './common/BackButton';
+// shared
+export { default as Logo } from './shared/Logo';
+export { default as Section } from './shared/Section';
+export { default as Icon } from './shared/Icon';
+export { default as BackButton } from './shared/BackButton';

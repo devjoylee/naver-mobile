@@ -1,6 +1,6 @@
 import React from 'react';
 import { VscMenu } from 'react-icons/vsc';
-import Icon from '../common/Icon';
+import Icon from '../shared/Icon';
 
 function NavBtn() {
   return (
