@@ -1,8 +1,22 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-const StylePayText = styled.div`
+export const PayWrapper = styled.div`
+  padding: 18px 15px;
+  border: 1px solid #03c75a;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  b {
+    font-weight: bold;
+  }
+`;
+
+// pay button
+export const StylePayText = styled.div`
   font-size: 14px;
   color: #666;
   letter-spacing: -1px;
@@ -20,7 +34,7 @@ const StylePayText = styled.div`
   }
 `;
 
-const StylePayButtonWrapper = styled.div`
+export const StylePayButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,7 +45,7 @@ const StylePayButtonWrapper = styled.div`
   cursor: pointer;
 `;
 
-const StylePayButton = styled(Link)`
+export const StylePayButton = styled(Link)`
   font-size: 14px;
   font-weight: bold;
   padding-right: 8px;
@@ -62,23 +76,3 @@ const StylePayButton = styled(Link)`
     opacity: 0;
   }
 `;
-
-export function PayText({ children }) {
-  return <StylePayText>{children}</StylePayText>;
-}
-
-export function PayButtonWrapper({ children }) {
-  return <StylePayButtonWrapper>{children}</StylePayButtonWrapper>;
-}
-
-export function PayButton({ text, isLinked, ...rest }) {
-  const preventClick = (e) => {
-    if (!isLinked) e.preventDefault();
-  };
-
-  return (
-    <StylePayButton {...rest} onClick={preventClick}>
-      {text}
-    </StylePayButton>
-  );
-}

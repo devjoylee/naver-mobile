@@ -1,5 +1,5 @@
 import React from 'react';
-import { LinkWrapper, WebtoonLink } from '../Main.elements';
+import { LinkWrapper, WebtoonLink } from '../../elements/Webtoon';
 import { BiCalendar, BiBookHeart } from 'react-icons/bi';
 import { SiLinewebtoon } from 'react-icons/si';
 

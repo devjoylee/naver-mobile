@@ -1,6 +1,6 @@
 import React from 'react';
 import { HelpBar, HelpBarItem } from '../shared/HelpBar';
-import { FooterContainer, FooterLogoImage } from './Main.elements';
+import { FooterContainer, FooterLogoImage } from './elements/Footer';
 import { useHistory } from 'react-router-dom';
 import { useUserContext } from '../../contexts/UserContext';
 import logoFooter from '../../images/logo-footer.png';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { useUserContext } from '../../contexts/UserContext';
-import { LogoutButton } from './Mypage.elements';
+import { LogoutButton } from './elements/Logout';
 
 function Logout() {
   const { setUser } = useUserContext();

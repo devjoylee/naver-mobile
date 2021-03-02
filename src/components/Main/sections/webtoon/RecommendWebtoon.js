@@ -8,9 +8,9 @@ import {
   ImgWrapper,
   TextWrapper,
   WatchNow,
-} from '../Main.elements';
-import { useUserContext } from '../../../contexts/UserContext';
-import { fetchRecommend } from '../service';
+} from '../../elements/Webtoon';
+import { useUserContext } from '../../../../contexts/UserContext';
+import { fetchRecommend } from '../../service';
 
 function RecommendWebtoon() {
   const [recommend, setRecommend] = useState([]);

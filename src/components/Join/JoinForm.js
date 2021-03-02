@@ -6,7 +6,7 @@ import {
   JoinInput,
   Validation,
   JoinButton,
-} from './Join.elements';
+} from './elements/Form.js';
 import useForm from './useForm';
 import validateInfo from './validation';
 

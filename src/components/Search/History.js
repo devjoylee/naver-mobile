@@ -11,7 +11,7 @@ import {
   Keyword,
   Date,
   RemoveButton,
-} from './Search.elements';
+} from './elements/History';
 
 function History({ keywords, onRemoveKeyword, onClearList }) {
   if (keywords.length === 0) {

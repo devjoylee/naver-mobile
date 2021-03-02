@@ -1,6 +1,6 @@
 import React from 'react';
-import { useUserContext } from '../../../contexts/UserContext';
-import { PayWrapper } from '../Main.elements';
+import { useUserContext } from '../../../../contexts/UserContext';
+import { PayWrapper } from '../../elements/NPay';
 import { PayText, PayButtonWrapper, PayButton } from './PayButton';
 
 function NPay() {

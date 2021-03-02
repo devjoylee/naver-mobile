@@ -8,7 +8,8 @@ import {
   EditButton,
   Email,
   Buttons,
-} from './Mypage.elements';
+} from './elements/UserInfo';
+
 import defaultImage from '../../images/default-profile.png';
 
 function UserInfo() {

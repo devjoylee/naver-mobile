@@ -6,7 +6,7 @@ import {
   InputWrapper,
   Input,
   SearchButton,
-} from './Search.elements';
+} from './elements/SearchBar';
 
 function SearchBar({ onAddKeyword }) {
   const [keyword, setKeyword] = useState('');

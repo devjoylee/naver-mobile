@@ -1,20 +1,5 @@
 import styled from 'styled-components';
 
-// search box
-export const InputBox = styled.input`
-  width: 100%;
-  height: 50px;
-  border: 1px solid #1fcf89;
-  border-radius: 3px;
-  padding-left: 12px;
-  box-sizing: border-box;
-
-  &::placeholder {
-    color: #dadada;
-    font-size: 16px;
-  }
-`;
-
 // webtoon list
 export const WebtoonContainer = styled.div`
   display: inline-block;
@@ -130,49 +115,4 @@ export const WebtoonLink = styled.li`
     font-size: 17px;
     padding-right: 5px;
   }
-`;
-
-// npay
-export const PayWrapper = styled.div`
-  padding: 18px 15px;
-  border: 1px solid #03c75a;
-  border-radius: 10px;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  b {
-    font-weight: bold;
-  }
-`;
-
-// footer
-export const FooterContainer = styled.div`
-  padding: 60px 0;
-  background: #eff2f8;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0px -20px;
-
-  & > div {
-    margin-bottom: 13px;
-  }
-`;
-
-export const FooterLogoImage = styled.img`
-  display: inline-block;
-  margin-top: 15px;
-  width: 80px;
-  height: 15px;
-  cursor: pointer;
-`;
-
-export const Empty = styled.p`
-  font-size: 14px;
-  padding-bottom: 10px;
-  color: #888;
-  letter-spacing: -1px;
-  text-align: center;
 `;

@@ -5,8 +5,8 @@ import {
   TextWrapper,
   Title,
   Author,
-} from '../Main.elements';
-import { fetchWebtoons } from '../service';
+} from '../../elements/Webtoon';
+import { fetchWebtoons } from '../../service';
 import ScrollContainer from './ScrollContainer';
 
 function Webtoon() {

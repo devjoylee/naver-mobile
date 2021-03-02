@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { LoginInput, LoginButton } from './Login.elements';
+import { LoginInput, LoginButton } from './elements/Form';
 import { useHistory } from 'react-router-dom';
 import { useUserContext } from '../../contexts/UserContext';
 import { fetchLogin } from './service';

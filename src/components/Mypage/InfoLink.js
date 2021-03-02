@@ -1,5 +1,5 @@
 import React from 'react';
-import { LinkWrapper, LinkMenu, Title, Text } from './Mypage.elements';
+import { LinkWrapper, LinkMenu, Title, Text } from './elements/InfoLink';
 import {
   VscAccount as Icon1,
   VscLock as Icon2,

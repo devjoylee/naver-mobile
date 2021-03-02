@@ -1,5 +1,5 @@
 import React from 'react';
-import { Nav, HomeLogo, NavTitle } from './Mypage.elements';
+import { Nav, HomeLogo, NavTitle } from './elements/Navbar';
 import logoSmall from '../../images/logo-s.png';
 
 function Navbar() {
