@@ -1,4 +1,4 @@
-export default function validateInfo(values) {
+export default function validate(values) {
   let errors = {};
 
   // id

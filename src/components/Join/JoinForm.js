@@ -8,10 +8,20 @@ import {
   JoinButton,
 } from './elements/Form.js';
 import useForm from './useForm';
-import validateInfo from './validation';
+import validate from './validation';
 
 function JoinForm() {
-  const { values, errors, handleChange, handleSubmit } = useForm(validateInfo);
+  const { values, errors, handleChange, handleSubmit } = useForm(
+    {
+      id: '',
+      password: '',
+      password2: '',
+      name: '',
+      email: '',
+    },
+    validate
+  );
+
   const { id, password, password2, name, email } = values;
 
   return (

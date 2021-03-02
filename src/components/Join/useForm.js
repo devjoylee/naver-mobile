@@ -2,14 +2,8 @@ import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { requestSignup } from './service';
 
-function useForm(validate) {
-  const [values, setValues] = useState({
-    id: '',
-    password: '',
-    password2: '',
-    name: '',
-    email: '',
-  });
+function useForm(initialValues, validate) {
+  const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState({});
   const history = useHistory();
 
@@ -23,12 +17,14 @@ function useForm(validate) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setErrors(validate(values));
+    const error = await validate(values);
+    const hasInvaild = Object.keys(error).length;
 
-    if (Object.keys(errors).length === 0) {
-      // submitForm();
-      window.alert('Welcome!');
+    if (!hasInvaild) {
+      submitForm();
     }
+
+    return setErrors(error);
   };
 
   const submitForm = async () => {
