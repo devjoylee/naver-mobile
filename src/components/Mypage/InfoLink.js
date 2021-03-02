@@ -10,24 +10,26 @@ import {
 } from 'react-icons/vsc';
 
 function InfoLink({ icon, title, text }) {
+  const getIcon = () => {
+    switch (icon) {
+      case 'icon1':
+        return <Icon1 />;
+      case 'icon2':
+        return <Icon2 />;
+      case 'icon3':
+        return <Icon3 />;
+      case 'icon4':
+        return <Icon4 />;
+      case 'icon5':
+        return <Icon5 />;
+      default:
+        return;
+    }
+  };
+
   return (
     <LinkWrapper>
-      {() => {
-        switch (icon) {
-          case 'icon1':
-            return <Icon1 />;
-          case 'icon2':
-            return <Icon2 />;
-          case 'icon3':
-            return <Icon3 />;
-          case 'icon4':
-            return <Icon4 />;
-          case 'icon5':
-            return <Icon5 />;
-          default:
-            return;
-        }
-      }}
+      {getIcon()}
       <LinkMenu>
         <Title>{title}</Title>
         <Text>{text}</Text>
