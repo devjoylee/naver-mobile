@@ -4,7 +4,6 @@ import { useUserContext } from '../contexts/UserContext';
 
 function Route({ auth, ...props }) {
   const { user } = useUserContext();
-  console.log(user);
 
   // 로그인 x : 로그인페이지로
   if (auth && !user) {

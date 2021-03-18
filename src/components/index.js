@@ -14,7 +14,7 @@ export { default as History } from './Search/History';
 export { default as HelpSearch } from './Search/HelpSearch';
 
 // login page
-export { default as Form } from './Login/Form';
+export { default as Form } from './Login/LoginForm';
 export { default as HelpLogin } from './Login/HelpLogin';
 
 // my page

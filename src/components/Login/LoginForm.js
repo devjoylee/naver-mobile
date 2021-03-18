@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { LoginInput, LoginButton } from './elements/Form';
+import { LoginForm, LoginInput, LoginButton } from './elements/LoginForm';
 import { useHistory } from 'react-router-dom';
 import { useUserContext } from '../../contexts/UserContext';
 import { fetchLogin } from './service';
@@ -21,7 +21,8 @@ function Form() {
     });
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
       const user = await fetchLogin({ id, password }); // 로그인 요청
       setUser(user);
@@ -35,7 +36,7 @@ function Form() {
   const isSubmittable = id && password;
 
   return (
-    <form>
+    <LoginForm onSubmit={handleSubmit}>
       <LoginInput
         id="id"
         type="text"
@@ -50,10 +51,8 @@ function Form() {
         placeholder="비밀번호"
         onChange={handleFormValues}
       />
-      <LoginButton disabled={!isSubmittable} onClick={handleSubmit}>
-        로그인
-      </LoginButton>
-    </form>
+      <LoginButton disabled={!isSubmittable}>로그인</LoginButton>
+    </LoginForm>
   );
 }
 

@@ -48,6 +48,7 @@ export const Icon = styled(GoSearch)`
   border-radius: 50%;
   background: #ddd;
   color: #fff;
+  box-sizing: unset;
 `;
 
 export const Keyword = styled.p`

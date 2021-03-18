@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { Input, Button } from '../../../globalStyles';
 
 // login form
+export const LoginForm = styled.form``;
+
 export const LoginInput = styled(Input)`
   margin-bottom: 10px;
 `;

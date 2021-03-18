@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import { Input, Button } from '../../../globalStyles';
 
-export const Form = styled.form``;
+export const Form = styled.form`
+  padding-bottom: 40px;
+`;
 
 export const FormRow = styled.div`
   &:nth-child(3) {

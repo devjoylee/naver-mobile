@@ -31,7 +31,11 @@ footer, header, hgroup, main, menu, nav, section {
 *[hidden] {
     display: none;
 }
-body {
+*{
+  box-sizing: border-box;
+}
+html, body, #root{
+  height: 100%;
   line-height: 1;
 }
 ol, ul {
@@ -78,9 +82,6 @@ textarea
 input:focus
 {
 	outline:0;
-}
-html, body, #root{
-  height: 100%;
 }
 `
 
