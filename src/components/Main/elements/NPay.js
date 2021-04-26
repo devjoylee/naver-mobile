@@ -43,6 +43,10 @@ export const StylePayButtonWrapper = styled.div`
   border-radius: 20px;
   background-color: #09b65a;
   cursor: pointer;
+
+  @media only screen and (max-width: 768px) {
+    width: 170px;
+  }
 `;
 
 export const StylePayButton = styled(Link)`
