@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Section } from '../components';
 import { useUserContext } from 'contexts/UserContext';
 import { Container, PageWrapper } from 'styles/globalStyles';
-import logoNpay from '../images/logo-npay.png';
+import logoNpay from 'images/logo-npay.png';
+import { Section } from 'components/Common';
 import {
   SearchBox,
   NPay,

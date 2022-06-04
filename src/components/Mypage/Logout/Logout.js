@@ -1,7 +1,7 @@
 import React from 'react';
+import * as S from './styles';
 import { useHistory } from 'react-router-dom';
 import { useUserContext } from 'contexts/UserContext';
-import { LogoutButton } from './elements/Logout';
 
 function Logout() {
   const { setUser } = useUserContext();
@@ -17,7 +17,7 @@ function Logout() {
     history.replace('./');
   };
 
-  return <LogoutButton onClick={handleLogOut}>Log Out</LogoutButton>;
+  return <S.LogoutButton onClick={handleLogOut}>Log Out</S.LogoutButton>;
 }
 
 export default Logout;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { SearchBar, History, HelpSearch } from '../components/';
+import { SearchBar, History, HelpSearch } from 'components/Search';
 import { PageWrapper } from 'styles/globalStyles';
 
 const SearchContainer = styled.div`

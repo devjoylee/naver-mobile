@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserInfo, Navbar, Logout, InfoLinks } from '../components';
+import { UserInfo, Navbar, Logout, InfoLinks } from 'components/Mypage';
 import { Container, PageWrapper } from 'styles/globalStyles';
 
 function MyPage() {

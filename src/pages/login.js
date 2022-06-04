@@ -1,6 +1,6 @@
 import React from 'react';
-import { Logo, BackButton } from '../components';
 import { Container, PageWrapper } from 'styles/globalStyles';
+import { Logo, BackButton } from 'components/Common';
 import { LoginForm, HelpLogin } from 'components/Login';
 
 function LoginPage() {

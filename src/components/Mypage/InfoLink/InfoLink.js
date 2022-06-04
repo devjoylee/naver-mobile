@@ -1,5 +1,5 @@
 import React from 'react';
-import { LinkWrapper, LinkMenu, Title, Text } from './elements/InfoLink';
+import * as S from './styles';
 import {
   VscAccount as Icon1,
   VscLock as Icon2,
@@ -28,14 +28,14 @@ function InfoLink({ icon, title, text }) {
   };
 
   return (
-    <LinkWrapper>
+    <S.LinkWrapper>
       {getIcon()}
-      <LinkMenu>
-        <Title>{title}</Title>
-        <Text>{text}</Text>
-      </LinkMenu>
+      <S.LinkMenu>
+        <S.Title>{title}</S.Title>
+        <S.Text>{text}</S.Text>
+      </S.LinkMenu>
       <LinkButton />
-    </LinkWrapper>
+    </S.LinkWrapper>
   );
 }
 

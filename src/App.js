@@ -2,13 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 import GlobalStyles from 'styles/globalStyles';
-import LoginPage from './pages/login';
-import MainPage from './pages/main';
-import MyPage from './pages/mypage';
-import SearchPage from './pages/search';
-import JoinPage from './pages/join';
 import Route from './components/Route';
 import ScrollToTop from 'utils/ScrollToTop';
+import { LoginPage, MainPage, MyPage, SearchPage, JoinPage } from 'pages';
 
 const Container = styled.div`
   max-width: 720px;

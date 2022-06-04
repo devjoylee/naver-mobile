@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import { BackButton } from '..';
-import {
-  BarWrapper,
-  ResetButton,
-  InputWrapper,
-  Input,
-  SearchButton,
-} from './elements/SearchBar';
+import { BackButton } from 'components/Common';
+import * as S from './styles';
 
 function SearchBar({ onAddKeyword }) {
   const [keyword, setKeyword] = useState('');
@@ -29,22 +23,22 @@ function SearchBar({ onAddKeyword }) {
   const hasKeyword = !!keyword;
 
   return (
-    <BarWrapper>
+    <S.BarWrapper>
       <BackButton />
-      <InputWrapper>
-        <Input
+      <S.InputWrapper>
+        <S.Input
           autoFocus
-          placeholder="검색어를 입력해주세요."
+          placeholder='검색어를 입력해주세요.'
           value={keyword}
           onChange={handleKeyword}
           onKeyDown={(e) => {
             if (e.keyCode === 13) handleSearch();
           }}
         />
-        <ResetButton onClick={handleReset} active={hasKeyword ? 1 : 0} />
-      </InputWrapper>
-      <SearchButton onClick={() => handleSearch()} />
-    </BarWrapper>
+        <S.ResetButton onClick={handleReset} active={hasKeyword ? 1 : 0} />
+      </S.InputWrapper>
+      <S.SearchButton onClick={() => handleSearch()} />
+    </S.BarWrapper>
   );
 }
 
