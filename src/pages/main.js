@@ -1,20 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useUserContext } from 'contexts/UserContext';
+import { Container, PageWrapper } from 'styles/globalStyles';
+import logoNpay from 'images/logo-npay.png';
+import { Section } from 'components/Common';
 import {
-  Logo,
-  NavBtn,
   SearchBox,
-  Section,
+  NPay,
   Webtoon,
   RecommendWebtoon,
-  WebtoonLinks,
-  NPay,
+  WebtoonNav,
   Weather,
   Footer,
-} from '../components';
-import { useUserContext } from '../contexts/UserContext';
-import { Container, PageWrapper } from '../globalStyles';
-import logoNpay from '../images/logo-npay.png';
+  MainHeader,
+} from 'components/Main';
 
 const SectionWrapper = styled.div`
   padding: 0 15px;
@@ -24,31 +23,28 @@ const SectionWrapper = styled.div`
 
 function MainPage() {
   const { user } = useUserContext();
-  const npay = <img src={logoNpay} alt="네이버페이"></img>;
+  const npay = <img src={logoNpay} alt='네이버페이'></img>;
 
   return (
     <PageWrapper padding>
-      <NavBtn />
-      <Container margin={{ top: 20, bottom: 25 }}>
-        <Logo />
-      </Container>
+      <MainHeader />
       <Container margin={{ bottom: 30 }}>
         <SearchBox />
       </Container>
       <SectionWrapper>
-        <Section title="오늘의 추천 웹툰" isOpened={true}>
+        <Section title='오늘의 추천 웹툰' isOpened={true}>
           <Webtoon />
           {user && (
             <Container padding={{ left: 15, right: 15 }}>
               <RecommendWebtoon />
             </Container>
           )}
-          <WebtoonLinks />
+          <WebtoonNav />
         </Section>
         <Section title={npay} isOpened={true} padding>
           <NPay />
         </Section>
-        <Section title="날씨" isOpened={false} padding>
+        <Section title='날씨' isOpened={false} padding>
           <Weather />
         </Section>
       </SectionWrapper>

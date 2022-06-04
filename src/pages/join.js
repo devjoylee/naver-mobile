@@ -1,7 +1,7 @@
 import React from 'react';
-import { Logo } from '../components';
-import JoinForm from '../components/Join/JoinForm';
-import { Container, PageWrapper } from '../globalStyles';
+import { Logo } from 'components/Common';
+import { Container, PageWrapper } from 'styles/globalStyles';
+import { JoinForm } from 'components/Join';
 
 function JoinPage() {
   return (

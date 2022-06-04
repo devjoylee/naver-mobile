@@ -1,0 +1,30 @@
+import React from 'react';
+import * as S from './styles';
+import { BiCalendar, BiBookHeart } from 'react-icons/bi';
+import { SiLinewebtoon } from 'react-icons/si';
+
+function WebtoonNav() {
+  const today = new Date();
+  const day = today.toLocaleDateString('ko-KR', {
+    weekday: 'short',
+  });
+
+  return (
+    <S.LinkWrapper>
+      <S.WebtoonLink>
+        <SiLinewebtoon />
+        웹툰 홈
+      </S.WebtoonLink>
+      <S.WebtoonLink>
+        <BiCalendar />
+        {day}요웹툰
+      </S.WebtoonLink>
+      <S.WebtoonLink>
+        <BiBookHeart />
+        MY웹툰
+      </S.WebtoonLink>
+    </S.LinkWrapper>
+  );
+}
+
+export default WebtoonNav;
