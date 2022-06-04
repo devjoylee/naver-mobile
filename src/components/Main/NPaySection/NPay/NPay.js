@@ -1,12 +1,12 @@
 import React from 'react';
+import * as S from './styles';
 import { useUserContext } from 'contexts/UserContext';
-import { PayWrapper } from '../../elements/NPay';
-import { PayText, PayButtonWrapper, PayButton } from './PayButton';
+import { PayText, PayButtonWrapper, PayButton } from '../PayButton/PayButton';
 
 function NPay() {
   const { user } = useUserContext();
   return (
-    <PayWrapper>
+    <S.PayWrapper>
       {user ? (
         // 로그인했을 때
         <>
@@ -33,7 +33,7 @@ function NPay() {
           </PayButtonWrapper>
         </>
       )}
-    </PayWrapper>
+    </S.PayWrapper>
   );
 }
 

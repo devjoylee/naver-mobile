@@ -1,13 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import {
-  WebtoonContainer,
-  Image,
-  TextWrapper,
-  Title,
-  Author,
-} from '../../elements/Webtoon';
-import { fetchWebtoons } from '../../service';
-import ScrollContainer from './ScrollContainer';
+import * as S from './styles';
+import { fetchWebtoons } from '../service';
+import { ScrollContainer } from 'components/Main';
 
 function Webtoon() {
   const [webtoons, setWebtoons] = useState([]);
@@ -28,13 +22,13 @@ function Webtoon() {
   return (
     <ScrollContainer>
       {webtoons.map(({ id, title, image, author }) => (
-        <WebtoonContainer key={id}>
-          <Image src={image} alt="webtoon" />
-          <TextWrapper>
-            <Title>{title}</Title>
-            <Author>{author}</Author>
-          </TextWrapper>
-        </WebtoonContainer>
+        <S.WebtoonContainer key={id}>
+          <S.Image src={image} alt='webtoon' />
+          <S.TextWrapper>
+            <S.Title>{title}</S.Title>
+            <S.Author>{author}</S.Author>
+          </S.TextWrapper>
+        </S.WebtoonContainer>
       ))}
     </ScrollContainer>
   );

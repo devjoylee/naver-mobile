@@ -1,16 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import {
-  RecommendTitle,
-  RecommendRow,
-  Image,
-  Title,
-  Author,
-  ImgWrapper,
-  TextWrapper,
-  WatchNow,
-} from '../../elements/Webtoon';
+import * as S from './styles';
 import { useUserContext } from 'contexts/UserContext';
-import { fetchRecommend } from '../../service';
+import { fetchRecommend } from '../service';
 
 function RecommendWebtoon() {
   const [recommend, setRecommend] = useState([]);
@@ -33,22 +24,22 @@ function RecommendWebtoon() {
 
   return (
     <>
-      <RecommendTitle>{name}님을 위한 추천</RecommendTitle>
+      <S.RecommendTitle>{name}님을 위한 추천</S.RecommendTitle>
       {recommend.map(({ id, title, image, author }) => (
-        <RecommendRow key={id}>
-          <ImgWrapper>
-            <Image src={image} />
-          </ImgWrapper>
-          <TextWrapper>
-            <Title>{title}</Title>
-            <Author>{author}</Author>
-          </TextWrapper>
-          <WatchNow>
+        <S.RecommendRow key={id}>
+          <S.ImgWrapper>
+            <S.Image src={image} />
+          </S.ImgWrapper>
+          <S.TextWrapper>
+            <S.Title>{title}</S.Title>
+            <S.Author>{author}</S.Author>
+          </S.TextWrapper>
+          <S.WatchNow>
             <b>첫 화</b>
             <br />
             바로보기
-          </WatchNow>
-        </RecommendRow>
+          </S.WatchNow>
+        </S.RecommendRow>
       ))}
     </>
   );

@@ -1,20 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-  Logo,
-  NavBtn,
-  SearchBox,
-  Section,
-  Webtoon,
-  RecommendWebtoon,
-  WebtoonLinks,
-  NPay,
-  Weather,
-  Footer,
-} from '../components';
+import { Section } from '../components';
 import { useUserContext } from 'contexts/UserContext';
 import { Container, PageWrapper } from 'styles/globalStyles';
 import logoNpay from '../images/logo-npay.png';
+import {
+  SearchBox,
+  NPay,
+  Webtoon,
+  RecommendWebtoon,
+  WebtoonNav,
+  Weather,
+  Footer,
+  MainHeader,
+} from 'components/Main';
 
 const SectionWrapper = styled.div`
   padding: 0 15px;
@@ -28,10 +27,7 @@ function MainPage() {
 
   return (
     <PageWrapper padding>
-      <NavBtn />
-      <Container margin={{ top: 20, bottom: 25 }}>
-        <Logo />
-      </Container>
+      <MainHeader />
       <Container margin={{ bottom: 30 }}>
         <SearchBox />
       </Container>
@@ -43,7 +39,7 @@ function MainPage() {
               <RecommendWebtoon />
             </Container>
           )}
-          <WebtoonLinks />
+          <WebtoonNav />
         </Section>
         <Section title={npay} isOpened={true} padding>
           <NPay />

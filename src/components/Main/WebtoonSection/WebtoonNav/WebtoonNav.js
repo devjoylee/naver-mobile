@@ -1,31 +1,30 @@
 import React from 'react';
-import { LinkWrapper, WebtoonLink } from '../../elements/Webtoon';
+import * as S from './styles';
 import { BiCalendar, BiBookHeart } from 'react-icons/bi';
 import { SiLinewebtoon } from 'react-icons/si';
 
-function WebtoonLinks() {
+function WebtoonNav() {
   const today = new Date();
   const day = today.toLocaleDateString('ko-KR', {
     weekday: 'short',
   });
 
   return (
-    <LinkWrapper>
-      <WebtoonLink>
+    <S.LinkWrapper>
+      <S.WebtoonLink>
         <SiLinewebtoon />
         웹툰 홈
-      </WebtoonLink>
-      <WebtoonLink>
+      </S.WebtoonLink>
+      <S.WebtoonLink>
         <BiCalendar />
         {day}요웹툰
-      </WebtoonLink>
-      <WebtoonLink>
+      </S.WebtoonLink>
+      <S.WebtoonLink>
         <BiBookHeart />
         MY웹툰
-      </WebtoonLink>
-    </LinkWrapper>
-    //
+      </S.WebtoonLink>
+    </S.LinkWrapper>
   );
 }
 
-export default WebtoonLinks;
+export default WebtoonNav;

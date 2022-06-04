@@ -1,9 +1,9 @@
 import React from 'react';
-import { HelpBar, HelpBarItem } from '../shared/HelpBar';
-import { FooterContainer, FooterLogoImage } from './elements/Footer';
+import * as S from './styles';
+import { HelpBar, HelpBarItem } from 'components/shared/HelpBar';
 import { useHistory } from 'react-router-dom';
 import { useUserContext } from 'contexts/UserContext';
-import logoFooter from '../../images/logo-footer.png';
+import logoFooter from 'images/logo-footer.png';
 
 function Footer() {
   const { user } = useUserContext();
@@ -17,7 +17,7 @@ function Footer() {
   };
 
   return (
-    <FooterContainer>
+    <S.FooterContainer>
       <HelpBar center borderNone paddingNone>
         {user ? (
           <HelpBarItem text='로그아웃' onClick={handleLogOut} />
@@ -32,8 +32,8 @@ function Footer() {
         <HelpBarItem text='개인정보처리방침' />
         <HelpBarItem text='고객센터' />
       </HelpBar>
-      <FooterLogoImage src={logoFooter} alt='푸터로고' />
-    </FooterContainer>
+      <S.FooterLogoImage src={logoFooter} alt='푸터로고' />
+    </S.FooterContainer>
   );
 }
 
