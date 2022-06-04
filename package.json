@@ -1,49 +1,38 @@
 {
   "name": "naver-app",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "This is a mobile web page",
+  "main": "webpack.config.js",
+  "devDependencies": {
+    "@babel/core": "^7.13.8",
+    "@babel/preset-env": "^7.13.9",
+    "@babel/preset-react": "^7.12.13",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "concurrently": "^6.0.2",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.2.0",
+    "json-server": "^0.16.3",
+    "webpack": "^5.24.3",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "build": "webpack",
+    "dev": "concurrently \"npm run json-server\" \"webpack serve\"",
+    "json-server": "json-server --watch db.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
+    "moment": "^2.29.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-icons": "^4.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.1",
-    "styled-components": "^5.2.1",
-    "web-vitals": "^0.2.4"
+    "styled-components": "^5.2.1"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "json-server": "json-server --watch server/db.json --port 8888",
-    "dev": "concurrently \"npm run json-server\" \"npm start\"",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "concurrently": "^6.0.0",
-    "eslint-config-react-app": "^6.0.0",
-    "json-server": "^0.16.3"
-  },
-  "proxy": "http://localhost:8888"
+  "proxy": "http://localhost:3000"
 }

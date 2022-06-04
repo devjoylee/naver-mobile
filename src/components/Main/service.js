@@ -1,5 +1,10 @@
 export const fetchWebtoons = async () => {
-  const response = await fetch('/webtoons');
+  const response = await fetch('http://localhost:3000/webtoons', {
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+  });
 
   if (response.ok) {
     return response.json();
@@ -9,7 +14,12 @@ export const fetchWebtoons = async () => {
 };
 
 export const fetchRecommend = async () => {
-  const response = await fetch('/recommend');
+  const response = await fetch('http://localhost:3000/recommend', {
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+  });
 
   if (response.ok) {
     return response.json();

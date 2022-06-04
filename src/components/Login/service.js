@@ -1,5 +1,10 @@
 export const fetchLogin = async ({ id, password }) => {
-  const response = await fetch('/users'); // http 요청
+  const response = await fetch('http://localhost:3000/users', {
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+  }); // http 요청
 
   if (response.ok) {
     const users = await response.json();
