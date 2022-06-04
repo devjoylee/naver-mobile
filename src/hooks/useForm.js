@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { requestSignup } from './service';
+import { requestSignup } from 'components/Join/service';
 
 function useForm(initialValues, validate) {
   const [values, setValues] = useState(initialValues);

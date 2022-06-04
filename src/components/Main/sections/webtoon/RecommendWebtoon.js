@@ -9,7 +9,7 @@ import {
   TextWrapper,
   WatchNow,
 } from '../../elements/Webtoon';
-import { useUserContext } from '../../../../contexts/UserContext';
+import { useUserContext } from 'contexts/UserContext';
 import { fetchRecommend } from '../../service';
 
 function RecommendWebtoon() {

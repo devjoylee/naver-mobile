@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { LoginForm, LoginInput, LoginButton } from './elements/LoginForm';
+import * as S from './styles';
 import { useHistory } from 'react-router-dom';
-import { useUserContext } from '../../contexts/UserContext';
-import { fetchLogin } from './service';
+import { useUserContext } from 'contexts/UserContext';
+import { fetchLogin } from '../service';
 
-function Form() {
+function LoginForm() {
   const { setUser } = useUserContext();
   const history = useHistory();
   const [formValues, setFormValues] = useState({
@@ -36,24 +36,24 @@ function Form() {
   const isSubmittable = id && password;
 
   return (
-    <LoginForm onSubmit={handleSubmit}>
-      <LoginInput
-        id="id"
-        type="text"
+    <S.LoginForm onSubmit={handleSubmit}>
+      <S.LoginInput
+        id='id'
+        type='text'
         value={id}
-        placeholder="아이디"
+        placeholder='아이디'
         onChange={handleFormValues}
       />
-      <LoginInput
-        id="password"
-        type="password"
+      <S.LoginInput
+        id='password'
+        type='password'
         value={password}
-        placeholder="비밀번호"
+        placeholder='비밀번호'
         onChange={handleFormValues}
       />
-      <LoginButton disabled={!isSubmittable}>로그인</LoginButton>
-    </LoginForm>
+      <S.LoginButton disabled={!isSubmittable}>로그인</S.LoginButton>
+    </S.LoginForm>
   );
 }
 
-export default Form;
+export default LoginForm;

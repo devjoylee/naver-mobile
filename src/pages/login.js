@@ -1,6 +1,7 @@
 import React from 'react';
-import { Form, Logo, BackButton, HelpLogin } from '../components';
-import { Container, PageWrapper } from '../globalStyles';
+import { Logo, BackButton } from '../components';
+import { Container, PageWrapper } from 'styles/globalStyles';
+import { LoginForm, HelpLogin } from 'components/Login';
 
 function LoginPage() {
   return (
@@ -10,7 +11,7 @@ function LoginPage() {
         <Logo />
       </Container>
       <Container margin={{ bottom: 40 }}>
-        <Form />
+        <LoginForm />
       </Container>
       <HelpLogin />
     </PageWrapper>

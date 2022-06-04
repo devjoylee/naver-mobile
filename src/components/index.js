@@ -13,18 +13,11 @@ export { default as SearchBar } from './Search/SearchBar';
 export { default as History } from './Search/History';
 export { default as HelpSearch } from './Search/HelpSearch';
 
-// login page
-export { default as Form } from './Login/LoginForm';
-export { default as HelpLogin } from './Login/HelpLogin';
-
 // my page
 export { default as UserInfo } from './Mypage/UserInfo';
 export { default as Navbar } from './Mypage/Navbar';
 export { default as Logout } from './Mypage/Logout';
 export { default as InfoLinks } from './Mypage/InfoLinks';
-
-// join page
-export { default as JoinForm } from './Join/JoinForm';
 
 // shared
 export { default as Logo } from './shared/Logo';

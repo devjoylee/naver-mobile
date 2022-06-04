@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { SearchBar, History, HelpSearch } from '../components/';
-import { PageWrapper } from '../globalStyles';
+import { PageWrapper } from 'styles/globalStyles';
 
 const SearchContainer = styled.div`
   display: flex;
@@ -12,9 +12,7 @@ const SearchContainer = styled.div`
 `;
 
 function SearchPage() {
-  const [keywords, setKeywords] = useState(
-    JSON.parse(localStorage.getItem('keywords') || '[]')
-  );
+  const [keywords, setKeywords] = useState(JSON.parse(localStorage.getItem('keywords') || '[]'));
 
   useEffect(() => {
     localStorage.setItem('keywords', JSON.stringify(keywords));
