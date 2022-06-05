@@ -1,27 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import * as S from './styles';
-import { fetchWebtoons } from '../service';
 import { ScrollContainer } from 'components/Main';
+import { fetcher } from 'utils/fetcher';
 
 function Webtoon() {
   const [webtoons, setWebtoons] = useState([]);
 
   useEffect(() => {
-    async function fetchAndSetWebtoons() {
-      const data = await fetchWebtoons();
-      setWebtoons(data);
-    }
-
-    fetchAndSetWebtoons();
+    fetcher('/api/webtoons').then((data) => setWebtoons(data.webtoons));
   }, []);
-
-  if (!webtoons.length) {
-    return null;
-  }
 
   return (
     <ScrollContainer>
-      {webtoons.map(({ id, title, image, author }) => (
+      {webtoons?.map(({ id, title, image, author }) => (
         <S.WebtoonContainer key={id}>
           <S.Image src={image} alt='webtoon' />
           <S.TextWrapper>
