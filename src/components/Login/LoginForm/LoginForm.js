@@ -2,34 +2,28 @@ import React, { useState } from 'react';
 import * as S from './styles';
 import { useHistory } from 'react-router-dom';
 import { useUserContext } from 'contexts/UserContext';
-import { fetchLogin } from '../service';
+import { requestLogin } from 'utils/requestLogin';
+import useForm from 'hooks/useForm';
 
 function LoginForm() {
   const { setUser } = useUserContext();
-  const history = useHistory();
-  const [formValues, setFormValues] = useState({
+  const [error, setError] = useState('');
+  const { values, handleChange } = useForm({
     id: '',
     password: '',
   });
-  const { id, password } = formValues;
 
-  const handleFormValues = (e) => {
-    const { id, value } = e.target;
-    setFormValues({
-      ...formValues,
-      [id]: value,
-    });
-  };
+  const history = useHistory();
+  const { id, password } = values;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const user = await fetchLogin({ id, password }); // 로그인 요청
+      const user = await requestLogin({ id, password }); // 로그인 요청
       setUser(user);
       history.replace('/'); // 홈으로
     } catch (error) {
-      console.log('error', error);
-      window.alert(error);
+      setError(error.message);
     }
   };
 
@@ -38,19 +32,20 @@ function LoginForm() {
   return (
     <S.LoginForm onSubmit={handleSubmit}>
       <S.LoginInput
-        id='id'
+        name='id'
         type='text'
         value={id}
         placeholder='아이디'
-        onChange={handleFormValues}
+        onChange={handleChange}
       />
       <S.LoginInput
-        id='password'
+        name='password'
         type='password'
         value={password}
         placeholder='비밀번호'
-        onChange={handleFormValues}
+        onChange={handleChange}
       />
+      {error && <S.ErrorMessage>{error}</S.ErrorMessage>}
       <S.LoginButton disabled={!isSubmittable}>로그인</S.LoginButton>
     </S.LoginForm>
   );

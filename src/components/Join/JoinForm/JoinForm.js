@@ -1,21 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as S from './styles';
 import useForm from 'hooks/useForm';
 import validate from 'utils/validation';
+import { useHistory } from 'react-router-dom';
+import { requestSignup } from 'utils/requestSignUp';
 
 function JoinForm() {
-  const { values, errors, handleChange, handleSubmit } = useForm(
-    {
-      id: '',
-      password: '',
-      password2: '',
-      name: '',
-      email: '',
-    },
-    validate
-  );
+  const [errors, setErrors] = useState({});
+  const { values, handleChange } = useForm({
+    id: '',
+    password: '',
+    password2: '',
+    name: '',
+    email: '',
+  });
 
+  const history = useHistory();
   const { id, password, password2, name, email } = values;
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const error = await validate(values);
+    const hasInvaild = Object.keys(error).length;
+    if (!hasInvaild) {
+      try {
+        const res = await requestSignup(values);
+        if (res) {
+          console.log(res);
+          history.push('/login');
+          window.alert('회원가입 성공. 가입한 아이디로 로그인해주세요');
+        }
+      } catch {
+        window.alert('회원가입에 실패하였습니다. 다시 시도해주세요.');
+      }
+    }
+    return setErrors(error);
+  };
 
   return (
     <S.Form onSubmit={handleSubmit}>

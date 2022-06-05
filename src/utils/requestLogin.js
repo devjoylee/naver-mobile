@@ -1,13 +1,9 @@
-export const fetchLogin = async ({ id, password }) => {
-  const response = await fetch('http://localhost:3000/users', {
-    headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-    },
-  }); // http 요청
+import { fetcher } from './fetcher';
 
-  if (response.ok) {
-    const users = await response.json();
+export const requestLogin = async ({ id, password }) => {
+  const response = await fetcher('/api/users');
+  if (response) {
+    const users = await response.users;
     const user = users.find((user) => user.id === id);
 
     if (!user) {

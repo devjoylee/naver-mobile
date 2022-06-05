@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import * as S from './styles';
 import { useUserContext } from 'contexts/UserContext';
-import { fetchRecommend } from '../service';
+import { fetcher } from 'utils/fetcher';
 
 function RecommendWebtoon() {
   const [recommend, setRecommend] = useState([]);
@@ -10,22 +10,13 @@ function RecommendWebtoon() {
   } = useUserContext(); // 로그인 한 유저정보에서 이름 값 추출
 
   useEffect(() => {
-    async function fetchAndSetRecommend() {
-      const data = await fetchRecommend();
-      setRecommend(data);
-    }
-
-    fetchAndSetRecommend();
+    fetcher('/api/recommend').then((data) => setRecommend(data.webtoons));
   }, []);
-
-  if (!recommend.length) {
-    return null;
-  }
 
   return (
     <>
       <S.RecommendTitle>{name}님을 위한 추천</S.RecommendTitle>
-      {recommend.map(({ id, title, image, author }) => (
+      {recommend?.map(({ id, title, image, author }) => (
         <S.RecommendRow key={id}>
           <S.ImgWrapper>
             <S.Image src={image} />
