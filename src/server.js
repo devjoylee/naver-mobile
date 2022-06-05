@@ -1,19 +1,26 @@
 import { createServer } from 'miragejs';
 
+let users = [
+  {
+    id: 'joylee',
+    password: '1234',
+    name: 'Joy',
+    profile: 'https://ziclife.com/wp-content/uploads/2020/08/cute-avatar-image-48.jpg',
+  },
+];
+
 createServer({
   routes() {
     this.namespace = 'api';
+
+    this.post('/users', (s, req) => {
+      const user = JSON.parse(req.requestBody);
+      users.push(user);
+      return user;
+    });
+
     this.get('/users', () => {
-      return {
-        users: [
-          {
-            id: 'joylee',
-            password: '1234',
-            name: 'Joy',
-            profile: 'https://ziclife.com/wp-content/uploads/2020/08/cute-avatar-image-48.jpg',
-          },
-        ],
-      };
+      return { users };
     });
 
     this.get('/webtoons', () => {
@@ -78,6 +85,7 @@ createServer({
         ],
       };
     });
+
     this.get('/recommend', () => {
       return {
         webtoons: [
