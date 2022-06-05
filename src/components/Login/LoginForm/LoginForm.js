@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import * as S from './styles';
 import { useHistory } from 'react-router-dom';
 import { useUserContext } from 'contexts/UserContext';
-import { fetchLogin } from '../service';
+import { requestLogin } from 'utils/requestLogin';
 
 function LoginForm() {
   const { setUser } = useUserContext();
   const history = useHistory();
+  const [error, setError] = useState('');
   const [formValues, setFormValues] = useState({
     id: '',
     password: '',
@@ -24,12 +25,11 @@ function LoginForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const user = await fetchLogin({ id, password }); // 로그인 요청
+      const user = await requestLogin({ id, password }); // 로그인 요청
       setUser(user);
       history.replace('/'); // 홈으로
     } catch (error) {
-      console.log('error', error);
-      window.alert(error);
+      setError(error.message);
     }
   };
 
@@ -51,6 +51,7 @@ function LoginForm() {
         placeholder='비밀번호'
         onChange={handleFormValues}
       />
+      {error && <S.ErrorMessage>{error}</S.ErrorMessage>}
       <S.LoginButton disabled={!isSubmittable}>로그인</S.LoginButton>
     </S.LoginForm>
   );
