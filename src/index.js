@@ -1,12 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import App from './App';
 import { UserContextProvider } from 'contexts/UserContext';
-import './server';
+import makeServer from './server';
 
-ReactDOM.render(
+const root = createRoot(document.getElementById('root'));
+if (process.env.NODE_ENV === 'development') makeServer();
+
+root.render(
   <UserContextProvider>
     <App />
-  </UserContextProvider>,
-  document.getElementById('root')
+  </UserContextProvider>
 );

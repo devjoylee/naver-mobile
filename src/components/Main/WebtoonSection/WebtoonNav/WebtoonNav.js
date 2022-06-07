@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './styles';
 import { BiCalendar, BiBookHeart } from 'react-icons/bi';
-import { SiLinewebtoon } from 'react-icons/si';
+import { SiWebtoon } from 'react-icons/si';
 
 function WebtoonNav() {
   const today = new Date();
@@ -12,7 +12,7 @@ function WebtoonNav() {
   return (
     <S.LinkWrapper>
       <S.WebtoonLink>
-        <SiLinewebtoon />
+        <SiWebtoon />
         웹툰 홈
       </S.WebtoonLink>
       <S.WebtoonLink>

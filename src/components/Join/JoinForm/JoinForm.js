@@ -3,7 +3,7 @@ import * as S from './styles';
 import useForm from 'hooks/useForm';
 import validate from 'utils/validation';
 import { useHistory } from 'react-router-dom';
-import { requestSignup } from 'utils/requestSignUp';
+import { requestSignup } from 'utils/requestSignup';
 
 function JoinForm() {
   const [errors, setErrors] = useState({});
