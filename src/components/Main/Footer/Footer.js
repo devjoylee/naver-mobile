@@ -1,19 +1,19 @@
 import React from 'react';
 import * as S from './styles';
 import { HelpBar, HelpBarItem } from 'components/Common/HelpBar';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useUserContext } from 'contexts/UserContext';
 import logoFooter from 'images/logo-footer.png';
 
 function Footer() {
   const { user } = useUserContext();
   const { setUser } = useUserContext();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleLogOut = () => {
     setUser(null);
     localStorage.removeItem('user');
-    history.replace('./');
+    navigate('/');
   };
 
   return (

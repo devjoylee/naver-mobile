@@ -7,7 +7,14 @@ function Webtoon() {
   const [webtoons, setWebtoons] = useState([]);
 
   useEffect(() => {
-    fetcher('/api/webtoons').then((data) => setWebtoons(data.webtoons));
+    let isRendered = false;
+    fetcher('/api/webtoons').then((data) => {
+      if (!isRendered) setWebtoons(data.webtoons);
+    });
+
+    return () => {
+      isRendered = true;
+    };
   }, []);
 
   return (

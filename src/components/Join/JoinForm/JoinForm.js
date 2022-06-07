@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import * as S from './styles';
 import useForm from 'hooks/useForm';
 import validate from 'utils/validation';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { requestSignup } from 'utils/requestSignup';
 
 function JoinForm() {
@@ -15,7 +15,7 @@ function JoinForm() {
     email: '',
   });
 
-  const history = useHistory();
+  const navigate = useNavigate();
   const { id, password, password2, name, email } = values;
 
   const handleSubmit = async (e) => {
@@ -26,8 +26,7 @@ function JoinForm() {
       try {
         const res = await requestSignup(values);
         if (res) {
-          console.log(res);
-          history.push('/login');
+          navigate('/login');
           window.alert('회원가입 성공. 가입한 아이디로 로그인해주세요');
         }
       } catch {
