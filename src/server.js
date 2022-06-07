@@ -13,6 +13,7 @@ export default function makeServer({ environment = 'development' } = {}) {
   return createServer({
     routes() {
       this.namespace = 'api';
+      this.logging = false;
 
       this.post('/users', (s, req) => {
         const user = JSON.parse(req.requestBody);
