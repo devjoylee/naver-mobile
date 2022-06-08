@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { SearchBar, History, HelpSearch } from 'components/Search';
 import { PageWrapper } from 'components/Common/styled';
+import { OptionNav, OptionNavItem } from 'components/Common';
+import { SearchBar, History } from 'components/Search';
 
 const SearchContainer = styled.div`
   display: flex;
@@ -57,7 +58,10 @@ function SearchPage() {
           onRemoveKeyword={handleRemoveKeyword}
           onClearList={handleClearList}
         />
-        <HelpSearch />
+        <OptionNav>
+          <OptionNavItem text='자동저장 끄기' />
+          <OptionNavItem text='도움말' />
+        </OptionNav>
       </SearchContainer>
     </PageWrapper>
   );
