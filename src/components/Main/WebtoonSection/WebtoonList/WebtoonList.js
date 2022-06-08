@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import * as S from './styles';
-import { ScrollContainer } from 'components/Main';
+import { ScrollContainer } from '../';
 import { fetcher } from 'utils/fetcher';
 
-function Webtoon() {
+function WebtoonList() {
   const [webtoons, setWebtoons] = useState([]);
 
   useEffect(() => {
@@ -32,4 +32,4 @@ function Webtoon() {
   );
 }
 
-export default Webtoon;
+export default WebtoonList;

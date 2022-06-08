@@ -1,8 +1,6 @@
 export { MainHeader } from './MainHeader/MainHeader';
 export { Footer } from './Footer/Footer';
-export { default as NPay } from './NPaySection/NPay/NPay';
-export { default as RecommendWebtoon } from './WebtoonSection/Recommend/Recommend';
-export { default as Webtoon } from './WebtoonSection/Webtoon/Webtoon';
-export { default as WebtoonNav } from './WebtoonSection/WebtoonNav/WebtoonNav';
-export { default as ScrollContainer } from './WebtoonSection/ScrollContainer/ScrollContainer';
-export { default as Weather } from './WeatherSection/Weather';
+export { SectionLayout } from './SectionLayout/SectionLayout';
+export { WebtoonSection } from './WebtoonSection/WebtoonSection';
+export { NPaySection } from './NPaySection/NPaySection';
+export { WeatherSection } from './WeatherSection/WeatherSection';
