@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-export const FooterContainer = styled.div`
+export const FooterContainer = styled.footer`
   padding: 60px 0;
-  background: #eff2f8;
+  background: ${({ theme }) => theme.color.bg};
   display: flex;
   flex-direction: column;
   align-items: center;

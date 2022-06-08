@@ -1,21 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useUserContext } from 'contexts/UserContext';
 import { Container, PageWrapper } from 'components/Common/styled';
-import logoNpay from 'images/logo-npay.png';
 import { Section } from 'components/Common';
-import {
-  SearchBox,
-  NPay,
-  Webtoon,
-  RecommendWebtoon,
-  WebtoonNav,
-  Weather,
-  Footer,
-  MainHeader,
-} from 'components/Main';
+import { useUserContext } from 'contexts/UserContext';
+import logoNpay from 'images/logo-npay.png';
+import * as M from 'components/Main';
 
-const SectionWrapper = styled.div`
+const SectionWrapper = styled.main`
   padding: 0 15px;
   background: linear-gradient(to bottom, #fff 5%, #eff2f8 40%);
   margin: 0px -20px;
@@ -27,28 +18,25 @@ function MainPage() {
 
   return (
     <PageWrapper padding>
-      <MainHeader />
-      <Container margin={{ bottom: 30 }}>
-        <SearchBox />
-      </Container>
+      <M.MainHeader />
       <SectionWrapper>
         <Section title='오늘의 추천 웹툰' isOpened={true}>
-          <Webtoon />
+          <M.Webtoon />
           {user && (
             <Container padding={{ left: 15, right: 15 }}>
-              <RecommendWebtoon />
+              <M.RecommendWebtoon />
             </Container>
           )}
-          <WebtoonNav />
+          <M.WebtoonNav />
         </Section>
         <Section title={npay} isOpened={true} padding>
-          <NPay />
+          <M.NPay />
         </Section>
         <Section title='날씨' isOpened={false} padding>
-          <Weather />
+          <M.Weather />
         </Section>
       </SectionWrapper>
-      <Footer />
+      <M.Footer />
     </PageWrapper>
   );
 }

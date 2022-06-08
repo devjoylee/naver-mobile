@@ -6,4 +6,3 @@ export { default as Webtoon } from './WebtoonSection/Webtoon/Webtoon';
 export { default as WebtoonNav } from './WebtoonSection/WebtoonNav/WebtoonNav';
 export { default as ScrollContainer } from './WebtoonSection/ScrollContainer/ScrollContainer';
 export { default as Weather } from './WeatherSection/Weather';
-export { default as SearchBox } from './SearchBox/SearchBox';

@@ -4,8 +4,8 @@ import styled from 'styled-components';
 
 const IconWrapper = styled.div`
   font-size: ${({ size }) => (size ? size + 'px' : '')};
-  a {
-    color: ${({ color }) => (color ? color : '')};
+  svg {
+    fill: ${({ color }) => (color ? color : '')};
   }
   cursor: ${({ cursor }) => (cursor ? 'pointer' : 'auto')};
 `;
