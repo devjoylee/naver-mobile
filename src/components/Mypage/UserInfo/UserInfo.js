@@ -5,8 +5,6 @@ import defaultImage from 'images/default-profile.png';
 
 function UserInfo() {
   const { user } = useUserContext();
-  if (!user) return null;
-
   const { id, name, image } = user;
 
   return (

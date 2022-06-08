@@ -1,8 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
-import LinkTo from './LinkTo';
 
-const StyleHelpBar = styled.div`
+export const OptionNavBlock = styled.div`
   display: flex;
   align-items: center;
   justify-content: ${({ center }) => (center ? 'center' : 'flex-start')};
@@ -10,11 +8,11 @@ const StyleHelpBar = styled.div`
   padding: ${({ paddingNone }) => (paddingNone ? '' : '15px')};
 `;
 
-const StyleHelpBarItem = styled.span`
+export const OptionNavItemBlock = styled.span`
   position: relative;
   padding-right: 10px;
   margin-right: 10px;
-  font-size: 14px;
+  font-size: 13px;
   color: #888;
   cursor: pointer;
 
@@ -35,15 +33,3 @@ const StyleHelpBarItem = styled.span`
     color: #888;
   }
 `;
-
-export function HelpBar({ children, ...rest }) {
-  return <StyleHelpBar {...rest}>{children}</StyleHelpBar>;
-}
-
-export function HelpBarItem({ ...rest }) {
-  return (
-    <StyleHelpBarItem>
-      <LinkTo {...rest} />
-    </StyleHelpBarItem>
-  );
-}

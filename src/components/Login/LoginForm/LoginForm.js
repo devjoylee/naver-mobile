@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import * as S from './styles';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useUserContext } from 'contexts/UserContext';
 import { requestLogin } from 'utils/requestLogin';
 import useForm from 'hooks/useForm';
@@ -13,7 +13,7 @@ function LoginForm() {
     password: '',
   });
 
-  const history = useHistory();
+  const navigate = useNavigate();
   const { id, password } = values;
 
   const handleSubmit = async (e) => {
@@ -21,7 +21,7 @@ function LoginForm() {
     try {
       const user = await requestLogin({ id, password }); // 로그인 요청
       setUser(user);
-      history.replace('/'); // 홈으로
+      navigate('/'); // 홈으로
     } catch (error) {
       setError(error.message);
     }

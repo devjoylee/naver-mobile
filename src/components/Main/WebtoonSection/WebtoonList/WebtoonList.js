@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import * as S from './styles';
-import { ScrollContainer } from 'components/Main';
+import { ScrollContainer } from '../';
 import { fetcher } from 'utils/fetcher';
 
-function Webtoon() {
+function WebtoonList() {
   const [webtoons, setWebtoons] = useState([]);
 
   useEffect(() => {
-    fetcher('/api/webtoons').then((data) => setWebtoons(data.webtoons));
+    let isRendered = false;
+    fetcher('/api/webtoons').then((data) => {
+      if (!isRendered) setWebtoons(data.webtoons);
+    });
+
+    return () => {
+      isRendered = true;
+    };
   }, []);
 
   return (
@@ -25,4 +32,4 @@ function Webtoon() {
   );
 }
 
-export default Webtoon;
+export default WebtoonList;

@@ -1,10 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
+import { ThemeProvider } from 'styled-components';
+import defaultTheme from 'styles/DefaultTheme';
 import GlobalStyles from 'styles/globalStyles';
-import Route from './components/Route';
-import ScrollToTop from 'utils/ScrollToTop';
-import { LoginPage, MainPage, MyPage, SearchPage, JoinPage } from 'pages';
+import * as P from 'pages';
 
 const Container = styled.div`
   max-width: 720px;
@@ -14,19 +14,18 @@ const Container = styled.div`
 
 function App() {
   return (
-    <Container>
-      <GlobalStyles />
-      <Router>
-        <ScrollToTop />
-        <Switch>
-          <Route exact path='/' component={MainPage} />
-          <Route path='/login' component={LoginPage} />
-          <Route auth path='/mypage' component={MyPage} />
-          <Route path='/search' component={SearchPage} />
-          <Route path='/join' component={JoinPage} />
-        </Switch>
-      </Router>
-    </Container>
+    <ThemeProvider theme={defaultTheme}>
+      <Container>
+        <GlobalStyles />
+        <Routes>
+          <Route path='/' index element={<P.MainPage />} />
+          <Route path='/login' element={<P.LoginPage />} />
+          <Route path='/mypage' element={<P.MyPage />} />
+          <Route path='/search' element={<P.SearchPage />} />
+          <Route path='/join' element={<P.JoinPage />} />
+        </Routes>
+      </Container>
+    </ThemeProvider>
   );
 }
 

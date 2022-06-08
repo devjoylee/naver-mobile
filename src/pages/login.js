@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container, PageWrapper } from 'styles/globalStyles';
-import { Logo, BackButton } from 'components/Common';
-import { LoginForm, HelpLogin } from 'components/Login';
+import { Container, PageWrapper } from 'components/Common/styled';
+import { Logo, BackButton, OptionNav, OptionNavItem } from 'components/Common';
+import { LoginForm } from 'components/Login';
 
 function LoginPage() {
   return (
@@ -13,7 +13,11 @@ function LoginPage() {
       <Container margin={{ bottom: 40 }}>
         <LoginForm />
       </Container>
-      <HelpLogin />
+      <OptionNav center>
+        <OptionNavItem text='아이디 찾기' />
+        <OptionNavItem text='비밀번호 찾기' />
+        <OptionNavItem to='/join' text='회원가입' />
+      </OptionNav>
     </PageWrapper>
   );
 }
