@@ -6,7 +6,7 @@ import { VscMenu } from 'react-icons/vsc';
 import { BiMicrophone } from 'react-icons/bi';
 import * as S from './styles';
 
-function MainHeader() {
+export const MainHeader = () => {
   const { user } = useUserContext();
 
   return (
@@ -25,6 +25,4 @@ function MainHeader() {
       </S.SearchBox>
     </S.HeaderContainer>
   );
-}
-
-export default MainHeader;
+};

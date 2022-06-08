@@ -9,7 +9,6 @@ import * as M from 'components/Main';
 const SectionWrapper = styled.main`
   padding: 0 15px;
   background: linear-gradient(to bottom, #fff 5%, #eff2f8 40%);
-  margin: 0px -20px;
 `;
 
 function MainPage() {
@@ -17,7 +16,7 @@ function MainPage() {
   const npay = <img src={logoNpay} alt='네이버페이'></img>;
 
   return (
-    <PageWrapper padding>
+    <PageWrapper graybg>
       <M.MainHeader />
       <SectionWrapper>
         <Section title='오늘의 추천 웹툰' isOpened={true}>

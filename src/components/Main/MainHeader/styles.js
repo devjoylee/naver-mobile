@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const HeaderContainer = styled.header`
-  margin-bottom: 30px;
+  padding: 20px;
+  background: #fff;
 `;
 
 export const SearchBox = styled(Link)`
