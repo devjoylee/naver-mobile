@@ -2,7 +2,7 @@ import React from 'react';
 import { VscMenu } from 'react-icons/vsc';
 import Icon from 'components/Common/Icon';
 import Logo from 'components/Common/Logo';
-import { Container } from 'styles/globalStyles';
+import { Container } from 'components/Common/styled';
 import { useUserContext } from 'contexts/UserContext';
 
 function MainHeader() {

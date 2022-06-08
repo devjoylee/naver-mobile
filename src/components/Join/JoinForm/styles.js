@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Input, Button } from 'styles/globalStyles';
+import { Input, Button } from 'components/Common/styled';
 
 export const Form = styled.form`
   padding-bottom: 40px;

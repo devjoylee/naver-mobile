@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { UserInfo, Navbar, Logout, InfoLinks } from 'components/Mypage';
-import { Container, PageWrapper } from 'styles/globalStyles';
+import { Container, PageWrapper } from 'components/Common/styled';
 import { useUserContext } from 'contexts/UserContext';
 import { useNavigate } from 'react-router-dom';
 

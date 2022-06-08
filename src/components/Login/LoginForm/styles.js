@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Input, Button } from 'styles/globalStyles';
+import { Input, Button } from 'components/Common/styled';
 
 // login form
 export const LoginForm = styled.form``;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, PageWrapper } from 'styles/globalStyles';
+import { Container, PageWrapper } from 'components/Common/styled';
 import { Logo, BackButton } from 'components/Common';
 import { LoginForm, HelpLogin } from 'components/Login';
 

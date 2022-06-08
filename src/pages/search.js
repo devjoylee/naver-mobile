@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { SearchBar, History, HelpSearch } from 'components/Search';
-import { PageWrapper } from 'styles/globalStyles';
+import { PageWrapper } from 'components/Common/styled';
 
 const SearchContainer = styled.div`
   display: flex;
