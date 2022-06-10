@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { UserInfo, Navbar, Logout, InfoLinks } from 'components/Mypage';
+import { UserInfo, Navbar, Logout, NavList } from 'components/Mypage';
 import { Container, PageWrapper } from 'components/Common/styled';
 import { useUserContext } from 'contexts/UserContext';
 import { useNavigate } from 'react-router-dom';
@@ -16,7 +16,7 @@ function MyPage() {
     <PageWrapper graybg>
       <Navbar />
       <UserInfo />
-      <InfoLinks />
+      <NavList />
       <Container padding={{ tb: 20 }}>
         <Logout />
       </Container>
