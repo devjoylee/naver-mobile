@@ -34,7 +34,7 @@ export const Buttons = styled.div`
   align-items: center;
   padding: 10px 15px;
   border-radius: 20px;
-  background: ${({ theme }) => theme.color.main};
+  background: ${({ theme }) => theme.color.main00a};
   cursor: pointer;
   @media only screen and (max-width: 768px) {
     width: 170px;
