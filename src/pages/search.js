@@ -4,15 +4,7 @@ import { PageWrapper } from 'components/Common/styled';
 import { OptionNav, OptionNavItem } from 'components/Common';
 import { SearchBar, History } from 'components/Search';
 
-const SearchContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background: #fff;
-  min-height: 200px;
-`;
-
-function SearchPage() {
+export const SearchPage = () => {
   const [keywords, setKeywords] = useState(JSON.parse(localStorage.getItem('keywords') || '[]'));
 
   useEffect(() => {
@@ -65,6 +57,12 @@ function SearchPage() {
       </SearchContainer>
     </PageWrapper>
   );
-}
+};
 
-export default SearchPage;
+const SearchContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fff;
+  min-height: 200px;
+`;

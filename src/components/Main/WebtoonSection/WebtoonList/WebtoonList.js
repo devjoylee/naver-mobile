@@ -3,7 +3,7 @@ import * as S from './styles';
 import { ScrollContainer } from '../';
 import { fetcher } from 'utils/fetcher';
 
-function WebtoonList() {
+export const WebtoonList = () => {
   const [webtoons, setWebtoons] = useState([]);
 
   useEffect(() => {
@@ -30,6 +30,4 @@ function WebtoonList() {
       ))}
     </ScrollContainer>
   );
-}
-
-export default WebtoonList;
+};

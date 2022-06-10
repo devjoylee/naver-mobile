@@ -5,7 +5,7 @@ import { useUserContext } from 'contexts/UserContext';
 import { requestLogin } from 'utils/requestLogin';
 import useForm from 'hooks/useForm';
 
-function LoginForm() {
+export const LoginForm = () => {
   const { setUser } = useUserContext();
   const [error, setError] = useState('');
   const { values, handleChange } = useForm({
@@ -49,6 +49,4 @@ function LoginForm() {
       <S.LoginButton disabled={!isSubmittable}>로그인</S.LoginButton>
     </S.LoginForm>
   );
-}
-
-export default LoginForm;
+};

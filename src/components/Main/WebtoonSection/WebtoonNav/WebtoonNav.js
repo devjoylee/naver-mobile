@@ -3,7 +3,7 @@ import * as S from './styles';
 import { BiCalendar, BiBookHeart } from 'react-icons/bi';
 import { SiWebtoon } from 'react-icons/si';
 
-function WebtoonNav() {
+export const WebtoonNav = () => {
   const today = new Date();
   const day = today.toLocaleDateString('ko-KR', {
     weekday: 'short',
@@ -25,6 +25,4 @@ function WebtoonNav() {
       </S.WebtoonLink>
     </S.LinkWrapper>
   );
-}
-
-export default WebtoonNav;
+};

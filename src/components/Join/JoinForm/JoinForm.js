@@ -5,7 +5,7 @@ import validate from 'utils/validation';
 import { useNavigate } from 'react-router-dom';
 import { requestSignup } from 'utils/requestSignup';
 
-function JoinForm() {
+export const JoinForm = () => {
   const [errors, setErrors] = useState({});
   const { values, handleChange } = useForm({
     id: '',
@@ -101,6 +101,4 @@ function JoinForm() {
       <S.JoinButton type='submit'>가입하기</S.JoinButton>
     </S.Form>
   );
-}
-
-export default JoinForm;
+};

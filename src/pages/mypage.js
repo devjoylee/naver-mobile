@@ -4,7 +4,7 @@ import { Container, PageWrapper } from 'components/Common/styled';
 import { useUserContext } from 'contexts/UserContext';
 import { useNavigate } from 'react-router-dom';
 
-function MyPage() {
+export const MyPage = () => {
   const navigate = useNavigate();
   const { user } = useUserContext();
 
@@ -21,6 +21,4 @@ function MyPage() {
       </Container>
     </PageWrapper>
   );
-}
-
-export default MyPage;
+};

@@ -1,5 +1,5 @@
-export { default as JoinPage } from './join';
-export { default as LoginPage } from './login';
+export { JoinPage } from './join';
+export { LoginPage } from './login';
 export { MainPage } from './main';
-export { default as MyPage } from './mypage';
-export { default as SearchPage } from './search';
+export { MyPage } from './mypage';
+export { SearchPage } from './search';
