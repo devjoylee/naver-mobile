@@ -3,7 +3,7 @@ import * as S from './styles';
 import { useUserContext } from 'contexts/UserContext';
 import { fetcher } from 'utils/fetcher';
 
-function RecommendWebtoon() {
+export const RecommendWebtoon = () => {
   const [recommend, setRecommend] = useState([]);
   const {
     user: { name },
@@ -34,6 +34,4 @@ function RecommendWebtoon() {
       ))}
     </>
   );
-}
-
-export default RecommendWebtoon;
+};

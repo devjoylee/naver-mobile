@@ -15,7 +15,7 @@ const Container = styled.div`
   }
 `;
 
-function ScrollContainer({ children }) {
+export const ScrollContainer = ({ children }) => {
   const slider = useRef(null);
 
   let isDown = false;
@@ -58,6 +58,4 @@ function ScrollContainer({ children }) {
       {children}
     </Container>
   );
-}
-
-export default ScrollContainer;
+};

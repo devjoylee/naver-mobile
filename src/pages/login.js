@@ -3,7 +3,7 @@ import { Container, PageWrapper } from 'components/Common/styled';
 import { Logo, BackButton, OptionNav, OptionNavItem } from 'components/Common';
 import { LoginForm } from 'components/Login';
 
-function LoginPage() {
+export const LoginPage = () => {
   return (
     <PageWrapper graybg padding>
       <BackButton />
@@ -20,6 +20,4 @@ function LoginPage() {
       </OptionNav>
     </PageWrapper>
   );
-}
-
-export default LoginPage;
+};

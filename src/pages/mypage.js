@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import { UserInfo, Navbar, Logout, InfoLinks } from 'components/Mypage';
+import { MyHeader, Logout, NavList } from 'components/Mypage';
 import { Container, PageWrapper } from 'components/Common/styled';
 import { useUserContext } from 'contexts/UserContext';
 import { useNavigate } from 'react-router-dom';
 
-function MyPage() {
+export const MyPage = () => {
   const navigate = useNavigate();
   const { user } = useUserContext();
 
@@ -14,14 +14,11 @@ function MyPage() {
 
   return (
     <PageWrapper graybg>
-      <Navbar />
-      <UserInfo />
-      <InfoLinks />
+      <MyHeader />
+      <NavList />
       <Container padding={{ tb: 20 }}>
         <Logout />
       </Container>
     </PageWrapper>
   );
-}
-
-export default MyPage;
+};

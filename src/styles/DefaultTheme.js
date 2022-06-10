@@ -1,6 +1,7 @@
 const defaultTheme = {
   color: {
-    main: '#09B65A',
+    main00a: '#00AF34',
+    main00b: '#00B636',
     bg: '#EFF2F8',
   },
   style: {

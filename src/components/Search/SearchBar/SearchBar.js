@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BackButton } from 'components/Common';
 import * as S from './styles';
 
-function SearchBar({ onAddKeyword }) {
+export const SearchBar = ({ onAddKeyword }) => {
   const [keyword, setKeyword] = useState('');
 
   const handleKeyword = (e) => {
@@ -40,6 +40,4 @@ function SearchBar({ onAddKeyword }) {
       <S.SearchButton onClick={() => handleSearch()} />
     </S.BarWrapper>
   );
-}
-
-export default SearchBar;
+};

@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './styles';
 
-function History({ keywords, onRemoveKeyword, onClearList }) {
+export const History = ({ keywords, onRemoveKeyword, onClearList }) => {
   if (keywords.length === 0) {
     return (
       <S.ListContainer>
@@ -30,6 +30,4 @@ function History({ keywords, onRemoveKeyword, onClearList }) {
       </S.RecentList>
     </S.ListContainer>
   );
-}
-
-export default History;
+};

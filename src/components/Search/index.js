@@ -1,2 +1,2 @@
-export { default as SearchBar } from './SearchBar/SearchBar';
-export { default as History } from './History/History';
+export { SearchBar } from './SearchBar/SearchBar';
+export { History } from './History/History';

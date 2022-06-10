@@ -1,1 +1,1 @@
-export { default as JoinForm } from './JoinForm/JoinForm.js';
+export { JoinForm } from './JoinForm/JoinForm.js';
