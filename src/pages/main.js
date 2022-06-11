@@ -6,6 +6,7 @@ import * as M from 'components/Main';
 export const MainPage = () => {
   return (
     <PageWrapper graybg>
+      <M.FixedHeader />
       <M.MainHeader />
       <SectionWrapper>
         <M.WebtoonSection />

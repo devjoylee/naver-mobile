@@ -4,3 +4,4 @@ export { SectionLayout } from './SectionLayout/SectionLayout';
 export { WebtoonSection } from './WebtoonSection/WebtoonSection';
 export { NPaySection } from './NPaySection/NPaySection';
 export { WeatherSection } from './WeatherSection/WeatherSection';
+export { FixedHeader } from './FixedHeader/FixedHeader';
