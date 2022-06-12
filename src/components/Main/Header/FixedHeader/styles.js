@@ -1,14 +1,24 @@
 import styled from 'styled-components';
 
-export const HeaderContainer = styled.div``;
+export const HeaderContainer = styled.header`
+  position: fixed;
+  max-width: 720px;
+  width: 100%;
+  z-index: 999;
+`;
 
 export const SearchBar = styled.div`
   height: 58px;
   display: flex;
   align-items: center;
   background: #fff;
+  opacity: 0;
+  position: relative;
+  z-index: 1000;
   .logo {
     padding: 18px;
+    transform: scale(0);
+    transition: all 0.2s ease-in-out;
     img {
       display: block;
       width: 25px;

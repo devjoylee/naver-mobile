@@ -1,7 +1,7 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
-export const ScrollContainer = ({ children }) => {
+export const ScrollContainer = ({ children, initX }) => {
   const slider = useRef(null);
 
   let isDown = false;
@@ -32,6 +32,10 @@ export const ScrollContainer = ({ children }) => {
     const walk = (x - startX) * 1.5; //scroll-fast
     slider.current.scrollLeft = scrollLeft - walk;
   };
+
+  useEffect(() => {
+    slider.current.scrollLeft = initX;
+  }, [initX]);
 
   return (
     <Container

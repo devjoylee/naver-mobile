@@ -2,7 +2,11 @@ import styled from 'styled-components';
 
 export const NavBarContainer = styled.div`
   background-image: linear-gradient(to right, #09c665 0, #07bb7b 100%);
+  transition: all 0.2s ease-in-out;
+  transform: translateY(-120px);
   position: relative;
+  z-index: 900;
+
   &::before,
   &::after {
     content: '';
