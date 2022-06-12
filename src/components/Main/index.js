@@ -1,7 +1,7 @@
-export { MainHeader } from './MainHeader/MainHeader';
+export { MainHeader } from './Header/MainHeader/MainHeader';
+export { FixedHeader } from './Header/FixedHeader/FixedHeader';
 export { Footer } from './Footer/Footer';
-export { SectionLayout } from './SectionLayout/SectionLayout';
-export { WebtoonSection } from './WebtoonSection/WebtoonSection';
-export { NPaySection } from './NPaySection/NPaySection';
-export { WeatherSection } from './WeatherSection/WeatherSection';
-export { FixedHeader } from './FixedHeader/FixedHeader';
+export { SectionLayout } from './Section/SectionLayout/SectionLayout';
+export { WebtoonSection } from './Section/WebtoonSection/WebtoonSection';
+export { NPaySection } from './Section/NPaySection/NPaySection';
+export { WeatherSection } from './Section/WeatherSection/WeatherSection';
