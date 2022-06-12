@@ -29,7 +29,7 @@ export const ScrollContainer = ({ children }) => {
     if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - slider.current.offsetLeft;
-    const walk = (x - startX) * 3; //scroll-fast
+    const walk = (x - startX) * 1.5; //scroll-fast
     slider.current.scrollLeft = scrollLeft - walk;
   };
 

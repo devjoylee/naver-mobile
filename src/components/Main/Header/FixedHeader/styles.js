@@ -28,16 +28,3 @@ export const SearchBar = styled.div`
     padding-right: 18px;
   }
 `;
-
-export const NavBar = styled.ul`
-  width: 1200px;
-  height: 55px;
-  display: flex;
-  align-items: center;
-  background-image: linear-gradient(to right, #09c665 0, #07bb7b 100%);
-  a {
-    display: block;
-    color: #fff;
-    padding: 18px 10px 0;
-  }
-`;

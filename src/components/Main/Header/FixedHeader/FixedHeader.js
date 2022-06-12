@@ -1,10 +1,10 @@
 import React from 'react';
 import * as S from './styles';
 import logo from 'images/logo01.png';
-import { Icon, ScrollContainer } from 'components/Common';
+import { Icon } from 'components/Common';
+import { ScrollNav } from 'components/Main';
 import { BiMicrophone } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
-import { NavMainData } from 'constants/NavMain';
 
 export const FixedHeader = () => {
   return (
@@ -20,15 +20,7 @@ export const FixedHeader = () => {
           <BiMicrophone />
         </Icon>
       </S.SearchBar>
-      <ScrollContainer>
-        <S.NavBar>
-          {NavMainData.map(({ name, link }) => (
-            <li key={name}>
-              <a href={link}>{name}</a>
-            </li>
-          ))}
-        </S.NavBar>
-      </ScrollContainer>
+      <ScrollNav />
     </S.HeaderContainer>
   );
 };
