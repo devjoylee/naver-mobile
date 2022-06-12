@@ -4,6 +4,8 @@ import logo from 'images/logo01.png';
 import { Icon } from 'components/Common';
 import { BiMicrophone } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
+import { NavMainData } from 'constants/NavMain';
+import { ScrollContainer } from '../WebtoonSection';
 
 export const FixedHeader = () => {
   return (
@@ -19,6 +21,15 @@ export const FixedHeader = () => {
           <BiMicrophone />
         </Icon>
       </S.SearchBar>
+      <ScrollContainer>
+        <S.NavBar>
+          {NavMainData.map(({ name, link }) => (
+            <li key={name}>
+              <a href={link}>{name}</a>
+            </li>
+          ))}
+        </S.NavBar>
+      </ScrollContainer>
     </S.HeaderContainer>
   );
 };
