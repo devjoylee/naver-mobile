@@ -12,19 +12,10 @@ export const SearchBar = styled.div`
   display: flex;
   align-items: center;
   background: #fff;
-  opacity: 0;
+  visibility: hidden;
   position: relative;
   z-index: 1000;
-  .logo {
-    padding: 18px;
-    transform: scale(0);
-    transition: all 0.2s ease-in-out;
-    img {
-      display: block;
-      width: 25px;
-      height: 25px;
-    }
-  }
+
   .search {
     flex: 1;
     height: 100%;
@@ -36,5 +27,17 @@ export const SearchBar = styled.div`
   }
   .mic {
     padding-right: 18px;
+    cursor: pointer;
+  }
+`;
+
+export const Logo = styled.div`
+  padding: 18px;
+  transform: scale(0);
+  transition: all 0.2s ease-in-out;
+  img {
+    display: block;
+    width: 25px;
+    height: 25px;
   }
 `;

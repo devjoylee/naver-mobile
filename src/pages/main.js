@@ -7,8 +7,8 @@ export const MainPage = () => {
   return (
     <PageWrapper graybg>
       <M.FixedHeader />
-      <M.MainHeader />
       <SectionWrapper>
+        <M.Home />
         <M.WebtoonSection />
         <M.NPaySection />
         <M.WeatherSection />

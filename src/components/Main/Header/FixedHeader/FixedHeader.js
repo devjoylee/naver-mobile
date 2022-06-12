@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from 'react';
-import * as S from './styles';
-import logo from 'images/logo01.png';
+import { Link } from 'react-router-dom';
 import { Icon } from 'components/Common';
 import { ScrollNav } from 'components/Main';
 import { BiMicrophone } from 'react-icons/bi';
-import { Link } from 'react-router-dom';
+import logo from 'images/logo01.png';
+import * as S from './styles';
 
 export const FixedHeader = () => {
   const searchRef = useRef(null);
@@ -14,11 +14,11 @@ export const FixedHeader = () => {
   useEffect(() => {
     window.addEventListener('scroll', () => {
       if (window.pageYOffset > 200) {
-        searchRef.current.style.opacity = '1';
+        searchRef.current.style.visibility = 'visible';
         navRef.current.style.transform = 'translateY(0)';
         logoRef.current.style.transform = 'scale(1)';
       } else {
-        searchRef.current.style.opacity = '0';
+        searchRef.current.style.visibility = 'hidden';
         navRef.current.style.transform = 'translateY(-120px)';
         logoRef.current.style.transform = 'scale(0)';
       }
@@ -28,9 +28,9 @@ export const FixedHeader = () => {
   return (
     <S.HeaderContainer>
       <S.SearchBar ref={searchRef}>
-        <Link to='/' className='logo' ref={logoRef}>
+        <S.Logo ref={logoRef} onClick={() => window.scrollTo(0, 0)}>
           <img src={logo} alt='' />
-        </Link>
+        </S.Logo>
         <Link to='/search' className='search'>
           검색어를 입력해주세요.
         </Link>
