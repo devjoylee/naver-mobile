@@ -1,11 +1,10 @@
 import React from 'react';
 import * as S from './styles';
 import logo from 'images/logo01.png';
-import { Icon } from 'components/Common';
+import { Icon, ScrollContainer } from 'components/Common';
 import { BiMicrophone } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import { NavMainData } from 'constants/NavMain';
-import { ScrollContainer } from '../WebtoonSection';
 
 export const FixedHeader = () => {
   return (
