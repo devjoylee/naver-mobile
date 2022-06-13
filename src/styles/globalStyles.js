@@ -9,12 +9,13 @@ export const reset = css`
 }
 html, body, #root{
   height: 100%;
+  min-height: 100vh;
   line-height: 1;
 }
 body {
   font-size: 15px;
   color: #333;
-  background: #fafafa;
+  background: #eee;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,

@@ -20,5 +20,4 @@ export const MainPage = () => {
 
 const SectionWrapper = styled.main`
   padding: 0 15px;
-  background: linear-gradient(to bottom, #fff 5%, #eff2f8 40%);
 `;
