@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
-export const NavBarContainer = styled.div`
+export const NavBarContainer = styled.nav`
   background-image: linear-gradient(to right, #09c665 0, #07bb7b 100%);
-  transition: all 0.2s ease-in-out;
   transform: translateY(-120px);
+  transition: transform 0.35s ease-in-out;
   position: relative;
   z-index: 900;
-
+  &.visible {
+    transform: translateY(0px);
+  }
   &::before,
   &::after {
     content: '';

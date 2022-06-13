@@ -4,7 +4,7 @@ import { ScrollContainer } from 'components/Common';
 import { NavLink } from 'react-router-dom';
 import { NavMainData } from 'constants/NavMain';
 
-export const ScrollNav = React.forwardRef(({}, ref) => {
+export const ScrollNav = ({ className }) => {
   const [active, setActive] = useState('홈');
   const handleClick = (name) => {
     if (name === '홈') window.scrollTo(0, 0);
@@ -12,7 +12,7 @@ export const ScrollNav = React.forwardRef(({}, ref) => {
   };
 
   return (
-    <S.NavBarContainer ref={ref}>
+    <S.NavBarContainer className={className}>
       <ScrollContainer initX={300}>
         <S.NavBar>
           {NavMainData.map(({ name, link }) => (
@@ -28,4 +28,4 @@ export const ScrollNav = React.forwardRef(({}, ref) => {
       </ScrollContainer>
     </S.NavBarContainer>
   );
-});
+};

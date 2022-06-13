@@ -5,6 +5,11 @@ export const HeaderContainer = styled.header`
   max-width: 720px;
   width: 100%;
   z-index: 999;
+  transform: translateY(-120px);
+  transition: transform 0.2s ease-in-out;
+  &.visible {
+    transform: translateY(0);
+  }
 `;
 
 export const SearchBar = styled.div`
@@ -12,7 +17,6 @@ export const SearchBar = styled.div`
   display: flex;
   align-items: center;
   background: #fff;
-  visibility: hidden;
   position: relative;
   z-index: 1000;
 
@@ -34,7 +38,10 @@ export const SearchBar = styled.div`
 export const Logo = styled.div`
   padding: 18px;
   transform: scale(0);
-  transition: all 0.2s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  &.visible {
+    transform: scale(1);
+  }
   img {
     display: block;
     width: 25px;

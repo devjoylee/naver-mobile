@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Icon } from 'components/Common';
 import { ScrollNav } from 'components/Main';
@@ -7,28 +7,19 @@ import logo from 'images/logo01.png';
 import * as S from './styles';
 
 export const FixedHeader = () => {
-  const searchRef = useRef(null);
-  const logoRef = useRef(null);
-  const navRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 200) {
-        searchRef.current.style.visibility = 'visible';
-        navRef.current.style.transform = 'translateY(0)';
-        logoRef.current.style.transform = 'scale(1)';
-      } else {
-        searchRef.current.style.visibility = 'hidden';
-        navRef.current.style.transform = 'translateY(-120px)';
-        logoRef.current.style.transform = 'scale(0)';
-      }
+      let y = window.pageYOffset;
+      if (y > 100 && y < 300) setIsVisible(y > 200);
     });
   });
 
   return (
-    <S.HeaderContainer>
-      <S.SearchBar ref={searchRef}>
-        <S.Logo ref={logoRef} onClick={() => window.scrollTo(0, 0)}>
+    <S.HeaderContainer className={isVisible ? 'visible' : 'hidden'}>
+      <S.SearchBar>
+        <S.Logo onClick={() => window.scrollTo(0, 0)} className={isVisible ? 'visible' : 'hidden'}>
           <img src={logo} alt='' />
         </S.Logo>
         <Link to='/search' className='search'>
@@ -38,7 +29,7 @@ export const FixedHeader = () => {
           <BiMicrophone />
         </Icon>
       </S.SearchBar>
-      <ScrollNav ref={navRef} />
+      <ScrollNav className={isVisible ? 'visible' : 'hidden'} />
     </S.HeaderContainer>
   );
 };
