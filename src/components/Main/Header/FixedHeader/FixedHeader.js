@@ -25,7 +25,7 @@ export const FixedHeader = () => {
         <Link to='/search' className='search'>
           검색어를 입력해주세요.
         </Link>
-        <Icon size='32' color='#09B65A' className='mic'>
+        <Icon size='32' color='#09B65A'>
           <BiMicrophone />
         </Icon>
       </S.SearchBar>

@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import { GoSearch } from 'react-icons/go';
-import { VscClose } from 'react-icons/vsc';
 
 export const ListContainer = styled.div`
   background: #fff;
@@ -40,11 +38,16 @@ export const TextWrapper = styled.li`
   margin-bottom: 10px;
   height: 30px;
   line-height: 30px;
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
-export const Icon = styled(GoSearch)`
-  font-size: 16px;
-  padding: 6px;
+export const Icon = styled.div`
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: #ddd;
   color: #fff;
@@ -62,7 +65,7 @@ export const Date = styled.span`
   padding-right: 5px;
 `;
 
-export const RemoveButton = styled(VscClose)`
+export const RemoveButton = styled.div`
   font-size: 23px;
   color: #ccc;
   cursor: pointer;

@@ -6,6 +6,7 @@ const defaultTheme = {
     bg: '#F4F6F8',
   },
   style: {
+    header_height: '58px',
     border_green: '1px solid #03C75A',
   },
 };

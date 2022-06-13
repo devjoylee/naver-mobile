@@ -16,6 +16,7 @@ body {
   font-size: 15px;
   color: #333;
   background: #eee;
+  overflow-y: scroll;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,

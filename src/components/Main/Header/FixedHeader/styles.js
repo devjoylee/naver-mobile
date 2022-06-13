@@ -29,9 +29,8 @@ export const SearchBar = styled.div`
     color: #ccc;
     cursor: text;
   }
-  .mic {
-    padding-right: 18px;
-    cursor: pointer;
+  .icon {
+    padding-right: 15px;
   }
 `;
 

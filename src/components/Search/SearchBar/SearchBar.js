@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { BackButton } from 'components/Common';
+import { GoSearch } from 'react-icons/go';
+import { RiCloseCircleFill } from 'react-icons/ri';
+import { VscArrowLeft } from 'react-icons/vsc';
 import * as S from './styles';
 
 export const SearchBar = ({ onAddKeyword }) => {
@@ -24,7 +26,9 @@ export const SearchBar = ({ onAddKeyword }) => {
 
   return (
     <S.BarWrapper>
-      <BackButton />
+      <S.BackButton to='/'>
+        <VscArrowLeft />
+      </S.BackButton>
       <S.InputWrapper>
         <S.Input
           autoFocus
@@ -35,9 +39,13 @@ export const SearchBar = ({ onAddKeyword }) => {
             if (e.keyCode === 13) handleSearch();
           }}
         />
-        <S.ResetButton onClick={handleReset} active={hasKeyword ? 1 : 0} />
+        <S.ResetButton onClick={handleReset} active={hasKeyword ? 1 : 0}>
+          <RiCloseCircleFill />
+        </S.ResetButton>
       </S.InputWrapper>
-      <S.SearchButton onClick={() => handleSearch()} />
+      <S.SearchButton onClick={() => handleSearch()}>
+        <GoSearch />
+      </S.SearchButton>
     </S.BarWrapper>
   );
 };

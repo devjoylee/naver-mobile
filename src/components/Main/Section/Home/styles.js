@@ -11,9 +11,6 @@ export const HomeNav = styled.nav`
   div:last-child {
     margin-left: 15px;
   }
-  svg {
-    cursor: pointer;
-  }
 `;
 
 export const SearchBarContainer = styled.div`
@@ -36,9 +33,8 @@ export const SearchBar = styled.div`
     color: #ccc;
     cursor: text;
   }
-  .mic {
+  .icon {
     padding-right: 15px;
-    cursor: pointer;
   }
 `;
 

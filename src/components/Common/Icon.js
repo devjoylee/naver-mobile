@@ -9,16 +9,20 @@ const IconWrapper = styled.div`
   svg {
     fill: ${({ color }) => (color ? color : '')};
   }
-  cursor: ${({ cursor }) => (cursor ? 'pointer' : 'auto')};
+  cursor: pointer;
 `;
 
 function Icon({ children, ...props }) {
   if (!props.linkTo) {
-    return <IconWrapper {...props}>{children}</IconWrapper>;
+    return (
+      <IconWrapper {...props} className='icon'>
+        {children}
+      </IconWrapper>
+    );
   }
 
   return (
-    <IconWrapper {...props}>
+    <IconWrapper {...props} className='icon'>
       <Link to={props.linkTo}>{children}</Link>
     </IconWrapper>
   );

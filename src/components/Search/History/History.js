@@ -1,4 +1,6 @@
 import React from 'react';
+import { GoSearch } from 'react-icons/go';
+import { VscClose } from 'react-icons/vsc';
 import * as S from './styles';
 
 export const History = ({ keywords, onRemoveKeyword, onClearList }) => {
@@ -17,16 +19,18 @@ export const History = ({ keywords, onRemoveKeyword, onClearList }) => {
         <S.DeleteAll onClick={onClearList}>Clear</S.DeleteAll>
       </S.Header>
       <S.RecentList>
-        {keywords.map(({ id, text, date }) => {
-          return (
-            <S.TextWrapper key={id}>
-              <S.Icon />
-              <S.Keyword>{text}</S.Keyword>
-              <S.Date>{date}</S.Date>
-              <S.RemoveButton onClick={() => onRemoveKeyword(id)} />
-            </S.TextWrapper>
-          );
-        })}
+        {keywords.map(({ id, text, date }) => (
+          <S.TextWrapper key={id}>
+            <S.Icon className='icon'>
+              <GoSearch />
+            </S.Icon>
+            <S.Keyword>{text}</S.Keyword>
+            <S.Date>{date}</S.Date>
+            <S.RemoveButton onClick={() => onRemoveKeyword(id)} className='icon'>
+              <VscClose />
+            </S.RemoveButton>
+          </S.TextWrapper>
+        ))}
       </S.RecentList>
     </S.ListContainer>
   );
