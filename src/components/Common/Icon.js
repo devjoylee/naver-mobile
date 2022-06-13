@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const IconWrapper = styled.div`
+  display: flex;
+  align-items: center;
   font-size: ${({ size }) => (size ? size + 'px' : '')};
   svg {
     fill: ${({ color }) => (color ? color : '')};

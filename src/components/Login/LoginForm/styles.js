@@ -16,5 +16,5 @@ export const ErrorMessage = styled.p`
 `;
 
 export const LoginButton = styled(Button)`
-  background-color: ${({ disabled }) => (disabled ? '#bcbcbc' : '#1fcf89')};
+  background-color: ${({ disabled, theme }) => (disabled ? '#bcbcbc' : theme.color.main00c)};
 `;

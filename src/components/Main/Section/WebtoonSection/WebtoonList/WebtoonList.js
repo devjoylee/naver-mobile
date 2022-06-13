@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import * as S from './styles';
-import { ScrollContainer } from '../';
 import { fetcher } from 'utils/fetcher';
+import { ScrollContainer } from 'components/Common';
 
 export const WebtoonList = () => {
   const [webtoons, setWebtoons] = useState([]);

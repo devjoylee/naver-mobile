@@ -1,21 +1,7 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
-const Container = styled.div`
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  margin: 0 0 20px 15px;
-  cursor: pointer;
-
-  -webkit-overflow-scrolling: touch; // only IOS
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-`;
-
-export const ScrollContainer = ({ children }) => {
+export const ScrollContainer = ({ children, initX }) => {
   const slider = useRef(null);
 
   let isDown = false;
@@ -43,9 +29,13 @@ export const ScrollContainer = ({ children }) => {
     if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - slider.current.offsetLeft;
-    const walk = (x - startX) * 3; //scroll-fast
+    const walk = (x - startX) * 1.5; //scroll-fast
     slider.current.scrollLeft = scrollLeft - walk;
   };
+
+  useEffect(() => {
+    slider.current.scrollLeft = initX;
+  }, [initX]);
 
   return (
     <Container
@@ -59,3 +49,16 @@ export const ScrollContainer = ({ children }) => {
     </Container>
   );
 };
+
+const Container = styled.div`
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+
+  -webkit-overflow-scrolling: touch; // only IOS
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;

@@ -35,5 +35,5 @@ export const Validation = styled.p`
 
 export const JoinButton = styled(Button)`
   margin-top: 40px;
-  background-color: ${({ disabled }) => (disabled ? '#bcbcbc' : '#1fcf89')};
+  background-color: ${({ disabled, theme }) => (disabled ? '#bcbcbc' : theme.color.main00c)};
 `;

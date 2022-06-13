@@ -1,14 +1,11 @@
 import styled from 'styled-components';
 
-// webtoon list
 export const WebtoonContainer = styled.div`
   display: inline-block;
   width: 38%;
   border-radius: 5px;
-  &:not(:last-child) {
-    margin-right: 15px;
-  }
-
+  margin-bottom: 20px;
+  margin-left: 15px;
   @media (min-width: 600px) {
     width: 28%;
   }

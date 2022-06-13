@@ -6,6 +6,7 @@ export const LinkWrapper = styled.ul`
   align-items: center;
   background-color: #f9fafc;
   border-top: 1px solid #eee;
+  border-radius: 0 0 8px 8px;
   cursor: pointer;
 `;
 

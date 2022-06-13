@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 export const SectionContainer = styled.section`
   background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px 0 rgb(0 0 0 / 6%);
   & + & {
     margin-top: 10px;
   }

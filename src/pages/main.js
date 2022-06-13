@@ -6,8 +6,9 @@ import * as M from 'components/Main';
 export const MainPage = () => {
   return (
     <PageWrapper graybg>
-      <M.MainHeader />
+      <M.FixedHeader />
       <SectionWrapper>
+        <M.Home />
         <M.WebtoonSection />
         <M.NPaySection />
         <M.WeatherSection />
@@ -19,5 +20,4 @@ export const MainPage = () => {
 
 const SectionWrapper = styled.main`
   padding: 0 15px;
-  background: linear-gradient(to bottom, #fff 5%, #eff2f8 40%);
 `;
