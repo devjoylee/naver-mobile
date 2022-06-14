@@ -18,21 +18,20 @@ export const TextWrapper = styled.ul``;
 export const Title = styled.li`
   font-size: 15px;
   font-weight: bold;
-  color: #333;
   letter-spacing: -1px;
 `;
 
 export const Author = styled.li`
   margin-top: 4px;
   font-size: 14px;
-  color: #797b84;
+  color: ${({ theme }) => theme.color.text2};
 `;
 
 export const RecommendTitle = styled.h3`
   padding: 15px 0;
   font-size: 14px;
-  color: #797b84;
-  border-top: 1px solid #eee;
+  color: ${({ theme }) => theme.color.text1};
+  border-top: ${({ theme }) => theme.style.border_gray2};
 `;
 
 export const RecommendRow = styled.div`

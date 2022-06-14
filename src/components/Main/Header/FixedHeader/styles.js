@@ -26,7 +26,7 @@ export const SearchBar = styled.div`
     line-height: 58px;
     font-size: 18px;
     font-weight: 500;
-    color: #ccc;
+    color: ${({ theme }) => theme.color.text4};
     cursor: text;
   }
   .icon {
@@ -35,7 +35,11 @@ export const SearchBar = styled.div`
 `;
 
 export const Logo = styled.div`
-  padding: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 58px;
+  height: 58px;
   transform: scale(0);
   transition: transform 0.5s ease-in-out;
   &.visible {

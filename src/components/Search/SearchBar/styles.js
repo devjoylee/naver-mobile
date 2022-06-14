@@ -11,6 +11,9 @@ export const BarWrapper = styled.div`
   .icon {
     padding: 18px;
   }
+  svg {
+    display: block;
+  }
 `;
 
 export const InputWrapper = styled.div`
@@ -23,21 +26,28 @@ export const InputWrapper = styled.div`
 export const Input = styled.input`
   width: 100%;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
   padding-right: 20px;
+  padding-top: 3px;
   box-sizing: border-box;
   &::placeholder {
-    color: #ccc;
+    color: ${({ theme }) => theme.color.text4};
   }
 `;
 
 export const BackButton = styled(Link)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 58px;
+  height: 58px;
   font-size: 26px;
-  color: #aaa;
-  margin: 16px;
+  color: ${({ theme }) => theme.color.text2};
+  transform: scale(0.1);
+  transition: transform 0.2s ease-in-out;
   cursor: pointer;
   &:hover {
-    color: #aaa;
+    color: ${({ theme }) => theme.color.text2};
   }
 `;
 
@@ -49,8 +59,8 @@ export const SearchButton = styled.div`
 `;
 
 export const ResetButton = styled.div`
-  font-size: 24px;
-  color: #ddd;
+  font-size: 20px;
+  color: ${({ theme }) => theme.color.bg3};
   opacity: ${({ active }) => (active ? 1 : 0)};
   cursor: pointer;
 `;

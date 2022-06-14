@@ -29,7 +29,6 @@ export const TextWrapper = styled.ul``;
 export const Title = styled.li`
   font-size: 15px;
   font-weight: bold;
-  color: #333;
   letter-spacing: -1px;
 `;
 

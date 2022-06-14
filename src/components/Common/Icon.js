@@ -7,6 +7,7 @@ const IconWrapper = styled.div`
   align-items: center;
   font-size: ${({ size }) => (size ? size + 'px' : '')};
   svg {
+    display: block;
     fill: ${({ color }) => (color ? color : '')};
   }
   cursor: pointer;

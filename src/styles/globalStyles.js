@@ -17,6 +17,7 @@ body {
   color: #333;
   background: #eee;
   overflow-y: scroll;
+  letter-spacing: -0.5px;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -45,7 +46,7 @@ table {
 a {
   text-decoration: none; 
   outline: none;
-  color: #1b1b1b;
+  color: #333;
 }
 a:hover, 
 a:active {

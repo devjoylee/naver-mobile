@@ -4,10 +4,10 @@ export const LogoutButton = styled.button`
   display: block;
   width: 80px;
   margin: 0 auto;
-  border: 1px solid #d6d6d6;
-  background: #eff2f8;
+  border: ${({ theme }) => theme.style.border_gray1};
+  background: ${({ theme }) => theme.color.bg4};
   padding: 7px 12px;
-  color: #666;
+  color: ${({ theme }) => theme.color.text1};
   outline: none;
   cursor: pointer;
 `;

@@ -27,14 +27,14 @@ export const Container = styled.div`
 
 export const PageWrapper = styled.div`
   min-height: 100vh;
-  background-color: ${({ graybg, theme }) => (graybg ? theme.color.bg : '#fff')};
+  background-color: ${({ graybg, theme }) => (graybg ? theme.color.bg1 : '#fff')};
   padding: ${({ padding }) => (padding ? '20px' : 0)};
 `;
 
 export const Input = styled.input`
   width: 100%;
   height: 50px;
-  border: 1px solid #dadada;
+  border: ${({ theme }) => theme.style.border_gray1};
   padding: 5px;
   background: #fff;
   box-sizing: border-box;

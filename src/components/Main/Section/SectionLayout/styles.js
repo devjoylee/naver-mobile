@@ -21,12 +21,11 @@ export const TitleWrapper = styled.div`
 export const Title = styled.h3`
   font-size: 16px;
   font-weight: bold;
-  color: #333;
 `;
 
 export const OpenIcon = styled.div`
-  font-size: 22px;
-  color: #777;
+  font-size: 20px;
+  color: ${({ theme }) => theme.color.text1};
   cursor: pointer;
   transform: rotate(${({ open }) => (open ? 0 : -180)}deg);
 `;
