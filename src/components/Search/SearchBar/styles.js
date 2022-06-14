@@ -31,6 +31,7 @@ export const Input = styled.input`
   padding-top: 3px;
   box-sizing: border-box;
   &::placeholder {
+    font-weight: 500;
     color: ${({ theme }) => theme.color.text4};
   }
 `;

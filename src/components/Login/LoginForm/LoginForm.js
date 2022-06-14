@@ -3,6 +3,7 @@ import * as S from './styles';
 import { useNavigate } from 'react-router-dom';
 import { useUserContext } from 'contexts/UserContext';
 import { requestLogin } from 'utils/requestLogin';
+import { MdPersonOutline, MdLockOutline } from 'react-icons/md';
 import useForm from 'hooks/useForm';
 
 export const LoginForm = () => {
@@ -31,20 +32,26 @@ export const LoginForm = () => {
 
   return (
     <S.LoginForm onSubmit={handleSubmit}>
-      <S.LoginInput
-        name='id'
-        type='text'
-        value={id}
-        placeholder='아이디'
-        onChange={handleChange}
-      />
-      <S.LoginInput
-        name='password'
-        type='password'
-        value={password}
-        placeholder='비밀번호'
-        onChange={handleChange}
-      />
+      <S.InputContainer>
+        <S.LoginInput className='id'>
+          <S.Icon>
+            <MdPersonOutline />
+          </S.Icon>
+          <input name='id' type='text' value={id} placeholder='아이디' onChange={handleChange} />
+        </S.LoginInput>
+        <S.LoginInput className='password'>
+          <S.Icon>
+            <MdLockOutline />
+          </S.Icon>
+          <input
+            name='password'
+            type='password'
+            value={password}
+            placeholder='비밀번호'
+            onChange={handleChange}
+          />
+        </S.LoginInput>
+      </S.InputContainer>
       {error && <S.ErrorMessage>{error}</S.ErrorMessage>}
       <S.LoginButton disabled={!isSubmittable}>로그인</S.LoginButton>
     </S.LoginForm>

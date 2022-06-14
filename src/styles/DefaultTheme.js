@@ -14,6 +14,7 @@ const defaultTheme = {
   },
   style: {
     header_height: '58px',
+    input_height: '50px',
     border_green: '1px solid #03C75A',
     border_gray1: '1px solid #DADADA',
     border_gray2: '1px solid #E2E5E8',

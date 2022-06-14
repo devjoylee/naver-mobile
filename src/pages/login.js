@@ -7,12 +7,10 @@ export const LoginPage = () => {
   return (
     <PageWrapper graybg padding>
       <BackButton />
-      <Container margin={{ top: 35, bottom: 40 }}>
+      <Container margin={{ top: 35 }}>
         <Logo />
       </Container>
-      <Container margin={{ bottom: 40 }}>
-        <LoginForm />
-      </Container>
+      <LoginForm />
       <OptionNav center>
         <OptionNavItem text='아이디 찾기' />
         <OptionNavItem text='비밀번호 찾기' />
