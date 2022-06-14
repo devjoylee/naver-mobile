@@ -65,4 +65,5 @@ const SearchContainer = styled.div`
   justify-content: space-between;
   background: #fff;
   min-height: 200px;
+  border-bottom: ${({ theme }) => theme.style.border_gray2};
 `;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { GoSearch } from 'react-icons/go';
 import { RiCloseCircleFill } from 'react-icons/ri';
 import { VscArrowLeft } from 'react-icons/vsc';
@@ -6,6 +6,7 @@ import * as S from './styles';
 
 export const SearchBar = ({ onAddKeyword }) => {
   const [keyword, setKeyword] = useState('');
+  const iconRef = useRef(null);
 
   const handleKeyword = (e) => {
     setKeyword(e.target.value);
@@ -24,9 +25,13 @@ export const SearchBar = ({ onAddKeyword }) => {
 
   const hasKeyword = !!keyword;
 
+  useEffect(() => {
+    iconRef.current.style.transform = 'scale(1)';
+  }, []);
+
   return (
     <S.BarWrapper>
-      <S.BackButton to='/'>
+      <S.BackButton to='/' ref={iconRef}>
         <VscArrowLeft />
       </S.BackButton>
       <S.InputWrapper>
