@@ -11,6 +11,7 @@ const defaultTheme = {
     text2: '#8F8F8F',
     text3: '#A5A5A5',
     text4: '#D1D3D9',
+    text_red: '#FF003E',
   },
   style: {
     header_height: '58px',

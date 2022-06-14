@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import * as S from './styles';
 import { useNavigate } from 'react-router-dom';
 import { useUserContext } from 'contexts/UserContext';
@@ -7,6 +7,7 @@ import { MdPersonOutline, MdLockOutline } from 'react-icons/md';
 import useForm from 'hooks/useForm';
 
 export const LoginForm = () => {
+  const [focus, setFocus] = useState('');
   const { setUser } = useUserContext();
   const [error, setError] = useState('');
   const { values, handleChange } = useForm({
@@ -30,17 +31,30 @@ export const LoginForm = () => {
 
   const isSubmittable = id && password;
 
+  // useEffect(() => {
+  //   document.body.addEventListener('click', (e) => {
+  //     console.log(e.target);
+  //     if (e.target.name !== 'id' || e.target.name !== 'password') setFocus('');
+  //   });
+  // }, []);
+
   return (
     <S.LoginForm onSubmit={handleSubmit}>
       <S.InputContainer>
-        <S.LoginInput className='id'>
-          <S.Icon>
+        <S.LoginInput
+          onClick={(e) => setFocus(e.target.name)}
+          className={focus === 'id' ? 'id focus' : 'id'}
+        >
+          <S.Icon className='icon'>
             <MdPersonOutline />
           </S.Icon>
           <input name='id' type='text' value={id} placeholder='아이디' onChange={handleChange} />
         </S.LoginInput>
-        <S.LoginInput className='password'>
-          <S.Icon>
+        <S.LoginInput
+          onClick={(e) => setFocus(e.target.name)}
+          className={focus === 'password' ? 'password focus' : 'password'}
+        >
+          <S.Icon className='icon'>
             <MdLockOutline />
           </S.Icon>
           <input

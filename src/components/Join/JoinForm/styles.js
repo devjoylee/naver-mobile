@@ -28,7 +28,7 @@ export const JoinInput = styled(Input)`
 `;
 
 export const Validation = styled.p`
-  color: #da2727;
+  color: ${({ theme }) => theme.color.text_red};
   font-size: 15px;
   margin: -5px 0 20px 3px;
 `;

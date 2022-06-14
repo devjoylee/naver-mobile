@@ -35,7 +35,15 @@ export const LoginInput = styled.div`
     border-radius: 6px 6px 0 0;
   }
   &.password {
+    border-top: none;
     border-radius: 0 0 6px 6px;
+  }
+
+  &.focus {
+    outline: 1px solid ${({ theme }) => theme.color.main00c};
+    .icon {
+      opacity: 0.7;
+    }
   }
 `;
 
@@ -50,10 +58,9 @@ export const Icon = styled.div`
 `;
 
 export const ErrorMessage = styled.p`
-  color: red;
+  color: ${({ theme }) => theme.color.text_red};
   font-size: 14px;
-  margin-bottom: 15px;
-  margin-left: 2px;
+  margin: 20px 10px 30px;
 `;
 
 export const LoginButton = styled(Button)`
