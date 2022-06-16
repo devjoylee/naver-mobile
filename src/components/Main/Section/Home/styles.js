@@ -11,15 +11,12 @@ export const HomeNav = styled.nav`
   div:last-child {
     margin-left: 15px;
   }
-  svg {
-    cursor: pointer;
-  }
 `;
 
 export const SearchBarContainer = styled.div`
   margin: 70px 60px 80px;
   border-radius: 40px;
-  outline: 1px solid #03cf5d;
+  outline: ${({ theme }) => theme.style.border_green};
   box-shadow: 0 5px 10px 0 rgb(117 145 181 / 12%);
   background: #fff;
 `;
@@ -33,12 +30,11 @@ export const SearchBar = styled.div`
     height: 100%;
     font-size: 18px;
     font-weight: 500;
-    color: #ccc;
+    color: ${({ theme }) => theme.color.text4};
     cursor: text;
   }
-  .mic {
+  .icon {
     padding-right: 15px;
-    cursor: pointer;
   }
 `;
 

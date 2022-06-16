@@ -4,7 +4,7 @@ export const OptionNavBlock = styled.div`
   display: flex;
   align-items: center;
   justify-content: ${({ center }) => (center ? 'center' : 'flex-start')};
-  border-top: ${({ borderNone }) => (borderNone ? '' : '1px solid #e1e1e1')};
+  border-top: ${({ borderNone, theme }) => (borderNone ? '' : theme.style.border_gray2)};
   padding: ${({ paddingNone }) => (paddingNone ? '' : '15px')};
 `;
 
@@ -13,7 +13,7 @@ export const OptionNavItemBlock = styled.span`
   padding-right: 10px;
   margin-right: 10px;
   font-size: 13px;
-  color: #888;
+  color: ${({ theme }) => theme.color.text2};
   cursor: pointer;
 
   &::after {
@@ -21,8 +21,8 @@ export const OptionNavItemBlock = styled.span`
     position: absolute;
     right: 0;
     width: 1px;
-    height: 17px;
-    background-color: #bbb;
+    height: 15px;
+    background-color: #d3d3d3;
   }
 
   &:last-child::after {
@@ -30,6 +30,6 @@ export const OptionNavItemBlock = styled.span`
   }
 
   a {
-    color: #888;
+    color: ${({ theme }) => theme.color.text2};
   }
 `;

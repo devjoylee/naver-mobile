@@ -1,20 +1,13 @@
 import React from 'react';
-import * as S from './styles';
-import { OptionNav, OptionNavItem } from 'components/Common';
-import { useNavigate } from 'react-router-dom';
+import { useLogout } from 'hooks/useLogout';
 import { useUserContext } from 'contexts/UserContext';
+import { OptionNav, OptionNavItem } from 'components/Common';
 import logoFooter from 'images/logo-footer.png';
+import * as S from './styles';
 
 export const Footer = () => {
   const { user } = useUserContext();
-  const { setUser } = useUserContext();
-  const navigate = useNavigate();
-
-  const handleLogOut = () => {
-    setUser(null);
-    localStorage.removeItem('user');
-    navigate('/');
-  };
+  const { handleLogOut } = useLogout();
 
   return (
     <S.FooterContainer>

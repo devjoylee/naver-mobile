@@ -12,7 +12,7 @@ export const PayContainer = styled.div`
 
 export const Text = styled.p`
   font-size: 14px;
-  color: #666;
+  color: ${({ theme }) => theme.color.text1};
   letter-spacing: -1px;
   word-break: keep-all;
   line-height: 1.3;

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import logo from '../../images/logo.png';
+import logo from 'images/logo.png';
 
 export const Logo = () => <LogoImage to='/' />;
 

@@ -4,8 +4,8 @@ export const LinkWrapper = styled.ul`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f9fafc;
-  border-top: 1px solid #eee;
+  background-color: ${({ theme }) => theme.color.bg4};
+  border-top: ${({ theme }) => theme.style.border_gray2};
   border-radius: 0 0 8px 8px;
   cursor: pointer;
 `;
@@ -14,7 +14,7 @@ export const WebtoonLink = styled.li`
   width: 33.33%;
   height: 45px;
   line-height: 45px;
-  color: #777;
+  color: ${({ theme }) => theme.color.text1};
   font-size: 15px;
 
   display: flex;

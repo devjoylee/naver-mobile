@@ -1,14 +1,19 @@
 import styled from 'styled-components';
-import { GoSearch } from 'react-icons/go';
-import { RiCloseCircleFill } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
 
 export const BarWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #1fcf89;
-  padding: 15px 20px;
+  border-bottom: ${({ theme }) => theme.style.border_green};
+  height: ${({ theme }) => theme.style.header_height};
   background: #fff;
+  .icon {
+    padding: 18px;
+  }
+  svg {
+    display: block;
+  }
 `;
 
 export const InputWrapper = styled.div`
@@ -16,33 +21,47 @@ export const InputWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 10px;
 `;
 
 export const Input = styled.input`
   width: 100%;
   font-size: 18px;
-  font-weight: bold;
-  line-height: 1.4;
-  background-color: #fff;
+  font-weight: 600;
   padding-right: 20px;
+  padding-top: 3px;
   box-sizing: border-box;
-
   &::placeholder {
-    color: #dadada;
-    font-size: 16px;
+    font-weight: 500;
+    color: ${({ theme }) => theme.color.text4};
   }
 `;
 
-export const SearchButton = styled(GoSearch)`
+export const BackButton = styled(Link)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 58px;
+  height: 58px;
   font-size: 26px;
-  color: #1fcf89;
+  color: ${({ theme }) => theme.color.text2};
+  transform: scale(0.1);
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    color: ${({ theme }) => theme.color.text2};
+  }
+`;
+
+export const SearchButton = styled.div`
+  font-size: 26px;
+  color: ${({ theme }) => theme.color.main00c};
+  margin: 16px;
   cursor: pointer;
 `;
 
-export const ResetButton = styled(RiCloseCircleFill)`
-  font-size: 24px;
-  color: #ddd;
+export const ResetButton = styled.div`
+  font-size: 20px;
+  color: ${({ theme }) => theme.color.bg3};
   opacity: ${({ active }) => (active ? 1 : 0)};
   cursor: pointer;
 `;

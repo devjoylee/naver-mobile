@@ -26,19 +26,23 @@ export const SearchBar = styled.div`
     line-height: 58px;
     font-size: 18px;
     font-weight: 500;
-    color: #ccc;
+    color: ${({ theme }) => theme.color.text4};
     cursor: text;
   }
-  .mic {
-    padding-right: 18px;
-    cursor: pointer;
+  .icon {
+    padding-right: 15px;
   }
 `;
 
 export const Logo = styled.div`
-  padding: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 58px;
+  height: 58px;
   transform: scale(0);
   transition: transform 0.5s ease-in-out;
+  cursor: pointer;
   &.visible {
     transform: scale(1);
   }
