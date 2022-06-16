@@ -9,6 +9,11 @@ import * as S from './styles';
 export const FixedHeader = () => {
   const [isVisible, setIsVisible] = useState(false);
 
+  const handleClick = () => {
+    window.scrollTo(0, 0);
+    setIsVisible(false);
+  };
+
   useEffect(() => {
     window.addEventListener('scroll', () => {
       let y = window.pageYOffset;
@@ -16,10 +21,14 @@ export const FixedHeader = () => {
     });
   });
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <S.HeaderContainer className={isVisible ? 'visible' : 'hidden'}>
       <S.SearchBar>
-        <S.Logo onClick={() => window.scrollTo(0, 0)} className={isVisible ? 'visible' : 'hidden'}>
+        <S.Logo onClick={handleClick} className={isVisible ? 'visible' : 'hidden'}>
           <img src={logo} alt='' />
         </S.Logo>
         <Link to='/search' className='search'>

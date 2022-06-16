@@ -42,6 +42,7 @@ export const Logo = styled.div`
   height: 58px;
   transform: scale(0);
   transition: transform 0.5s ease-in-out;
+  cursor: pointer;
   &.visible {
     transform: scale(1);
   }

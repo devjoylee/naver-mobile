@@ -1,17 +1,9 @@
 import React from 'react';
 import * as S from './styles';
-import { useNavigate } from 'react-router-dom';
-import { useUserContext } from 'contexts/UserContext';
+import { useLogout } from 'hooks/useLogout';
 
 export const Logout = () => {
-  const { setUser } = useUserContext();
-  const navigate = useNavigate();
+  const { handleLogOut } = useLogout();
 
-  const handleLogOut = () => {
-    setUser(null);
-    localStorage.removeItem('user');
-    navigate('/');
-  };
-
-  return <S.LogoutButton onClick={handleLogOut}>Log Out</S.LogoutButton>;
+  return <S.LogoutButton onClick={handleLogOut}>로그아웃</S.LogoutButton>;
 };
