@@ -14,7 +14,11 @@ export const requestLogin = async ({ id, password }) => {
       throw new Error('비밀번호가 틀립니다.');
     }
 
-    return user;
+    return {
+      id: user.id,
+      name: user.name,
+      profile: user.profile,
+    };
   }
 
   throw new Error('일시적인 에러가 발생했습니다. 잠시후 다시 시도해주세요');

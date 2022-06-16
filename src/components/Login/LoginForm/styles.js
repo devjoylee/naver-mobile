@@ -64,8 +64,27 @@ export const ErrorMessage = styled.p`
 `;
 
 export const LoginButton = styled(Button)`
-  margin-top: 20px;
+  margin: 20px 0;
+  font-size: 17px;
   height: ${({ theme }) => theme.style.input_height};
   border-radius: 6px;
   background-color: ${({ disabled, theme }) => (disabled ? '#bcbcbc' : theme.color.main00c)};
+`;
+
+export const KeepLoggedIn = styled.div`
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  span {
+    margin-left: 5px;
+    font-size: 15px;
+  }
+
+  .icon {
+    font-size: 21px;
+    color: #ccc;
+    .active {
+      color: ${({ theme }) => theme.color.main00c};
+    }
+  }
 `;
