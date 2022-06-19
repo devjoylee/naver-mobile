@@ -1,22 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import * as S from './styles';
+import React from 'react';
 import { useUserContext } from 'contexts/UserContext';
-import { fetcher } from 'utils/fetcher';
+import { GET_RECOMMENDS, fetcher } from 'utils/api';
+import useSWR from 'swr';
+import * as S from './styles';
 
 export const RecommendWebtoon = () => {
-  const [recommend, setRecommend] = useState([]);
+  const { data: recommends } = useSWR(GET_RECOMMENDS, fetcher);
   const {
     user: { name },
   } = useUserContext(); // 로그인 한 유저정보에서 이름 값 추출
 
-  useEffect(() => {
-    fetcher('/api/recommend').then((data) => setRecommend(data.webtoons));
-  }, []);
-
   return (
     <>
       <S.RecommendTitle>{name}님을 위한 추천</S.RecommendTitle>
-      {recommend?.map(({ id, title, image, author }) => (
+      {recommends?.map(({ id, title, image, author }) => (
         <S.RecommendRow key={id}>
           <S.ImgWrapper>
             <S.Image src={image} />
