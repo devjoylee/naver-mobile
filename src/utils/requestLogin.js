@@ -1,9 +1,5 @@
-import { fetcher } from './fetcher';
-
-export const requestLogin = async ({ id, password }) => {
-  const response = await fetcher('/api/users');
-  if (response) {
-    const users = await response.users;
+export const requestLogin = async (users, { id, password }) => {
+  if (users) {
     const user = users.find((user) => user.id === id);
 
     if (!user) {
@@ -15,7 +11,7 @@ export const requestLogin = async ({ id, password }) => {
     }
 
     return {
-      id: user.id,
+      userId: user.userId,
       name: user.name,
       profile: user.profile,
     };

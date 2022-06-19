@@ -2,10 +2,10 @@ export default function validate(values) {
   let errors = {};
 
   // id
-  if (!values.id) {
-    errors.id = '아이디를 입력하세요.';
-  } else if (values.id.length < 6) {
-    errors.id = '6자 이상의 아이디를 입력하세요.';
+  if (!values.userId) {
+    errors.userId = '아이디를 입력하세요.';
+  } else if (values.userId.length < 6) {
+    errors.userId = '6자 이상의 아이디를 입력하세요.';
   }
 
   // password

@@ -1,21 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import * as S from './styles';
-import { fetcher } from 'utils/fetcher';
+import React from 'react';
 import { ScrollContainer } from 'components/Common';
+import { GET_WEBTOONS, fetcher } from 'utils/api';
+import useSWR from 'swr';
+import * as S from './styles';
 
 export const WebtoonList = () => {
-  const [webtoons, setWebtoons] = useState([]);
-
-  useEffect(() => {
-    let isRendered = false;
-    fetcher('/api/webtoons').then((data) => {
-      if (!isRendered) setWebtoons(data.webtoons);
-    });
-
-    return () => {
-      isRendered = true;
-    };
-  }, []);
+  const { data: webtoons } = useSWR(GET_WEBTOONS, fetcher);
 
   return (
     <ScrollContainer>

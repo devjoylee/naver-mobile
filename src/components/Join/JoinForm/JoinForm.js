@@ -8,7 +8,7 @@ import { requestSignup } from 'utils/requestSignup';
 export const JoinForm = () => {
   const [errors, setErrors] = useState({});
   const { values, handleChange } = useForm({
-    id: '',
+    userId: '',
     password: '',
     password2: '',
     name: '',
@@ -16,7 +16,7 @@ export const JoinForm = () => {
   });
 
   const navigate = useNavigate();
-  const { id, password, password2, name, email } = values;
+  const { userId, password, password2, name, email } = values;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -39,16 +39,16 @@ export const JoinForm = () => {
   return (
     <S.Form onSubmit={handleSubmit}>
       <S.FormRow>
-        <S.JoinLabel htmlFor='id'>아이디</S.JoinLabel>
+        <S.JoinLabel htmlFor='userId'>아이디</S.JoinLabel>
         <S.JoinInput
           type='text'
-          id='id'
-          name='id'
-          value={id}
+          id='userId'
+          name='userId'
+          value={userId}
           onChange={handleChange}
           placeholder='id'
         />
-        {errors.id && <S.Validation>{errors.id}</S.Validation>}
+        {errors.userId && <S.Validation>{errors.userId}</S.Validation>}
       </S.FormRow>
       <S.FormRow>
         <S.JoinLabel htmlFor='password'>비밀번호</S.JoinLabel>
