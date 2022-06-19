@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useUserContext } from 'contexts/UserContext';
 import { requestLogin } from 'utils/requestLogin';
-import { fetcher, GET_USERS } from 'utils/api';
+import { fetcher, USERS_DATA } from 'utils/api';
 import { MdPersonOutline, MdLockOutline } from 'react-icons/md';
 import { AiFillCheckCircle, AiOutlineCheckCircle } from 'react-icons/ai';
 import { Icon } from 'components/Common';
@@ -11,18 +11,19 @@ import useForm from 'hooks/useForm';
 import * as S from './styles';
 
 export const LoginForm = () => {
-  const { data: users } = useSWR(GET_USERS, fetcher);
+  const { data: users } = useSWR(USERS_DATA, fetcher);
+  const { setUser } = useUserContext();
+  const navigate = useNavigate();
+
   const [focus, setFocus] = useState('');
   const [error, setError] = useState('');
   const [isKeptLogged, setIsKeptLogged] = useState('');
 
-  const { setUser } = useUserContext();
   const { values, handleChange } = useForm({
     userId: '',
     password: '',
   });
 
-  const navigate = useNavigate();
   const { userId, password } = values;
 
   const handleSubmit = async (e) => {
@@ -44,7 +45,7 @@ export const LoginForm = () => {
       <S.InputContainer>
         <S.LoginInput
           onClick={(e) => setFocus(e.target.name)}
-          className={focus === 'id' ? 'id focus' : 'id'}
+          className={focus === 'userId' ? 'id focus' : 'id'}
         >
           <S.Icon className='icon'>
             <MdPersonOutline />

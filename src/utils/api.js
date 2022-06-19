@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const BASE_URL = 'http://localhost:8080';
 
-export const GET_USERS = `${BASE_URL}/users`;
+export const USERS_DATA = `${BASE_URL}/users`;
 export const GET_WEBTOONS = `${BASE_URL}/webtoons`;
 export const GET_RECOMMENDS = `${BASE_URL}/recommends`;
 
