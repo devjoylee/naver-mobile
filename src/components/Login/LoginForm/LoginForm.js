@@ -2,30 +2,33 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useUserContext } from 'contexts/UserContext';
 import { requestLogin } from 'utils/requestLogin';
+import { fetcher, GET_USERS } from 'utils/api';
 import { MdPersonOutline, MdLockOutline } from 'react-icons/md';
 import { AiFillCheckCircle, AiOutlineCheckCircle } from 'react-icons/ai';
 import { Icon } from 'components/Common';
+import useSWR from 'swr';
 import useForm from 'hooks/useForm';
 import * as S from './styles';
 
 export const LoginForm = () => {
+  const { data: users } = useSWR(GET_USERS, fetcher);
   const [focus, setFocus] = useState('');
   const [error, setError] = useState('');
   const [isKeptLogged, setIsKeptLogged] = useState('');
 
   const { setUser } = useUserContext();
   const { values, handleChange } = useForm({
-    id: '',
+    userId: '',
     password: '',
   });
 
   const navigate = useNavigate();
-  const { id, password } = values;
+  const { userId, password } = values;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const user = await requestLogin({ id, password }); // 로그인 요청
+      const user = await requestLogin(users, { userId, password }); // 로그인 요청
       setUser(user);
       isKeptLogged && localStorage.setItem('user', JSON.stringify(user));
       navigate('/'); // 홈으로
@@ -34,7 +37,7 @@ export const LoginForm = () => {
     }
   };
 
-  const isSubmittable = id && password;
+  const isSubmittable = userId && password;
 
   return (
     <S.LoginForm onSubmit={handleSubmit}>
@@ -46,7 +49,13 @@ export const LoginForm = () => {
           <S.Icon className='icon'>
             <MdPersonOutline />
           </S.Icon>
-          <input name='id' type='text' value={id} placeholder='아이디' onChange={handleChange} />
+          <input
+            name='userId'
+            type='text'
+            value={userId}
+            placeholder='아이디'
+            onChange={handleChange}
+          />
         </S.LoginInput>
         <S.LoginInput
           onClick={(e) => setFocus(e.target.name)}
