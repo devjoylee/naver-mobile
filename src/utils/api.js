@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:8080';
+const BASE_URL = 'https://naver-mobile.herokuapp.com';
 
 export const USERS_DATA = `${BASE_URL}/users`;
 export const GET_WEBTOONS = `${BASE_URL}/webtoons`;
