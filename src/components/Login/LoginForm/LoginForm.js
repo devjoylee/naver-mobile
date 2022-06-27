@@ -29,10 +29,14 @@ export const LoginForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const user = await requestLogin(users, { userId, password }); // 로그인 요청
-      setUser(user);
-      isKeptLogged && localStorage.setItem('user', JSON.stringify(user));
-      navigate('/'); // 홈으로
+      // const user = await requestLogin(users, { userId, password }); // 로그인 요청
+      const user = JSON.parse(localStorage.getItem('user'));
+
+      if (userId === user.id) {
+        setUser(user);
+        navigate('/'); // 홈으로
+        // isKeptLogged && localStorage.setItem('user', JSON.stringify(user));
+      }
     } catch (error) {
       setError(error.message);
     }

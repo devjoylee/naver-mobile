@@ -27,6 +27,7 @@ export const JoinForm = () => {
         const res = await requestSignup(values);
         if (res) {
           navigate('/login');
+          localStorage.setItem('user', JSON.stringify({ id: userId, name, email }));
           window.alert('회원가입 성공. 가입한 아이디로 로그인해주세요');
         }
       } catch {
