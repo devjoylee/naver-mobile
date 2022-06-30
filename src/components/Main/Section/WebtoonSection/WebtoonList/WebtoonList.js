@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollContainer } from 'components/Common';
+import { ScrollContainer, Skeleton } from 'components/Common';
 import { GET_WEBTOONS, fetcher } from 'utils/api';
 import useSWR from 'swr';
 import * as S from './styles';
@@ -9,15 +9,23 @@ export const WebtoonList = () => {
 
   return (
     <ScrollContainer>
-      {webtoons?.map(({ id, title, image, author }) => (
-        <S.WebtoonContainer key={id}>
-          <S.Image src={image} alt='webtoon' />
-          <S.TextWrapper>
-            <S.Title>{title}</S.Title>
-            <S.Author>{author}</S.Author>
-          </S.TextWrapper>
-        </S.WebtoonContainer>
-      ))}
+      {webtoons
+        ? webtoons?.map(({ id, title, image, author }) => (
+            <S.WebtoonContainer key={id}>
+              <S.Image src={image} alt='webtoon' />
+              <S.TextWrapper>
+                <S.Title>{title}</S.Title>
+                <S.Author>{author}</S.Author>
+              </S.TextWrapper>
+            </S.WebtoonContainer>
+          ))
+        : [...Array(4)].map((_, i) => (
+            <S.WebtoonContainer key={i}>
+              <Skeleton h='115' />
+              <Skeleton h='12' />
+              <Skeleton h='12' />
+            </S.WebtoonContainer>
+          ))}
     </ScrollContainer>
   );
 };
