@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 export const Image = styled.img`
   width: 100%;
+  height: 100px;
+  object-fit: cover;
   vertical-align: top;
   background: transparent;
   color: #41403e;

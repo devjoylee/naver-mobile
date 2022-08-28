@@ -4,6 +4,9 @@ import { Button } from 'components/Common/styled';
 // login form
 export const LoginForm = styled.form`
   margin: 70px 40px 50px;
+  @media (max-width: 450px) {
+    margin: 50px 5px;
+  }
 `;
 
 export const InputContainer = styled.div`
@@ -68,7 +71,8 @@ export const LoginButton = styled(Button)`
   font-size: 17px;
   height: ${({ theme }) => theme.style.input_height};
   border-radius: 6px;
-  background-color: ${({ disabled, theme }) => (disabled ? '#bcbcbc' : theme.color.main00c)};
+  background-color: ${({ disabled, theme }) =>
+    disabled ? '#bcbcbc' : theme.color.main00c};
 `;
 
 export const KeepLoggedIn = styled.div`

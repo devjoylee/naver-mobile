@@ -22,8 +22,8 @@ export const History = ({ keywords, onRemoveKeyword, onClearList }) => {
   return (
     <S.ListContainer>
       <S.Header>
-        <p>최근 검색어</p>
-        <S.DeleteAll onClick={onClearList}>전체삭제</S.DeleteAll>
+        <p>Search History</p>
+        <S.DeleteAll onClick={onClearList}>Clear All</S.DeleteAll>
       </S.Header>
       <S.RecentList>
         {keywords.map(({ id, text, date }) => (
@@ -33,7 +33,10 @@ export const History = ({ keywords, onRemoveKeyword, onClearList }) => {
             </S.Icon>
             <S.Keyword>{text}</S.Keyword>
             <S.Date>{date}</S.Date>
-            <S.RemoveButton onClick={() => onRemoveKeyword(id)} className='icon'>
+            <S.RemoveButton
+              onClick={() => onRemoveKeyword(id)}
+              className='icon'
+            >
               <VscClose />
             </S.RemoveButton>
           </S.TextWrapper>

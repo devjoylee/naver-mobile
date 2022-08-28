@@ -13,6 +13,8 @@ export const WebtoonContainer = styled.div`
 
 export const Image = styled.img`
   width: 100%;
+  height: 122px;
+  object-fit: cover;
   vertical-align: top;
   background: transparent;
   color: #41403e;

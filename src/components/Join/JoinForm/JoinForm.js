@@ -26,8 +26,14 @@ export const JoinForm = () => {
     if (!hasInvaild) {
       try {
         // const res = await requestSignup(values);
-        localStorage.setItem('user', JSON.stringify({ id: userId, name, email }));
-        sessionStorage.setItem('user', JSON.stringify({ id: userId, name, email }));
+        localStorage.setItem(
+          'user',
+          JSON.stringify({ id: userId, name, email })
+        );
+        sessionStorage.setItem(
+          'user',
+          JSON.stringify({ id: userId, name, email })
+        );
         window.alert('You have successfully signed up! Please login.');
         // window.alert('회원가입 성공. 가입한 아이디로 로그인해주세요');
         navigate('/login');
@@ -76,12 +82,24 @@ export const JoinForm = () => {
       </S.FormRow>
       <S.FormRow>
         <S.JoinLabel htmlFor='name'>Name</S.JoinLabel>
-        <S.JoinInput type='text' id='name' name='name' value={name} onChange={handleChange} />
+        <S.JoinInput
+          type='text'
+          id='name'
+          name='name'
+          value={name}
+          onChange={handleChange}
+        />
         {errors.name && <S.Validation>{errors.name}</S.Validation>}
       </S.FormRow>
       <S.FormRow>
         <S.JoinLabel htmlFor='email'>E-mail</S.JoinLabel>
-        <S.JoinInput type='text' id='email' name='email' value={email} onChange={handleChange} />
+        <S.JoinInput
+          type='text'
+          id='email'
+          name='email'
+          value={email}
+          onChange={handleChange}
+        />
         {errors.email && <S.Validation>{errors.email}</S.Validation>}
       </S.FormRow>
       <S.JoinButton type='submit' disabled={!isSubmittable}>

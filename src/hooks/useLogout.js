@@ -6,7 +6,7 @@ export const useLogout = () => {
   const navigate = useNavigate();
 
   const handleLogOut = () => {
-    if (window.confirm('로그아웃 하시겠습니까?')) {
+    if (window.confirm('Are you sure you want to log out?')) {
       setUser(null);
       sessionStorage.removeItem('user');
       navigate('/');

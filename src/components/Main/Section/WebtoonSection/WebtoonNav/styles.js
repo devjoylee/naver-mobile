@@ -13,9 +13,8 @@ export const LinkWrapper = styled.ul`
 export const WebtoonLink = styled.li`
   width: 33.33%;
   height: 45px;
-  line-height: 45px;
   color: ${({ theme }) => theme.color.text1};
-  font-size: 15px;
+  font-size: 14px;
 
   display: flex;
   justify-content: center;

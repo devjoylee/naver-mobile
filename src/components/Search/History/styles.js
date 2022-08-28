@@ -63,7 +63,12 @@ export const Icon = styled.div`
 
 export const Keyword = styled.p`
   flex: 1;
-  padding-left: 10px;
+  padding: 0 10px;
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
 `;
 
 export const Date = styled.span`

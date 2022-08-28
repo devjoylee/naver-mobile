@@ -19,6 +19,9 @@ export const SearchBarContainer = styled.div`
   outline: ${({ theme }) => theme.style.border_green};
   box-shadow: 0 5px 10px 0 rgb(117 145 181 / 12%);
   background: #fff;
+  @media (max-width: 550px) {
+    margin: 30px 5px 50px;
+  }
 `;
 
 export const SearchBar = styled.div`
