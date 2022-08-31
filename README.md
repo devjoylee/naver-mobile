@@ -3,96 +3,184 @@
   <img src="./src/images/logo01.png" alt="Logo" width="60" height="60">
   <h1>Naver Mobile Clone Project</h1>
   <p>
-    <a href="https://naver-mobile.herokuapp.com">배포 주소 바로가기</a>
+    <a href="https://navermobile.netlify.app/" target="_blank">View Demo</a>
   </p>
 </div>
 
 <!-- TABLE OF CONTENTS -->
 <details align="right">
   <summary>Table of Contents</summary>
-    <div><a href="#프로젝트-소개">프로젝트 소개</a></div>
-    <div><a href="#기술-스택">기술 스택</a></div>
-    <div><a href="#프로젝트-실행">프로젝트 실행</a></div>
-    <div><a href="#프로젝트-구현-사항">프로젝트 구현 사항</a></div>
-    <div><a href="#커밋-컨벤션">커밋 컨벤션</a></div>
+    <div><a href="#About-The-Project">About The Project</a></div>
+    <div><a href="#Built-With">Built With</a></div>
+    <div><a href="#Getting-Started">Getting Started</a></div>
+    <div><a href="#Main-Features">Main Features</a></div>
+    <div><a href="#Commit-Convention">Commit Convention</a></div>
 </details>
 
-## 프로젝트 소개
+## About The Project
 
-> React를 사용해 single page application으로 네이버 모바일 페이지를 클론 개발한 프로젝트입니다. json-server로 MOCK 서버를 만들어 회원가입한 유저값과 웹툰 데이터를 관리할 수 있도록 하였습니다.
+> Cloning Naver Website (https://m.naver.com) which the most poular search engine platform in South Korea. <br/> It’s developed mobile friendly, the maximum width is 768px.
 
-- 제작 기간 : 2020.12 - 2021.03
+- Production Period : 2020.12 - 2021.03
 
  <br/>
 
-## 기술 스택
+## Built With
 
-<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">&nbsp;&nbsp;<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">
+<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">&nbsp;&nbsp;<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">&nbsp;&nbsp;<img src="https://img.shields.io/badge/styled_components-DB7093?style=for-the-badge&logo=storybook&logoColor=white"/>
 
 <br/>
 
-## 프로그램 실행
+## Getting Started
 
-1. Json-server 실행
+You are able to start the app by typing the following commands in the command line:
 
 ```bash
+git clone https://github.com/devjoylee/naver-mobile.git
+npm install
 npm start
 ```
 
-2. 클라이언트 실행
+<br/>
 
-```bash
-npm run dev
+## Main Features
+
+### 1. Main Page `/`
+
+- It consists of a header, a footer and 3 dropdown sections.
+- There are 2 types of headers. One is the original header with icons, and the other is the fixed header only visible when scrolling down with a dropdown animation. It includes a search bar and a swipeable navigation.
+- The recommend webtoon section is only visible when logged in.
+- You can log out in the footer.
+
+<div align="center">
+<img src="https://user-images.githubusercontent.com/68415905/220211040-64c258d9-a875-47bf-8b5a-7d7e5d50b332.JPG" alt="img" width="90%" >
+</div><br/>
+
+- Code Preview
+
+```jsx
+// components/Main/Header/FixedHeader
+export const FixedHeader = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // show the header when the scroll moves down.
+    window.addEventListener('scroll', () => {
+      let y = window.pageYOffset;
+      if (y > 100 && y < 300) setIsVisible(y > 200);
+    });
+  });
+
+  return <S.HeaderContainer className={isVisible ? 'visible' : 'hidden'}>// ...</S.HeaderContainer>;
+};
 ```
 
 <br/>
 
-## 프로젝트 구현사항
+### 2. LOGIN PAGE `/login` & JOIN PAGE `/join`
 
-### 메인 페이지 : `/`
+- Go to a login page by clicking the hamburger icon in the upper left of the main page.
+- Go to a join page by clicking the ‘Sign-Up’ button in the bottom of the login page.
+- Sign-up form includes validation inputs with error message and a submit button.
+- Created a custom `useForm` hook to re-use in the login form and the join form.
 
-- 메인창은 Header, Sections, Footer로 구성되어 있습니다.
-- Header의 상단 왼쪽 아이콘을 클릭하면 로그인, 마이페이지 창으로 이동합니다.
-- Header의 검색바를 클릭하면 검색페이지로 이동합니다.
-- `json-server`에 저장된 웹툰 목록을 `useSWR`로 가져와 오늘의 추천웹툰 섹션에 출력합니다
-- 일정 높이 이상 스크롤을 하면 상단에 Fixed Header가 나타납니다.
-- Fixed Header의 메뉴창은 좌우 스와이프가 가능합니다.
+<div align="center">
+<img src="https://user-images.githubusercontent.com/68415905/220211043-3d6fa7a1-4a17-49c2-a845-0c10a14c542b.JPG" alt="img" width="90%" >
+</div><br/>
 
-### 로그인 페이지 : `/login`
+- Code Preview
 
-- 회원가입 버튼을 클릭하면 회원가입 페이지로 이동합니다.
-- 유효한 ID와 비밀번호를 입력하면 메인페이지로 이동합니다.
-
-### 회원가입 페이지 : `/join`
-
-- Id, 비밀번호, 이름, Email을 입력하여 회원가입합니다.
-
-### 검색 페이지 : `/search`
-
-- 입력한 키위드는 하단의 최신 검색 목록에 저장됩니다
-- 삭제 아이콘 또는 전체삭제 버튼으로 검색 기록을 삭제합니다.
-
-### 내 정보 페이지 : `/mypage`
+```jsx
+// hooks/useForm.js
+export const useForm = (initialValues) => {
+  const [values, setValues] = useState(initialValues);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setValues({
+      ...values,
+      [name]: value,
+    });
+  };
+  return { values, handleChange };
+};
+```
 
 <br/>
 
-## 커밋 컨벤션
+### 3. SEARCH PAGE `/search`
 
-commit 메세지에 깃모지를 추가하여 어떤 작업을 수행했는지 한 눈에 확인할 수 있도록 직관성을 높였습니다.
+- - Go to a search page by clicking the search bar in the main page.
+- It has a search history section which shows recent searched keywords. The searched keywords are actually saved in `localStorage` and the history list get recent searches from the storage.
+- There is a ‘Clear All’ button which resets all history.
 
-| 깃모지 | 사용 예시               |
-| ------ | ----------------------- |
-| 🎉     | init                    |
-| 🚚     | 디렉토리 또는 파일 이동 |
-| ✨     | 기능 구현               |
-| 💄     | CSS 스타일링            |
-| ♻️     | 리팩토링                |
-| 📝     | Readme 수정             |
-| ➕     | 모듈 추가               |
-| 🐛     | 버그 해결               |
-| 🚑️    | 치명적인 오류 해결      |
+<div align="center">
+<img src="https://user-images.githubusercontent.com/68415905/220211037-2be92183-629c-4d20-8d8d-ac27243fc358.JPG" alt="img" width="90%" >
+</div><br/>
 
-출처 : 깃모지(http://gitmoji.dev/)
+- Code Preview
+
+```jsx
+//
+export const SearchPage = () => {
+  // load keywords list from localStorage
+  const [keywords, setKeywords] = useState(JSON.parse(localStorage.getItem('keywords') || '[]'));
+
+  useEffect(() => {
+    localStorage.setItem('keywords', JSON.stringify(keywords));
+  }, [keywords]);
+
+  // Getting the searched date
+  const getDate = () => {
+    const today = new Date();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+    return `${month}.${day}`;
+  };
+
+  const handleAddKeyword = (text) => {
+    const newKeyword = {
+      id: Date.now(),
+      text,
+      date: getDate(),
+    };
+    setKeywords([newKeyword, ...keywords]);
+  };
+
+  const handleRemoveKeyword = (id) => {
+    setKeywords(
+      keywords.filter((keyword) => {
+        return keyword.id !== id;
+      })
+    );
+  };
+
+  const handleClearList = () => {
+    setKeywords([]);
+  };
+
+  return <PageWrapper graybg>// ...</PageWrapper>;
+};
+```
+
+<br/>
+
+## Commit Convention
+
+The commit message is written with the GITMOJI icons in order to make commit messages more intuitive.
+
+| Gitmoji | Meaning                     |
+| ------- | --------------------------- |
+| 🎉      | Init or begin a project.    |
+| 🚚      | Move or rename resources    |
+| ✨      | Introduce new features      |
+| 💄      | Add the UI and style files  |
+| ♻️      | Refactor code               |
+| 📝      | Add or update documentation |
+| ➕      | Add a dependency            |
+| 🐛      | Fix a bug                   |
+| 🚀      | Deploy stuff                |
+
+REFERENCE : Gitmoji (http://gitmoji.dev/)
 
 <br/>
 
