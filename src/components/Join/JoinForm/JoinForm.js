@@ -3,7 +3,6 @@ import * as S from './styles';
 import useForm from 'hooks/useForm';
 import validate from 'utils/validation';
 import { useNavigate } from 'react-router-dom';
-import { requestSignup } from 'utils/requestSignup';
 
 export const JoinForm = () => {
   const [errors, setErrors] = useState({});
@@ -24,12 +23,10 @@ export const JoinForm = () => {
     const hasInvaild = Object.keys(error).length;
     if (!hasInvaild) {
       try {
-        const res = await requestSignup(values);
-        if (res) {
-          navigate('/login');
-          localStorage.setItem('user', JSON.stringify({ id: userId, name, email }));
-          window.alert('회원가입 성공. 가입한 아이디로 로그인해주세요');
-        }
+        // const res = await requestSignup(values);
+        localStorage.setItem('user', JSON.stringify({ id: userId, name, email }));
+        window.alert('회원가입 성공. 가입한 아이디로 로그인해주세요');
+        navigate('/login');
       } catch {
         window.alert('회원가입에 실패하였습니다. 다시 시도해주세요.');
       }

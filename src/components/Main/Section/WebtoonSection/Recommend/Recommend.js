@@ -1,11 +1,10 @@
 import React from 'react';
+import { Webtoons } from 'constants/Webtoons';
 import { useUserContext } from 'contexts/UserContext';
-import { GET_RECOMMENDS, fetcher } from 'utils/api';
-import useSWR from 'swr';
 import * as S from './styles';
 
 export const RecommendWebtoon = () => {
-  const { data: recommends } = useSWR(GET_RECOMMENDS, fetcher);
+  // const { data: recommends } = useSWR(GET_RECOMMENDS, fetcher);
   const {
     user: { name },
   } = useUserContext(); // 로그인 한 유저정보에서 이름 값 추출
@@ -13,7 +12,7 @@ export const RecommendWebtoon = () => {
   return (
     <>
       <S.RecommendTitle>{name}님을 위한 추천</S.RecommendTitle>
-      {recommends?.map(({ id, title, image, author }) => (
+      {Webtoons.recommend?.map(({ id, title, image, author }) => (
         <S.RecommendRow key={id}>
           <S.ImgWrapper>
             <S.Image src={image} />

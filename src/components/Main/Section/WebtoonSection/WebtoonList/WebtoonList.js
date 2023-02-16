@@ -1,16 +1,15 @@
 import React from 'react';
 import { ScrollContainer, Skeleton } from 'components/Common';
-import { GET_WEBTOONS, fetcher } from 'utils/api';
-import useSWR from 'swr';
+import { Webtoons } from 'constants/Webtoons';
 import * as S from './styles';
 
 export const WebtoonList = () => {
-  const { data: webtoons } = useSWR(GET_WEBTOONS, fetcher);
+  // const { data: webtoons } = useSWR(GET_WEBTOONS, fetcher);
 
   return (
     <ScrollContainer>
-      {webtoons
-        ? webtoons?.map(({ id, title, image, author }) => (
+      {Webtoons
+        ? Webtoons.popular?.map(({ id, title, image, author }) => (
             <S.WebtoonContainer key={id}>
               <S.Image src={image} alt='webtoon' />
               <S.TextWrapper>

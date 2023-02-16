@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useUserContext } from 'contexts/UserContext';
-import { requestLogin } from 'utils/requestLogin';
-import { fetcher, USERS_DATA } from 'utils/api';
 import { MdPersonOutline, MdLockOutline } from 'react-icons/md';
 import { AiFillCheckCircle, AiOutlineCheckCircle } from 'react-icons/ai';
 import { Icon } from 'components/Common';
-import useSWR from 'swr';
 import useForm from 'hooks/useForm';
 import * as S from './styles';
 
 export const LoginForm = () => {
-  const { data: users } = useSWR(USERS_DATA, fetcher);
+  // const { data: users } = useSWR(USERS_DATA, fetcher);
   const { setUser } = useUserContext();
   const navigate = useNavigate();
 
