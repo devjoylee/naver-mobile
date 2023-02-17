@@ -11,7 +11,8 @@ export const RecommendWebtoon = () => {
 
   return (
     <>
-      <S.RecommendTitle>{name}님을 위한 추천</S.RecommendTitle>
+      <S.RecommendTitle>{name}, You may like this!</S.RecommendTitle>
+      {/* <S.RecommendTitle>{name}님을 위한 추천</S.RecommendTitle> */}
       {Webtoons.recommend?.map(({ id, title, image, author }) => (
         <S.RecommendRow key={id}>
           <S.ImgWrapper>
@@ -22,9 +23,9 @@ export const RecommendWebtoon = () => {
             <S.Author>{author}</S.Author>
           </S.TextWrapper>
           <S.WatchNow>
-            <b>첫 화</b>
+            Go to the
             <br />
-            바로보기
+            <b>First Episode</b>
           </S.WatchNow>
         </S.RecommendRow>
       ))}

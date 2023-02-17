@@ -8,7 +8,7 @@ export const useLogout = () => {
   const handleLogOut = () => {
     if (window.confirm('로그아웃 하시겠습니까?')) {
       setUser(null);
-      localStorage.removeItem('user');
+      sessionStorage.removeItem('user');
       navigate('/');
       window.location.reload();
     }

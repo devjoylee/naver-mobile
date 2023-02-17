@@ -8,9 +8,11 @@ export const History = ({ keywords, onRemoveKeyword, onClearList }) => {
     return (
       <S.ListContainer>
         <S.EmptyList>
-          최근 검색어 내역이 없습니다.
+          There is no recent searches.
+          {/* 최근 검색어 내역이 없습니다. */}
           <span>
-            설정이 초기화된다면 <b>도움말</b>을 확인해주세요.
+            If you need a help, please check our <b>F&Q</b>.
+            {/* 설정이 초기화된다면 <b>도움말</b>을 확인해주세요. */}
           </span>
         </S.EmptyList>
       </S.ListContainer>

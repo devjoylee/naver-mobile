@@ -1,16 +1,16 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useState, createContext, useContext } from 'react';
 
 const Context = createContext();
 
 export function UserContextProvider({ children }) {
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem('user') || null));
+  const [user, setUser] = useState(JSON.parse(sessionStorage.getItem('user') || null));
 
-  useEffect(() => {
-    if (user) {
-      sessionStorage.setItem('user', JSON.stringify(user));
-    }
-  }, [user]);
+  // useEffect(() => {
+  //   if (user) {
+  //     sessionStorage.setItem('user', JSON.stringify(user));
+  //   }
+  // }, [user]);
 
   return <Context.Provider value={{ user, setUser }}>{children}</Context.Provider>;
 }

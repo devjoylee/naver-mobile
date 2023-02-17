@@ -32,7 +32,7 @@ export const FixedHeader = () => {
           <img src={logo} alt='' />
         </S.Logo>
         <Link to='/search' className='search'>
-          검색어를 입력해주세요.
+          Search here
         </Link>
         <Icon size='32' color='#09B65A'>
           <BiMicrophone />

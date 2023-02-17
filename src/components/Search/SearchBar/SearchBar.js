@@ -37,7 +37,7 @@ export const SearchBar = ({ onAddKeyword }) => {
       <S.InputWrapper>
         <S.Input
           autoFocus
-          placeholder='검색어를 입력해주세요.'
+          placeholder='Search here.'
           value={keyword}
           onChange={handleKeyword}
           onKeyDown={(e) => {

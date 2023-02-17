@@ -78,6 +78,7 @@ export const KeepLoggedIn = styled.div`
   span {
     margin-left: 5px;
     font-size: 15px;
+    color: #555;
   }
 
   .icon {

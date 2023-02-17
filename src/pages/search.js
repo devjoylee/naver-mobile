@@ -51,8 +51,8 @@ export const SearchPage = () => {
           onClearList={handleClearList}
         />
         <OptionNav>
-          <OptionNavItem text='자동저장 끄기' />
           <OptionNavItem text='도움말' />
+          <OptionNavItem text='Turn off Search Predictions' />
         </OptionNav>
       </SearchContainer>
     </PageWrapper>

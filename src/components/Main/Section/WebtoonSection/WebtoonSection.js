@@ -7,7 +7,7 @@ import { WebtoonList, WebtoonNav, RecommendWebtoon } from './';
 export const WebtoonSection = () => {
   const { user } = useUserContext();
   return (
-    <SectionLayout title='오늘의 추천 웹툰' isOpened={true}>
+    <SectionLayout title="Today's Webtoon" isOpened={true}>
       <WebtoonList />
       {user && (
         <Container padding={{ left: 15, right: 15 }}>

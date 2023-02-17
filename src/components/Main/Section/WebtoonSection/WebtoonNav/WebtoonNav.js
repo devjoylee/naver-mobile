@@ -5,23 +5,23 @@ import { SiWebtoon } from 'react-icons/si';
 
 export const WebtoonNav = () => {
   const today = new Date();
-  const day = today.toLocaleDateString('ko-KR', {
-    weekday: 'short',
+  const day = today.toLocaleDateString('en', {
+    weekday: 'long',
   });
 
   return (
     <S.LinkWrapper>
       <S.WebtoonLink>
         <SiWebtoon />
-        웹툰 홈
+        Webtoon Home
       </S.WebtoonLink>
       <S.WebtoonLink>
         <BiCalendar />
-        {day}요웹툰
+        {day} Webtoons
       </S.WebtoonLink>
       <S.WebtoonLink>
         <BiBookHeart />
-        MY웹툰
+        My Subscriptions
       </S.WebtoonLink>
     </S.LinkWrapper>
   );

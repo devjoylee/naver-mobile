@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Input, Button } from 'components/Common/styled';
 
 export const Form = styled.form`
-  padding-bottom: 40px;
+  margin: 70px 40px 50px;
 `;
 
 export const FormRow = styled.div`
@@ -13,10 +13,9 @@ export const FormRow = styled.div`
 
 export const JoinLabel = styled.label`
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   font-size: 15px;
-  font-weight: bold;
-
+  color: #777;
   span {
     font-weight: 400;
     color: #777;
@@ -25,6 +24,12 @@ export const JoinLabel = styled.label`
 
 export const JoinInput = styled(Input)`
   margin-bottom: 12px;
+  border-radius: 6px;
+  font-size: 15px;
+  padding: 10px;
+  &:focus {
+    outline: 1px solid ${({ theme }) => theme.color.main00c};
+  }
 `;
 
 export const Validation = styled.p`
@@ -36,4 +41,5 @@ export const Validation = styled.p`
 export const JoinButton = styled(Button)`
   margin-top: 40px;
   background-color: ${({ disabled, theme }) => (disabled ? '#bcbcbc' : theme.color.main00c)};
+  border-radius: 6px;
 `;

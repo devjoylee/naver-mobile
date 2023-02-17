@@ -6,9 +6,9 @@ export const OptionNav = ({ children, ...rest }) => {
   return <S.OptionNavBlock {...rest}>{children}</S.OptionNavBlock>;
 };
 
-export const OptionNavItem = ({ text, to, onClick }) => {
+export const OptionNavItem = ({ text, to, onClick, bold }) => {
   return (
-    <S.OptionNavItemBlock>
+    <S.OptionNavItemBlock bold={bold}>
       {to ? (
         <Link to={to}>{text}</Link>
       ) : onClick ? (

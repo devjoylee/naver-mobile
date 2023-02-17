@@ -11,26 +11,29 @@ export const NPaySection = () => {
   return (
     <SectionLayout title={npay} isOpened={true} padding>
       {user ? (
-        // 로그인했을 때
+        // Logged in
         <S.PayContainer>
           <S.Text>
-            네이버페이 포인트 <br />
-            <strong>10,800</strong> 원
+            Naver Pay Points
+            <br />
+            <strong>10,800</strong> won
           </S.Text>
           <S.Buttons>
-            <S.LinkButton to='/'>충전</S.LinkButton>
-            <S.LinkButton to='/'>인출</S.LinkButton>
-            <S.LinkButton to='/'>포인트선물</S.LinkButton>
+            <S.LinkButton to='/'>Charge</S.LinkButton>
+            <S.LinkButton to='/'>Withdraw</S.LinkButton>
+            {/* <S.LinkButton to='/'>충전 인출 포인트선물</S.LinkButton> */}
           </S.Buttons>
         </S.PayContainer>
       ) : (
-        // 로그인 안 했을 때
+        // Not logged in
         <S.PayContainer>
           <S.Text>
-            편리하고 안전한 <b>네이버페이를 시작하세요</b>
+            Enjoy your safe and hassle-free banking experience with <b>Naver Pay</b>
+            {/* 편리하고 안전한 <b>네이버페이를 시작하세요</b> */}
           </S.Text>
           <S.Buttons>
-            <S.LinkButton to='/login'>로그인 후 시작</S.LinkButton>
+            <S.LinkButton to='/login'>Get Started</S.LinkButton>
+            {/* <S.LinkButton to='/login'>로그인 후 시작</S.LinkButton> */}
           </S.Buttons>
         </S.PayContainer>
       )}

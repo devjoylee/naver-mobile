@@ -13,7 +13,7 @@ export const LoginForm = () => {
   const navigate = useNavigate();
 
   const [focus, setFocus] = useState('');
-  const [error, setError] = useState('');
+  const [isFailed, setIsFailed] = useState(false);
   const [isKeptLogged, setIsKeptLogged] = useState('');
 
   const { values, handleChange } = useForm({
@@ -32,10 +32,9 @@ export const LoginForm = () => {
       if (userId === user.id) {
         setUser(user);
         navigate('/'); // 홈으로
-        // isKeptLogged && localStorage.setItem('user', JSON.stringify(user));
       }
     } catch (error) {
-      setError(error.message);
+      setIsFailed(true);
     }
   };
 
@@ -55,7 +54,7 @@ export const LoginForm = () => {
             name='userId'
             type='text'
             value={userId}
-            placeholder='아이디'
+            placeholder='ID'
             onChange={handleChange}
           />
         </S.LoginInput>
@@ -70,21 +69,22 @@ export const LoginForm = () => {
             name='password'
             type='password'
             value={password}
-            placeholder='비밀번호'
+            placeholder='PASSWORD'
             onChange={handleChange}
           />
         </S.LoginInput>
       </S.InputContainer>
 
-      {error && <S.ErrorMessage>{error}</S.ErrorMessage>}
+      {isFailed && <S.ErrorMessage>Invaild ID or password. Please try again.</S.ErrorMessage>}
 
-      <S.LoginButton disabled={!isSubmittable}>로그인</S.LoginButton>
+      <S.LoginButton disabled={!isSubmittable}>Login</S.LoginButton>
 
       <S.KeepLoggedIn onClick={() => setIsKeptLogged((prev) => !prev)}>
         <Icon>
           {isKeptLogged ? <AiFillCheckCircle className='active' /> : <AiOutlineCheckCircle />}
         </Icon>
-        <span>로그인 상태 유지</span>
+        <span>Remember me</span>
+        {/* <span>로그인 상태 유지</span> */}
       </S.KeepLoggedIn>
     </S.LoginForm>
   );

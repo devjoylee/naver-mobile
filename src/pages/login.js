@@ -15,9 +15,9 @@ export const LoginPage = () => {
       </Container>
       <LoginForm />
       <OptionNav center>
-        <OptionNavItem text='아이디 찾기' />
-        <OptionNavItem text='비밀번호 찾기' />
-        <OptionNavItem to='/join' text='회원가입' />
+        <OptionNavItem text='Forgot My ID' />
+        <OptionNavItem text='Forgot My Password' />
+        <OptionNavItem to='/join' text='Sign Up' bold />
       </OptionNav>
     </PageWrapper>
   );

@@ -13,6 +13,7 @@ export const OptionNavItemBlock = styled.span`
   padding-right: 10px;
   margin-right: 10px;
   font-size: 13px;
+  font-weight: ${({ bold }) => (bold ? 'bold' : '500')};
   color: ${({ theme }) => theme.color.text2};
   cursor: pointer;
 

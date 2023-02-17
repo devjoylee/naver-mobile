@@ -13,17 +13,18 @@ export const Footer = () => {
     <S.FooterContainer>
       <OptionNav center borderNone paddingNone>
         {user ? (
-          <OptionNavItem text='로그아웃' onClick={handleLogOut} />
+          <OptionNavItem text='Logout' onClick={handleLogOut} bold />
         ) : (
-          <OptionNavItem to='/login' text='로그인' />
+          <OptionNavItem to='/login' text='Login' bold />
         )}
-        <OptionNavItem text='전체서비스' />
-        <OptionNavItem text='PC버전' />
+        <OptionNavItem text='Apps' />
+        <OptionNavItem text='Desktop Site' />
       </OptionNav>
       <OptionNav center borderNone paddingNone>
-        <OptionNavItem text='이용약관' />
-        <OptionNavItem text='개인정보처리방침' />
-        <OptionNavItem text='고객센터' />
+        <OptionNavItem text='Terms Of Service' />
+        <OptionNavItem text='Security' />
+        <OptionNavItem text='Contact Us' />
+        {/* 전체서비스 PC버전 이용약관 개인정보처리방침 고객센터 */}
       </OptionNav>
       <S.FooterLogoImage src={logoFooter} alt='푸터로고' />
     </S.FooterContainer>
